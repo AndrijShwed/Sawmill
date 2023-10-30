@@ -1,0 +1,23 @@
+h1{
+    color:brown;
+}
+
+
+th,td {
+  padding: 10px;
+}
+
+th {
+    background-color:Moccasin;
+    border: 5px solid gray;
+}
+
+table {
+    border: 5px solid gray;
+    text-align:center;
+}
+
+td {
+    border: 1px solid gray;
+}
+

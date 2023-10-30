@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/Home.css">
+</head>
+<body>
+  
+    <div class="text-center">
+        <h1 class="display-4">Вітаємо на нашому сайті звмовлень пиломатеріалів</h1>
+        <a asp-page="./Orders/Index"><b style="font-size:larger">Перейти до замовлень</b></a>
+    </div>
+    <div style="padding:40px">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="images/Пилорама2.jpg"/>
+                    </td>
+                    <td>
+                        <img src="images/Бруски.jpg"/>
+                    </td>
+                    <td>
+                        <img src="images/Скелет.png"/>
+                    </td>
+        
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+
+
+</body>
+</html>
