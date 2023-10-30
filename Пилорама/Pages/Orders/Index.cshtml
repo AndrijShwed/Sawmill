@@ -19,8 +19,6 @@
         <a asp-page="Create">Додати</a>
     </p>
 
-   
-
     <table>
 
         <thead>
@@ -110,13 +108,11 @@
                             <a asp-page="./Edit" asp-route-id="@item.orderId">
                                 <b>Змінити</b>
                             </a> |
-                            @* <a asp-page="./Details" asp-route-id="@item.orderId">Details</a> | *@
                             <a asp-page="./Delete" asp-route-id="@item.orderId">
                                 <b style="color:red">Видалити</b>
                             </a>
                         </td>
                     </tr>
-
                 }
             }
         </tbody>
