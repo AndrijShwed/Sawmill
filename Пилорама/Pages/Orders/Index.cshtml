@@ -19,8 +19,6 @@
         <a asp-page="Create">Додати</a>
     </p>
 
-   
-
     <table>
 
         <thead>
@@ -59,11 +57,8 @@
         </thead>
         <tbody>
 
-
-
             @foreach (var item in Model.Order)
             {
-
                 if (item.Замовник == User.Identity.Name)
                 {
                     decimal h = Convert.ToDecimal(item.Висота);
