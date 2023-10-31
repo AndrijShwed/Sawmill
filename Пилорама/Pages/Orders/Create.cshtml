@@ -6,11 +6,11 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Додавання елемента</h1>
 
-<h4>Order</h4>
+<h4>Замовлення</h4>
 <hr />
-<div class="row">
+<div class="row" style="font:bold">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -20,7 +20,7 @@
                 <span asp-validation-for="Order.Замовник" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Order.Назва" class="control-label"></label>
+                <label asp-for="Order.Назва" class="control-label"></label><b>(виберіть)</b>
                 <select asp-for="Order.Назва" class="form-control">
                 
                     <option>Балка</option>
@@ -31,22 +31,22 @@
                 </select>
             </div>
             <div class="form-group">
-                <label asp-for="Order.Висота" class="control-label"></label>
+                <label asp-for="Order.Висота" class="control-label"></label><b>(мм)</b>
                 <input asp-for="Order.Висота" class="form-control" />
                 <span asp-validation-for="Order.Висота" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Order.Ширина" class="control-label"></label>
+                <label asp-for="Order.Ширина" class="control-label"></label><b>(мм)</b>
                 <input asp-for="Order.Ширина" class="form-control" />
                 <span asp-validation-for="Order.Ширина" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Order.Довжина" class="control-label"></label>
+                <label asp-for="Order.Довжина" class="control-label"></label><b>(м)</b>
                 <input asp-for="Order.Довжина" class="form-control" />
                 <span asp-validation-for="Order.Довжина" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Order.Кількість" class="control-label"></label>
+                <label asp-for="Order.Кількість" class="control-label"></label><b>(шт)</b>
                 <input asp-for="Order.Кількість" class="form-control" />
                 <span asp-validation-for="Order.Кількість" class="text-danger"></span>
             </div>
@@ -56,14 +56,14 @@
                 <span asp-validation-for="Order.Ціна" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Додати" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Повернутись до списку</a>
 </div>
 
 @section Scripts {

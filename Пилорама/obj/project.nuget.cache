@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Wdza6FiEuoSpgqfK22cM0y0W+FrGRFSwnr/LyBkEkUfsX2a3rzBTeOYCYA6wiVzWFGfXx8itHDMWydtdmJNc4Q==",
+  "dgSpecHash": "nAfSwymP0X5uBTa9BHDZp1lmLk7cBjMbMhP0Un//zhhr+ieua5Aui1bJ7I19p5NNjdRNgwCKB0136UwnbVlYaw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\Пилорама.csproj",
+  "projectFilePath": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\Пилорама.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\1\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -6,6 +6,7 @@
     decimal nAll = 0;
     decimal sumAll = 0;
     int num = 0;
+    string name = "";
 }
 <!DOCTYPE html>
 <html>
@@ -13,131 +14,134 @@
     <link rel="stylesheet" href="css/Index.css">
 </head>
 <body>
-    <h1>Замовлення</h1>
+   
+        <h1>Замовлення </h1>
+        
+        <p style="font-size:larger">
+            <a asp-page="Create">Додати</a>
+        </p>
 
-    <p style="font-size:larger">
-        <a asp-page="Create">Додати</a>
-    </p>
+        <table>
 
-    <table>
+            <thead>
+                <tr>
+                    <th>
+                        <p>Номер п/п</p>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Order[0].Назва)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Order[0].Висота)<p>(мм.)</p>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Order[0].Ширина)<p>(мм.)</p>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Order[0].Довжина)<p>(м.)</p>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Order[0].Кількість)<p>(шт.)||(м/п)</p>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Order[0].Об_єм)<p>(м.куб)</p>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Order[0].Ціна)<p>(грн.)</p>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Order[0].Сума)<p>(грн.)</p>
+                    </th>
+                    <th>
+                        <p>Редагувати</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
 
-        <thead>
-            <tr>
-                <th>
-                    <p>Номер п/п</p>
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Order[0].Назва)
-                </th>
-                <th >
-                    @Html.DisplayNameFor(model => model.Order[0].Висота)<p>(мм.)</p>
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Order[0].Ширина)<p>(мм.)</p>
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Order[0].Довжина)<p>(м.)</p>
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Order[0].Кількість)<p>(шт.)||(м/п)</p>
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Order[0].Об_єм)<p>(м.куб)</p>
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Order[0].Ціна)<p>(грн.)</p>
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Order[0].Сума)<p>(грн.)</p>
-                </th>
-                <th>
-                    <p>Редагувати</p>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-
-            @foreach (var item in Model.Order)
-            {
-                if (item.Замовник == User.Identity.Name)
+                @foreach (var item in Model.Order)
                 {
-                    decimal h = Convert.ToDecimal(item.Висота);
-                    decimal w = Convert.ToDecimal(item.Ширина);
-                    decimal l = Convert.ToDecimal(item.Довжина);
-                    decimal n = Convert.ToDecimal(item.Кількість);
-                    decimal volume = h * w * l * n / 1000000;
-                    decimal sum = volume * item.Ціна;
-                    nAll += volume;
+                    if (item.Замовник == User.Identity.Name)
+                    {
+                        decimal h = Convert.ToDecimal(item.Висота);
+                        decimal w = Convert.ToDecimal(item.Ширина);
+                        decimal l = Convert.ToDecimal(item.Довжина);
+                        decimal n = Convert.ToDecimal(item.Кількість);
+                        decimal volume = h * w * l * n / 1000000;
+                        decimal sum = volume * item.Ціна;
+                        nAll += volume;
 
-                    sumAll += sum;
-                    num++;
-                    sumAll = Convert.ToInt32(sumAll);
+                        sumAll += sum;
+                        num++;
+                        sumAll = Convert.ToInt32(sumAll);
 
-                    <tr>
-                        <td>
-                            @num
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Назва)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Висота)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Ширина)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Довжина)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Кількість)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => volume)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Ціна)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => sum)
-                        </td>
-                        <td>
-                            <a asp-page="./Edit" asp-route-id="@item.orderId">
-                                <b>Змінити</b>
-                            </a> |
-                            @* <a asp-page="./Details" asp-route-id="@item.orderId">Details</a> | *@
-                            <a asp-page="./Delete" asp-route-id="@item.orderId">
-                                <b style="color:red">Видалити</b>
-                            </a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>
+                                @num
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Назва)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Висота)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ширина)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Довжина)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Кількість)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => volume)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ціна)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => sum)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.orderId">
+                                    <b>Змінити</b>
+                                </a> |
+                                @* <a asp-page="./Details" asp-route-id="@item.orderId">Details</a> | *@
+                                <a asp-page="./Delete" asp-route-id="@item.orderId">
+                                    <b style="color:red">Видалити</b>
+                                </a>
+                            </td>
+                        </tr>
 
+                    }
                 }
-            }
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="6" style="border: 5px solid gray">
-                    <b style="font-size:larger">Всього : </b>
-                </td>
-                <td style="border: 5px solid gray">
-                    <b>@nAll </b>
-                </td>
-                <td style="border: 5px solid gray">
-                    <b></b>
-                </td>
-                <td style="border: 5px solid gray">
-                    <b>@sumAll </b>
-                </td>
-                <td style="border: 5px solid gray; background-color:aqua">
-                    <a asp-page="./Підтвердити">
-                        <b style="color:red; font-size:larger">Замовити</b>
-                    </a>
-                </td>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6" style="border: 5px solid gray">
+                        <b style="font-size:larger">Всього : </b>
+                    </td>
+                    <td style="border: 5px solid gray">
+                        <b>@nAll </b>
+                    </td>
+                    <td style="border: 5px solid gray">
+                        <b></b>
+                    </td>
+                    <td style="border: 5px solid gray">
+                        <b>@sumAll </b>
+                    </td>
+                    <td style="border: 5px solid gray; background-color:aqua">
+                        <a asp-page="./Підтвердити">
+                            <b style="color:red; font-size:larger">Замовити</b>
+                        </a>
+                    </td>
 
-            </tr>
-        </tfoot>
+                </tr>
+            </tfoot>
 
-    </table>
+        </table>
+   
+    
 </body>
 </html>

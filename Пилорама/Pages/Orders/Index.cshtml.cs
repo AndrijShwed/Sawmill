@@ -31,6 +31,9 @@ namespace Пилорама.Pages.Orders
                 Order = await _context.Orders.ToListAsync();
                
             }
+
         }
+
+
     }
 }
