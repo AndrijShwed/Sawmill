@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Пилорама.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\css\\HeaderFooter.css",
+      "PackagePath": "staticwebassets\\css\\HeaderFooter.css"
+    },
+    {
       "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\css\\Home.css",
       "PackagePath": "staticwebassets\\css\\Home.css"
     },

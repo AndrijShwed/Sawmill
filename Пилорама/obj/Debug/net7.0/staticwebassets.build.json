@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fWWK5Rtyurssx6et1vY09iupy0Pz/8c3cfdiyQYobmU=",
+  "Hash": "+K+KAbe6oq6tB60YBB7LEBfF6V2ogE37svURijFeJHc=",
   "Source": "Пилорама",
   "BasePath": "_content/Пилорама",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Пилорама.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\css\\HeaderFooter.css",
+      "SourceId": "Пилорама",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\",
+      "BasePath": "_content/Пилорама",
+      "RelativePath": "css/HeaderFooter.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\HeaderFooter.css"
     },
     {
       "Identity": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\css\\Home.css",
