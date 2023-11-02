@@ -12,5 +12,7 @@ namespace Пилорама.Data
         }
 
         public DbSet<Order> Orders { get; set; } = default!;
+
+        public DbSet<Пилорама.Models.Work> Work { get; set; } = default!;
     }
 }

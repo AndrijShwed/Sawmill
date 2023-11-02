@@ -36,6 +36,7 @@ namespace Пилорама.Pages.Orders
             {
                 return Page();
             }
+            
 
             _context.Orders.Add(Order);
             await _context.SaveChangesAsync();

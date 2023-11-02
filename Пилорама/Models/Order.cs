@@ -3,7 +3,10 @@
     public class Order
     {
         public int orderId { get; set; }
+        public int WorkId { get; set; }
         public string? Замовник { get; set; }
+        public string? Статус { get; set; }
+        public int НомерЗамовлення { get; set; }
         public string? Назва { get; set; }
         public int Висота { get; set; }
         public int Ширина{ get; set; }

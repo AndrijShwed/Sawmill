@@ -25,6 +25,46 @@
       "PackagePath": "staticwebassets\\images\\Бруски.jpg"
     },
     {
+      "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\Зруб_1.jpg",
+      "PackagePath": "staticwebassets\\images\\Зруб_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\Зруб_2.jpg",
+      "PackagePath": "staticwebassets\\images\\Зруб_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\Зруб_3.jpg",
+      "PackagePath": "staticwebassets\\images\\Зруб_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\Ліс_1.jpg",
+      "PackagePath": "staticwebassets\\images\\Ліс_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\Ліс_2.jpg",
+      "PackagePath": "staticwebassets\\images\\Ліс_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\Ліс_3.jpg",
+      "PackagePath": "staticwebassets\\images\\Ліс_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\Ліс_4.jpg",
+      "PackagePath": "staticwebassets\\images\\Ліс_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\Ліс_5.jpg",
+      "PackagePath": "staticwebassets\\images\\Ліс_5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\Ліс_6.jpg",
+      "PackagePath": "staticwebassets\\images\\Ліс_6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\Ліс_7.jpg",
+      "PackagePath": "staticwebassets\\images\\Ліс_7.jpg"
+    },
+    {
       "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\Пилорама.jpg",
       "PackagePath": "staticwebassets\\images\\Пилорама.jpg"
     },
@@ -35,6 +75,10 @@
     {
       "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\Розпил.jpg",
       "PackagePath": "staticwebassets\\images\\Розпил.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\СО_1.jpg",
+      "PackagePath": "staticwebassets\\images\\СО_1.jpg"
     },
     {
       "Id": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\wwwroot\\images\\Скелет.png",

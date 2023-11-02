@@ -47,7 +47,6 @@ namespace Пилорама.Pages.Orders
             {
                 return Page();
             }
-
             _context.Attach(Order).State = EntityState.Modified;
 
             try

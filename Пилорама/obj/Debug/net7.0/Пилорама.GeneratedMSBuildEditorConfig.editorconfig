@@ -64,6 +64,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/1/source/repos/Пилорама/Пилорама/Pages/Works/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV29ya3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Пилорама/Пилорама/Pages/Works/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV29ya3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Пилорама/Пилорама/Pages/Works/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV29ya3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Пилорама/Пилорама/Pages/Works/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV29ya3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Пилорама/Пилорама/Pages/Works/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV29ya3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/1/source/repos/Пилорама/Пилорама/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

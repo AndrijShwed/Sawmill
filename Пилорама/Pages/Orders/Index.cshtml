@@ -1,11 +1,11 @@
 ﻿@page
 @model Пилорама.Pages.Orders.IndexModel
-
 @{
     ViewData["Title"] = "Index";
     decimal nAll = 0;
     decimal sumAll = 0;
     int num = 0;
+
     int i = 0;
     string[] client = new string[Model.Order.Count];
     client[0] = "Default";
@@ -20,30 +20,27 @@
     }
 
     string[] Uclient = client.Distinct().ToArray();
-
-
-
 }
+
 <!DOCTYPE html>
+
 <html>
 
 <head>
     <link rel="stylesheet" href="css/Index.css">
+   
 </head>
 
-@{
+<body>
 
-    if (User.Identity.Name == "Admin@ukr.net")
-    {
-        for (int m = 0; m < Uclient.Length; m++)
+        @if (User.Identity.Name == "Admin@ukr.net")
         {
-
-            <body>
-                <h1>Замовлення</h1>
-                <b>@Uclient[m]</b>
-
+            for (int m = 0; m < Uclient.Length; m++)
+            {
+                <h2>@Uclient[m]</h2>
 
                 <table>
+
 
                     <thead>
                         <tr>
@@ -80,8 +77,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
-
 
                         @foreach (var item in Model.Order)
                         {
@@ -131,14 +126,15 @@
                                         <a asp-page="./Edit" asp-route-id="@item.orderId">
                                             <b>Змінити</b>
                                         </a> |
+                                        @* <a asp-page="./Details" asp-route-id="@item.orderId">Details</a> | *@
                                         <a asp-page="./Delete" asp-route-id="@item.orderId">
                                             <b style="color:red">Видалити</b>
                                         </a>
                                     </td>
                                 </tr>
+
                             }
                         }
-
                     </tbody>
                     <tfoot>
                         <tr>
@@ -165,26 +161,26 @@
 
                 </table>
 
-            </body>
-        }
 
-        <h2>Список клієнтів</h2>
-        <table>
-            <tbody>
-                <tr>
-                    @for (int k = 0; k < Uclient.Length; k++)
-                    {
-                        <td>
-                            @Uclient[k]
-                        </td>
-                    }
-                </tr>
-            </tbody>
-        </table>
-    }
-    else
-    {
-        <body>
+            }
+
+            <h2>Список клієнтів</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        @for (int k = 0; k < Uclient.Length; k++)
+                        {
+                            <td>
+                                @Uclient[k]
+                            </td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        }
+        else
+        {
+
             <h1>Замовлення</h1>
 
             <p style="font-size:larger">
@@ -308,14 +304,21 @@
                                 <b style="color:red; font-size:larger">Замовити</b>
                             </a>
                         </td>
-
                     </tr>
+
                 </tfoot>
 
             </table>
-        </body>
+            <form method="post">
 
-    }
-}
+                <div class="form-group">
+                    <input type="submit" value="Зберегти" class="btn btn-primary" />
+                </div>
 
+            </form>
+
+        }
+    
+
+</body>
 </html>

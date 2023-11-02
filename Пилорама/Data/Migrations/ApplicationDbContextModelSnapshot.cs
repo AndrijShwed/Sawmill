@@ -232,6 +232,9 @@ namespace Пилорама.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("orderId"));
 
+                    b.Property<int>("WorkId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Висота")
                         .HasColumnType("int");
 
@@ -247,8 +250,14 @@ namespace Пилорама.Data.Migrations
                     b.Property<string>("Назва")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("НомерЗамовлення")
+                        .HasColumnType("int");
+
                     b.Property<double>("Об_єм")
                         .HasColumnType("float");
+
+                    b.Property<string>("Статус")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Сума")
                         .HasColumnType("float");
@@ -262,6 +271,26 @@ namespace Пилорама.Data.Migrations
                     b.HasKey("orderId");
 
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Пилорама.Models.Work", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Client")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderNumber")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Work");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
