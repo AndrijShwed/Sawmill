@@ -7,7 +7,7 @@
     
 
     int i = 0;
-    string[] client = new string[Model.Order.Count];
+    string[] client = new string[Model.Order.Count+1];
     client[0] = "Default";
 
 
@@ -33,11 +33,11 @@
 
 <body>
 
-        @if (User.Identity.Name == "Admin@ukr.net")
-        {
-            for (int m = 0; m < Uclient.Length; m++)
+    @if (User.Identity.Name == "Admin@ukr.net")
+    {
+            for (int m = 0; m < Uclient.Length-1; m++)
             {
-            int num = 0;
+                int num = 0;
                 <h2 style="color:brown">@Uclient[m]</h2>
 
                 <table>
@@ -124,13 +124,7 @@
                                         @Html.DisplayFor(modelItem => sum)
                                     </td>
                                     <td>
-                                        <a asp-page="./Edit" asp-route-id="@item.orderId">
-                                            <b>Змінити</b>
-                                        </a> |
-                                        @* <a asp-page="./Details" asp-route-id="@item.orderId">Details</a> | *@
-                                        <a asp-page="./Delete" asp-route-id="@item.orderId">
-                                            <b style="color:red">Видалити</b>
-                                        </a>
+                                     
                                     </td>
                                 </tr>
 
@@ -180,34 +174,45 @@
     else
     {
 
-       
+
         int s = 0;
         int u = 0;
-        foreach (var p in Model.Order)
+        if (Model.Order.Count == 0)
         {
-            s++;
-            if (p.Замовник == User.Identity.Name)
+            <p style="font-size:larger">
+                <a asp-page="Create">Додати</a>
+            </p>
+        }
+        else
+        {
+            foreach (var p in Model.Order)
             {
-                if (p.Статус == "На підтвердженні")
+                s++;
+                if (p.Замовник == User.Identity.Name)
                 {
-                    u = p.НомерЗамовлення;
+                    if (p.Статус == "На підтвердженні")
+                    {
+                        u = p.НомерЗамовлення;
+                    }
+                    else
+                    {
+                        <p style="font-size:larger">
+                            <a asp-page="Create">Додати</a>
+                        </p>
+                    }
                 }
                 else
                 {
-                    <p style="font-size:larger">
-                        <a asp-page="Create">Додати</a>
-                    </p>
+                    if (u == 0 && s == Model.Order.Count)
+                    {
+                        <p style="font-size:larger">
+                            <a asp-page="Create">Додати</a>
+                        </p>
+                    }
                 }
-            }
-            else
-            {
-                if(u == 0 && s == Model.Order.Count)
-                {
-                    <p style="font-size:larger">
-                        <a asp-page="Create">Додати</a>
-                    </p>
-                }
-                
+
+
+               
             }
         }
         int num = 0;
@@ -219,7 +224,7 @@
         {
             <h1>Замовлення </h1>
         }
-        <table>
+                    <table>
 
                               <thead>
                                 <tr>
@@ -354,12 +359,12 @@
 
                                   </tfoot>
 
-                            </table>
+                    </table>
 
 
            foreach (var p in Model.Order)
            {
-              if (p.Статус != "На підтвердженні")
+              if (p.Статус != "На підтвердженні"&& p.Замовник==User.Identity.Name)
               {
                 <form method="post">
 
@@ -374,7 +379,7 @@
 
         
                
-        }
+    }
     
 
 </body>

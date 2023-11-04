@@ -12,7 +12,7 @@ using Пилорама.Data;
 namespace Пилорама.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231104100502_111")]
+    [Migration("20231104225447_111")]
     partial class _111
     {
         /// <inheritdoc />

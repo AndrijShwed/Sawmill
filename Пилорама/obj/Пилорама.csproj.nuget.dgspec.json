@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\Пилорама.csproj": {}
+    "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\Пилорама.csproj": {}
   },
   "projects": {
-    "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\Пилорама.csproj": {
+    "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\Пилорама.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\Пилорама.csproj",
+        "projectUniqueName": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\Пилорама.csproj",
         "projectName": "Пилорама",
-        "projectPath": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\Пилорама.csproj",
+        "projectPath": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\Пилорама.csproj",
         "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\1\\source\\repos\\Пилорама\\Пилорама\\obj\\",
+        "outputPath": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
