@@ -9,11 +9,11 @@ using Пилорама.Data;
 
 #nullable disable
 
-namespace Пилорама.Data.Migrations
+namespace Пилорама.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231031203911_FolderWork")]
-    partial class FolderWork
+    [Migration("20231104100502_111")]
+    partial class _111
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -227,6 +227,23 @@ namespace Пилорама.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Пилорама.Models.Number", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Numbers");
+                });
+
             modelBuilder.Entity("Пилорама.Models.Order", b =>
                 {
                     b.Property<int>("orderId")
@@ -274,26 +291,6 @@ namespace Пилорама.Data.Migrations
                     b.HasKey("orderId");
 
                     b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("Пилорама.Models.Work", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Client")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OrderNumber")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Work");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

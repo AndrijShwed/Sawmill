@@ -3,24 +3,21 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Пилорама.Data;
 
 #nullable disable
 
-namespace Пилорама.Data.Migrations
+namespace Пилорама.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231028135916_124")]
-    partial class _124
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.5")
+                .HasAnnotation("ProductVersion", "7.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -225,6 +222,72 @@ namespace Пилорама.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("Пилорама.Models.Number", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Numbers");
+                });
+
+            modelBuilder.Entity("Пилорама.Models.Order", b =>
+                {
+                    b.Property<int>("orderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("orderId"));
+
+                    b.Property<int>("WorkId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Висота")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Довжина")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Замовник")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Кількість")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Назва")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("НомерЗамовлення")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Об_єм")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Статус")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Сума")
+                        .HasColumnType("float");
+
+                    b.Property<int>("Ціна")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Ширина")
+                        .HasColumnType("int");
+
+                    b.HasKey("orderId");
+
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

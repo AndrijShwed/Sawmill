@@ -36,6 +36,11 @@
                 <span asp-validation-for="Order.Висота" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Order.Статус" class="control-label" ></label>
+                <input type="hidden" asp-for="Order.Статус" class="form-control" value="Додано"/>
+                <span asp-validation-for="Order.Статус" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Order.Ширина" class="control-label"></label><b>(мм)</b>
                 <input asp-for="Order.Ширина" class="form-control" />
                 <span asp-validation-for="Order.Ширина" class="text-danger"></span>

@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
     decimal nAll = 0;
     decimal sumAll = 0;
-    int num = 0;
+    
 
     int i = 0;
     string[] client = new string[Model.Order.Count];
@@ -13,10 +13,10 @@
 
     foreach (var name in Model.Order)
     {
-
-        client[i] = name.Замовник;
-        i++;
-
+        
+            client[i] = name.Замовник;
+            i++;
+        
     }
 
     string[] Uclient = client.Distinct().ToArray();
@@ -37,7 +37,8 @@
         {
             for (int m = 0; m < Uclient.Length; m++)
             {
-                <h2>@Uclient[m]</h2>
+            int num = 0;
+                <h2 style="color:brown">@Uclient[m]</h2>
 
                 <table>
 
@@ -147,13 +148,11 @@
                             <td style="border: 5px solid gray">
                                 <b></b>
                             </td>
-                            <td style="border: 5px solid gray">
+                            <td sstyle="border: 5px solid gray">
                                 <b>@sumAll </b>
                             </td>
-                            <td style="border: 5px solid gray; background-color:aqua">
-                                <a asp-page="./Підтвердити">
-                                    <b style="color:red; font-size:larger">Замовити</b>
-                                </a>
+                            <td style="border: 5px solid gray">
+                                <b></b>
                             </td>
 
                         </tr>
@@ -164,7 +163,7 @@
 
             }
 
-            <h2>Список клієнтів</h2>
+            <h2 style="color:brown">Список клієнтів</h2>
             <table>
                 <tbody>
                     <tr>
@@ -176,147 +175,205 @@
                         }
                     </tr>
                 </tbody>
-            </table>
+        </table>
+    }
+    else
+    {
+
+       
+        int s = 0;
+        int u = 0;
+        foreach (var p in Model.Order)
+        {
+            s++;
+            if (p.Замовник == User.Identity.Name)
+            {
+                if (p.Статус == "На підтвердженні")
+                {
+                    u = p.НомерЗамовлення;
+                }
+                else
+                {
+                    <p style="font-size:larger">
+                        <a asp-page="Create">Додати</a>
+                    </p>
+                }
+            }
+            else
+            {
+                if(u == 0 && s == Model.Order.Count)
+                {
+                    <p style="font-size:larger">
+                        <a asp-page="Create">Додати</a>
+                    </p>
+                }
+                
+            }
+        }
+        int num = 0;
+        if(u != 0)
+        {
+            <h1>Замовлення №@u</h1>
         }
         else
         {
+            <h1>Замовлення </h1>
+        }
+        <table>
 
-            <h1>Замовлення</h1>
+                              <thead>
+                                <tr>
+                                    <th>
+                                        <p>Номер п/п</p>
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Order[0].Назва)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Order[0].Висота)<p>(мм.)</p>
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Order[0].Ширина)<p>(мм.)</p>
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Order[0].Довжина)<p>(м.)</p>
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Order[0].Кількість)<p>(шт.)||(м/п)</p>
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Order[0].Об_єм)<p>(м.куб)</p>
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Order[0].Ціна)<p>(грн.)</p>
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Order[0].Сума)<p>(грн.)</p>
+                                    </th>
+                                    <th>
+                                        <p>Редагувати</p>
+                                    </th>
+                                </tr>
+                              </thead>
+                                 <tbody>
+                                      
+                                     @foreach(var item in Model.Order)
+                                     {
 
-            <p style="font-size:larger">
-                <a asp-page="Create">Додати</a>
-            </p>
-
-            <table>
-
-                <thead>
-                    <tr>
-                        <th>
-                            <p>Номер п/п</p>
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Order[0].Назва)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Order[0].Висота)<p>(мм.)</p>
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Order[0].Ширина)<p>(мм.)</p>
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Order[0].Довжина)<p>(м.)</p>
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Order[0].Кількість)<p>(шт.)||(м/п)</p>
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Order[0].Об_єм)<p>(м.куб)</p>
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Order[0].Ціна)<p>(грн.)</p>
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Order[0].Сума)<p>(грн.)</p>
-                        </th>
-                        <th>
-                            <p>Редагувати</p>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
+                                      @if (item.Замовник == User.Identity.Name)
+                                      {
+                                              decimal h = Convert.ToDecimal(item.Висота);
+                                              decimal w = Convert.ToDecimal(item.Ширина);
+                                              decimal l = Convert.ToDecimal(item.Довжина);
+                                              decimal n = Convert.ToDecimal(item.Кількість);
+                                              decimal volume = h * w * l * n / 1000000;
+                                              decimal sum = volume * item.Ціна;
+                                              nAll += volume;
+                                            
+                                              sumAll += sum;
+                                              num++;
+                                              sumAll = Convert.ToInt32(sumAll);
 
 
+                                            <tr>
+                                                <td>
+                                                    @num
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Назва)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Висота)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Ширина)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Довжина)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Кількість)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => volume)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Ціна)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => sum)
+                                                </td>
+                                                <td>
+                                                    @if (item.Статус == "Додано")
+                                                    {
+                                                            <a asp-page="./Edit" asp-route-id="@item.orderId">
+                                                               <b>Змінити</b>
+                                                            </a> <b>|</b>
+                                                            <a asp-page="./Delete" asp-route-id="@item.orderId">
+                                                                <b style="color:red">Видалити</b>
+                                                            </a>
 
-                    @foreach (var item in Model.Order)
-                    {
+                                                        
+                                                    }
+                                                </td>
+                                            </tr>
+                                      }
+                                     }
+                                 </tbody>
 
-                        if (item.Замовник == User.Identity.Name)
-                        {
-                            decimal h = Convert.ToDecimal(item.Висота);
-                            decimal w = Convert.ToDecimal(item.Ширина);
-                            decimal l = Convert.ToDecimal(item.Довжина);
-                            decimal n = Convert.ToDecimal(item.Кількість);
-                            decimal volume = h * w * l * n / 1000000;
-                            decimal sum = volume * item.Ціна;
-                            nAll += volume;
 
-                            sumAll += sum;
-                            num++;
-                            sumAll = Convert.ToInt32(sumAll);
+                                  <tfoot>
+                                            @*  @{ string status = "Default";
+                                                     foreach(var m in Model.Number)
+                                                     {
+                                                          if(m.id == UnumOrder[o])
+                                                          {
+                                                               status = m.Status;
+                                                          }
+                                                     }
+                                                } *@
 
-                            <tr>
-                                <td>
-                                    @num
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Назва)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Висота)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Ширина)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Довжина)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Кількість)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => volume)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Ціна)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => sum)
-                                </td>
-                                <td>
-                                    <a asp-page="./Edit" asp-route-id="@item.orderId">
-                                        <b>Змінити</b>
-                                    </a> |
-                                    <a asp-page="./Delete" asp-route-id="@item.orderId">
-                                        <b style="color:red">Видалити</b>
-                                    </a>
-                                </td>
-                            </tr>
-                        }
-                    }
 
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="6" style="border: 5px solid gray">
-                            <b style="font-size:larger">Всього : </b>
-                        </td>
-                        <td style="border: 5px solid gray">
-                            <b>@nAll </b>
-                        </td>
-                        <td style="border: 5px solid gray">
-                            <b></b>
-                        </td>
-                        <td style="border: 5px solid gray">
-                            <b>@sumAll </b>
-                        </td>
-                        <td style="border: 5px solid gray; background-color:aqua">
-                            <a asp-page="./Підтвердити">
-                                <b style="color:red; font-size:larger">Замовити</b>
-                            </a>
-                        </td>
-                    </tr>
+                                         <tr>
+                                              <td colspan="6" style="border: 5px solid gray">
+                                                  <b style="font-size:larger">Всього : </b>
+                                              </td>
+                                              <td style="border: 5px solid gray">
+                                                  <b>@nAll </b>
+                                              </td>
+                                              <td style="border: 5px solid gray">
+                                                  <b></b>
+                                              </td>
+                                              <td style="border: 5px solid gray">
+                                                  <b>@sumAll </b>
+                                              </td>
+                                              <td style="border: 5px solid gray; background-color:aqua">
+                                                  <b>@* @Model.Number.ToList().Last().Status *@</b>
+                                              </td>
+                                         </tr>
 
-                </tfoot>
+                                  </tfoot>
 
-            </table>
-            <form method="post">
+                            </table>
 
-                <div class="form-group">
-                    <input type="submit" value="Зберегти" class="btn btn-primary" />
-                </div>
 
-            </form>
+           foreach (var p in Model.Order)
+           {
+              if (p.Статус != "На підтвердженні")
+              {
+                <form method="post">
 
+                    <div class="form-group">
+                        <input type="submit" value="Зберегти" class="btn btn-primary" />
+                    </div>
+
+                </form>
+                
+              }
+           }
+
+        
+               
         }
     
 
