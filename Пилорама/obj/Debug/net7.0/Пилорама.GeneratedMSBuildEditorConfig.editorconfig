@@ -20,12 +20,56 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/1/source/repos/Sawmill/Пилорама/Pages/AdminNumbers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5OdW1iZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Sawmill/Пилорама/Pages/AdminNumbers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5OdW1iZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Sawmill/Пилорама/Pages/AdminNumbers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5OdW1iZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Sawmill/Пилорама/Pages/AdminNumbers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5OdW1iZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Sawmill/Пилорама/Pages/AdminNumbers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5OdW1iZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Sawmill/Пилорама/Pages/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/1/source/repos/Sawmill/Пилорама/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/1/source/repos/Sawmill/Пилорама/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Sawmill/Пилорама/Pages/Numbers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTnVtYmVyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Sawmill/Пилорама/Pages/Numbers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTnVtYmVyc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Sawmill/Пилорама/Pages/Numbers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTnVtYmVyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Sawmill/Пилорама/Pages/Numbers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTnVtYmVyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Sawmill/Пилорама/Pages/Numbers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTnVtYmVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/1/source/repos/Sawmill/Пилорама/Pages/Orders/Create.cshtml]
@@ -46,6 +90,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/1/source/repos/Sawmill/Пилорама/Pages/Orders/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/1/source/repos/Sawmill/Пилорама/Pages/Orders/Index1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXEluZGV4MS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/1/source/repos/Sawmill/Пилорама/Pages/Orders/Підтвердити.cshtml]

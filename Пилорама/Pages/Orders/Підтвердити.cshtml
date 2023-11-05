@@ -3,7 +3,13 @@
 @{
     ViewData["Title"] = "Підтведження замовлення";
 }
-<h2>Шановний <b>@User.Identity.Name</b> , Ваше замовлення в обробці. Очікуйте підтвердження ... </h2>
-<div style="font-size:large">
-    <a asp-page="Index">Повернутись на головну</a>
-</div>
+<h2>Шановний <b>@User.Identity.Name</b> , Ваше замовлення  в обробці. Очікуйте підтвердження ... </h2>
+<h3>Вкажіть свій номкр телефону </h3>
+
+<form method="post">
+
+    <div class="form-group">
+        <input type="submit" value="Підтвердити" class="btn btn-primary" />
+    </div>
+
+</form>

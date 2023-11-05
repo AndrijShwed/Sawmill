@@ -233,7 +233,15 @@ namespace Пилорама.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
                     b.Property<string>("Status")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ім_я")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Населений_пункт")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Номер_телефону")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");

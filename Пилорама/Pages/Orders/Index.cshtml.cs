@@ -26,7 +26,7 @@ namespace Пилорама.Pages.Orders
 
         public IList<Order> Order { get;set; } = default!;
         public IList<Number> Number { get; set; } = default!;
-        [Authorize]
+       
         public async Task OnGetAsync()
         {
             if (_context.Orders != null)
@@ -49,11 +49,8 @@ namespace Пилорама.Pages.Orders
                 return Page();
             }
 
-            Number number = new Number() { Status = "На підтвердженні" };
-            _context.Numbers.Add(number);
-            await _context.SaveChangesAsync();
-
-            Номер = _context.Numbers.ToList().Last().id;
+           
+            Номер = _context.Numbers.ToList().Last().id+1;
            
             foreach (var item in _context.Orders)
             {
@@ -69,7 +66,7 @@ namespace Пилорама.Pages.Orders
            
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Підтвердити");
+            return RedirectToPage("/Numbers/Create");
         }
 
     }

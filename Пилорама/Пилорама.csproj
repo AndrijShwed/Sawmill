@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Pages\Orders\NewFolder\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
