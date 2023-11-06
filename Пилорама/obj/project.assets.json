@@ -11661,11 +11661,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\1\\Source\\Repos\\Sawmill\\Пилорама\\Пилорама.csproj",
+      "projectUniqueName": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\Пилорама.csproj",
       "projectName": "Пилорама",
-      "projectPath": "C:\\Users\\1\\Source\\Repos\\Sawmill\\Пилорама\\Пилорама.csproj",
+      "projectPath": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\Пилорама.csproj",
       "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\1\\Source\\Repos\\Sawmill\\Пилорама\\obj\\",
+      "outputPath": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -11749,5 +11749,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400-preview.23225.8\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
