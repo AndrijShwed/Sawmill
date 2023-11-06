@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Домашня сторінка";
 }
 <!DOCTYPE html>
 <html>
@@ -12,7 +12,25 @@
   
     <div class="text-center">
         <h1 class="display-4">Вітаємо на сайті замовлень пиломатеріалів</h1>
-        <a asp-page="./Orders/Index"><b style="font-size:larger">Перейти до замовлень</b></a>
+        
+        @if (User.Identity.Name != "Admin@ukr.net")
+        {
+            <div class="text-start">
+                <a asp-page="./Orders/Index"><b style="font-size:larger">Створити замовлення</b></a>
+            </div>
+            <div class="text-start">
+                <a asp-page="./Numbers/Index"><b style="font-size:larger">Мої замовлення</b></a>
+            </div>
+        }
+        else
+        {
+            <div class="text-start">
+                <a asp-page="./Orders/Index"><b style="font-size:larger">Переглянути замовлення</b></a>
+            </div>
+            <div class="text-start">
+                <a asp-page="./AdminNumbers/Index"><b style="font-size:larger">Опрацювати замовлення</b></a>
+            </div>
+        }
     </div>
     <div style="padding:40px">
         <table>

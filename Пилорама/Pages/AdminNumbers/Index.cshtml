@@ -1,0 +1,54 @@
+﻿@page
+@model Пилорама.Pages.AdminNumbers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Number[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number[0].Номер_телефону)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number[0].Ім_я)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number[0].Населений_пункт)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Number) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Номер_телефону)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ім_я)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Населений_пункт)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Підтвердити</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Переглянути</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Видалити</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

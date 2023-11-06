@@ -17,7 +17,7 @@ namespace Пилорама.Pages.Orders
     {
         private readonly Пилорама.Data.ApplicationDbContext _context;
 
-        int Номер;
+        int Номер = 0;
 
         public IndexModel(Пилорама.Data.ApplicationDbContext context)
         {
@@ -25,21 +25,22 @@ namespace Пилорама.Pages.Orders
         }
 
         public IList<Order> Order { get;set; } = default!;
-        public IList<Work> Work { get;set; } = default!;
-        [Authorize]
+        public IList<Number> Number { get; set; } = default!;
+       
         public async Task OnGetAsync()
         {
             if (_context.Orders != null)
             {
                 Order = await _context.Orders.ToListAsync();
+              
+            }
+            if (_context.Numbers != null)
+            {
+                Number = await _context.Numbers.ToListAsync();
                
             }
-            if (_context.Work != null)
-            {
-                Work = await _context.Work.ToListAsync();
-                  
-            }
-            Номер = Work.Count;
+           
+            
         }
         public async Task<IActionResult> OnPostAsync()
         {
@@ -48,8 +49,9 @@ namespace Пилорама.Pages.Orders
                 return Page();
             }
 
-            
-
+           
+            Номер = _context.Numbers.ToList().Last().id+1;
+           
             foreach (var item in _context.Orders)
             {
                 if (item.Замовник == User.Identity.Name)
@@ -60,12 +62,11 @@ namespace Пилорама.Pages.Orders
                 }
             }
 
-            Work work = new Work() { Client = User.Identity.Name, OrderNumber = Номер };
-            
-            _context.Work.Add(work);
+
+           
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Підтвердити");
+            return RedirectToPage("/Numbers/Create");
         }
 
     }
