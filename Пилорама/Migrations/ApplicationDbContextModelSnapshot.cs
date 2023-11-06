@@ -238,6 +238,9 @@ namespace Пилорама.Migrations
                     b.Property<string>("Ім_я")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Замовник1")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Населений_пункт")
                         .HasColumnType("nvarchar(max)");
 

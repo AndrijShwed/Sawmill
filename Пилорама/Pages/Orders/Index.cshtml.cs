@@ -51,19 +51,19 @@ namespace Пилорама.Pages.Orders
 
            
             Номер = _context.Numbers.ToList().Last().id+1;
-           
+
             foreach (var item in _context.Orders)
             {
                 if (item.Замовник == User.Identity.Name)
                 {
-                    item.Статус = "На підтвердженні";
+                    
                     item.НомерЗамовлення = Номер;
-                   
+
                 }
             }
 
 
-           
+
             await _context.SaveChangesAsync();
 
             return RedirectToPage("/Numbers/Create");
