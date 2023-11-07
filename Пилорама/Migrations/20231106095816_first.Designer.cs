@@ -12,8 +12,8 @@ using Пилорама.Data;
 namespace Пилорама.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231105092804_486")]
-    partial class _486
+    [Migration("20231106095816_first")]
+    partial class first
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

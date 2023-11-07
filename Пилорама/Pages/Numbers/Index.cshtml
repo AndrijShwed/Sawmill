@@ -1,6 +1,6 @@
 ﻿
 @page
-@model Пилорама.Pages.Orders.IndexModel
+@model Пилорама.Pages.Numbers.IndexModel
 @{
     ViewData["Title"] = "Мої замовлення";
     int[] numb = new int[Model.Order.Count];
@@ -23,8 +23,6 @@
 
 <!DOCTYPE html>
 
-
-
 <html>
 
 <head>
@@ -33,14 +31,12 @@
 
 </head>
 
-
-
 <body>
-
+   
     @if (k != 0)
     {
 
-        for (int m = 0; m < Unumb.Length - 1; m++)
+        for (int m = 0; m < Unumb.Length; m++)
         {
 
             int num = 0;
@@ -169,12 +165,17 @@
 
             </table>
         }
-
+        <p style="font-size:larger">
+            <a asp-page="Orders/Index">Створити нове замовлення</a>
+        </p>
     }
 
     else
     {
         <h2 style="color:brown; font:bolder">У Вас ще немає замовлень</h2>
+        <p style="font-size:larger">
+            <a asp-page="Orders/Index">Створити нове замовлення</a>
+        </p>
     }
 
 

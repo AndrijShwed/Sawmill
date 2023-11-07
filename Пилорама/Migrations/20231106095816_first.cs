@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Пилорама.Migrations
 {
     /// <inheritdoc />
-    public partial class _111 : Migration
+    public partial class first : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -56,7 +56,10 @@ namespace Пилорама.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Номер_телефону = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Ім_я = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Населений_пункт = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

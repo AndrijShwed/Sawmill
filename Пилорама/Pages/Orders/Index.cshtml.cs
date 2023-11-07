@@ -49,9 +49,14 @@ namespace Пилорама.Pages.Orders
                 return Page();
             }
 
-           
-            Номер = _context.Numbers.ToList().Last().id+1;
-           
+            if (_context.Numbers != null)
+            {
+                Номер = _context.Numbers.ToList().Last().id + 1;
+            }
+            else
+            {
+                Номер = 1;
+            }
             foreach (var item in _context.Orders)
             {
                 if (item.Замовник == User.Identity.Name)

@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Orders\NewFolder\**" />
+    <Content Remove="Pages\Orders\NewFolder\**" />
+    <EmbeddedResource Remove="Pages\Orders\NewFolder\**" />
+    <None Remove="Pages\Orders\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.5" />
@@ -20,7 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Orders\NewFolder\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
