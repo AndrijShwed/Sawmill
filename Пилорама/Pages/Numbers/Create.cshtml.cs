@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Пилорама.Data;
+using Microsoft.EntityFrameworkCore;
 using Пилорама.Models;
 
 namespace Пилорама.Pages.Numbers
@@ -18,10 +13,15 @@ namespace Пилорама.Pages.Numbers
         {
             _context = context;
         }
+        public IList<Number> Numberm { get; set; } = default!;
 
-        public IActionResult OnGet()
+        public async Task OnGetAsync()
         {
-            return Page();
+            if (_context.Numbers != null)
+            {
+                Numberm = await _context.Numbers.ToListAsync();
+            }
+            
         }
 
         [BindProperty]

@@ -11,19 +11,7 @@
     int OrderNum = 0;
     int num = 0;
     int i = 0;
-    string [] client = new string[Model.Number.Count];
-
-
-
-    foreach (var name in Model.Number)
-    {
-
-        client[i] = name.Замовник1;
-        i++;
-
-    }
-    string[] Uclient = client.Distinct().ToArray();
-
+   
 }
 
 <!DOCTYPE html>
@@ -82,8 +70,7 @@
                                       
                                  @foreach(var item in Model.Order)
                                  {
-
-                                      @if (item.Замовник == User.Identity.Name)
+                                      @if (item.Замовник == User.Identity.Name && item.НомерЗамовлення == 0)
                                       {
                                               decimal h = Convert.ToDecimal(item.Висота);
                                               decimal w = Convert.ToDecimal(item.Ширина);
@@ -96,7 +83,6 @@
                                               sumAll += sum;
                                               num++;
                                               sumAll = Convert.ToInt32(sumAll);
-
 
                                             <tr>
                                                 <td>
@@ -127,8 +113,7 @@
                                                     @Html.DisplayFor(modelItem => sum)
                                                 </td>
                                                 <td>
-                                                    @if (item.Статус == "Додано")
-                                                    {
+                                                  
                                                             <a asp-page="./Edit" asp-route-id="@item.orderId">
                                                                <b>Змінити</b>
                                                             </a> <b>|</b>
@@ -136,19 +121,14 @@
                                                                 <b style="color:red">Видалити</b>
                                                             </a>
 
-                                                        
-                                                    }
+                                                    
                                                 </td>
                                             </tr>
                                       }
                                  }
                            </tbody>
                            <tfoot>
-<<<<<<< HEAD
-                                            
-=======
-                                           
->>>>>>> ad2a905c2e376dcf37853891a4996866f8f58b6c
+
                                          <tr>
                                               <td colspan="6" style="border: 5px solid gray">
                                                   <b style="font-size:larger">Всього : </b>
@@ -163,7 +143,7 @@
                                                   <b>@sumAll </b>
                                               </td>
                                               <td style="border: 5px solid gray; background-color:aqua">
-                                                  <b>@* @Model.Number.ToList().Last().Status *@</b>
+                                                  <b></b>
                                               </td>
                                          </tr>
 
@@ -178,10 +158,6 @@
                     </div>
 
                 </form>
-                
-           
-    
-    
-
+               
 </body>
 </html>

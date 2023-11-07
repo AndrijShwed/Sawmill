@@ -3,22 +3,13 @@
 @model Пилорама.Pages.Numbers.IndexModel
 @{
     ViewData["Title"] = "Мої замовлення";
-    int[] numb = new int[Model.Order.Count];
     int k = 0;
     decimal nAll = 0;
     decimal sumAll = 0;
     int Client = 0;
-    string status = "";
+    string status;
 
-    foreach (var item in Model.Order)
-    {
-        if (item.Замовник == User.Identity.Name)
-        {
-            numb[k] = item.НомерЗамовлення;
-            k++;
-        }
-    }
-    int[] Unumb = numb.Distinct().ToArray();
+    
 }
 
 <!DOCTYPE html>
@@ -33,18 +24,18 @@
 
 <body>
    
-    @if (k != 0)
+    @foreach(var cl in Model.Number)
     {
-
-        for (int m = 0; m < Unumb.Length; m++)
+        if (cl.Замовник1 == User.Identity.Name)
         {
-
+            k++;
             int num = 0;
+            int zam = cl.id;
+            status = cl.Status;
             <div style="background-color:antiquewhite; width: 300px ">
-                  <h2 style="color:brown">Замовлення №@Unumb[m]</h2>
+                <h2 style="color:brown">Замовлення №@zam</h2>
             </div>
             <table>
-
 
                 <thead>
                     <tr>
@@ -86,7 +77,7 @@
                     {
 
 
-                        if (item.Замовник == User.Identity.Name)
+                        if (item.НомерЗамовлення == zam)
                         {
                             decimal h = Convert.ToDecimal(item.Висота);
                             decimal w = Convert.ToDecimal(item.Ширина);
@@ -150,13 +141,6 @@
                             <b>@sumAll </b>
                         </td>
                         <td style="border: 5px solid gray">
-                            @foreach(var o in Model.Number)
-                            {
-                                if(Client == o.id)
-                                {
-                                    status = o.Status;
-                                }
-                            }
                             <b>@status</b>
                         </td>
 
@@ -165,16 +149,15 @@
 
             </table>
         }
-        <p style="font-size:larger">
-            <a asp-page="Orders/Index">Створити нове замовлення</a>
-        </p>
     }
-
-    else
+    <p style="font-size:larger">
+        <a asp-page="/Orders/Index">Створити нове замовлення</a>
+    </p>
+    @if(k == 0)
     {
         <h2 style="color:brown; font:bolder">У Вас ще немає замовлень</h2>
         <p style="font-size:larger">
-            <a asp-page="Orders/Index">Створити нове замовлення</a>
+            <a asp-page="/Orders/Index">Створити нове замовлення</a>
         </p>
     }
 

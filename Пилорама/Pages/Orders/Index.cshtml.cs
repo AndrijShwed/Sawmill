@@ -49,8 +49,8 @@ namespace Пилорама.Pages.Orders
                 return Page();
             }
 
-<<<<<<< HEAD
-            if (_context.Numbers != null)
+
+            if (_context.Numbers.Count() != 0)
             {
                 Номер = _context.Numbers.ToList().Last().id + 1;
             }
@@ -58,14 +58,10 @@ namespace Пилорама.Pages.Orders
             {
                 Номер = 1;
             }
-=======
-           
-            Номер = _context.Numbers.ToList().Last().id+1;
 
->>>>>>> ad2a905c2e376dcf37853891a4996866f8f58b6c
             foreach (var item in _context.Orders)
             {
-                if (item.Замовник == User.Identity.Name)
+                if (item.Замовник == User.Identity.Name && item.НомерЗамовлення == 0)
                 {
                     
                     item.НомерЗамовлення = Номер;
