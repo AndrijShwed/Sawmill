@@ -19,6 +19,11 @@
                 <span asp-validation-for="Number.Status" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Number.Замовник1" class="control-label"></label>
+                <input asp-for="Number.Замовник1" class="form-control" value=@User.Identity.Name />
+                <span asp-validation-for="Number.Замовник1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Number.Номер_телефону" class="control-label"></label>
                 <input asp-for="Number.Номер_телефону" class="form-control" />
                 <span asp-validation-for="Number.Номер_телефону" class="text-danger"></span>

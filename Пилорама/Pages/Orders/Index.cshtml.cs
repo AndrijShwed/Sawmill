@@ -49,6 +49,7 @@ namespace Пилорама.Pages.Orders
                 return Page();
             }
 
+<<<<<<< HEAD
             if (_context.Numbers != null)
             {
                 Номер = _context.Numbers.ToList().Last().id + 1;
@@ -57,18 +58,23 @@ namespace Пилорама.Pages.Orders
             {
                 Номер = 1;
             }
+=======
+           
+            Номер = _context.Numbers.ToList().Last().id+1;
+
+>>>>>>> ad2a905c2e376dcf37853891a4996866f8f58b6c
             foreach (var item in _context.Orders)
             {
                 if (item.Замовник == User.Identity.Name)
                 {
-                    item.Статус = "На підтвердженні";
+                    
                     item.НомерЗамовлення = Номер;
-                   
+
                 }
             }
 
 
-           
+
             await _context.SaveChangesAsync();
 
             return RedirectToPage("/Numbers/Create");

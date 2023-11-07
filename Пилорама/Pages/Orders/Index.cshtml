@@ -9,21 +9,21 @@
     string Name ="";
     string Village="";
     int OrderNum = 0;
-
+    int num = 0;
     int i = 0;
-    int[] client = new int[Model.Number.Count+1];
-  
+    string [] client = new string[Model.Number.Count];
+
 
 
     foreach (var name in Model.Number)
     {
-        
-            client[i] = name.id;
-            i++;
-        
-    }
 
-   
+        client[i] = name.Замовник1;
+        i++;
+
+    }
+    string[] Uclient = client.Distinct().ToArray();
+
 }
 
 <!DOCTYPE html>
@@ -36,189 +36,10 @@
 
 <body>
 
-    @if (User.Identity.Name == "Admin@ukr.net")
-    {
-         for (int m = 0; m < client.Length-1; m++)
-         {
-            
-            int num = 0;
-            
-
-            foreach(var c in Model.Number)
-            {
-                if(c.id == client[m])
-                {
-                    Name = c.Ім_я;
-                    Village = c.Населений_пункт;
-                    OrderNum = c.id;
-                }
-            }
-            <div style="background-color:antiquewhite; width: 600px ">
-            <h2 style="color:brown">@Name, нас.пункт -  @Village Замовлення № @OrderNum</h2>
-            </div>
-               <table>
-
-
-                    <thead>
-                        <tr>
-                            <th>
-                                <p>Номер п/п</p>
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Order[0].Назва)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Order[0].Висота)<p>(мм.)</p>
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Order[0].Ширина)<p>(мм.)</p>
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Order[0].Довжина)<p>(м.)</p>
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Order[0].Кількість)<p>(шт.)||(м/п)</p>
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Order[0].Об_єм)<p>(м.куб)</p>
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Order[0].Ціна)<p>(грн.)</p>
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Order[0].Сума)<p>(грн.)</p>
-                            </th>
-                            <th>
-                                <p>Редагувати</p>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        @foreach (var item in Model.Order)
-                        {
-                           
-
-                            if (item.НомерЗамовлення == client[m])
-                            {
-                                decimal h = Convert.ToDecimal(item.Висота);
-                                decimal w = Convert.ToDecimal(item.Ширина);
-                                decimal l = Convert.ToDecimal(item.Довжина);
-                                decimal n = Convert.ToDecimal(item.Кількість);
-                                decimal volume = h * w * l * n / 1000000;
-                                decimal sum = volume * item.Ціна;
-                                nAll += volume;
-                                Client = item.НомерЗамовлення;
-                                sumAll += sum;
-                                num++;
-                                sumAll = Convert.ToInt32(sumAll);
-
-                                <tr>
-                                    <td>
-                                        @num
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Назва)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Висота)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Ширина)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Довжина)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Кількість)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => volume)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Ціна)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => sum)
-                                    </td>
-                                    <td>
-                                     
-                                    </td>
-                                </tr>
-
-                            }
-                        }
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="6" style="border: 5px solid gray">
-                                <b style="font-size:larger">Всього : </b>
-                            </td>
-                            <td style="border: 5px solid gray">
-                                <b>@nAll </b>
-                            </td>
-                            <td style="border: 5px solid gray">
-                                <b></b>
-                            </td>
-                            <td sstyle="border: 5px solid gray">
-                                <b>@sumAll </b>
-                            </td>
-                            <td style="border: 5px solid gray">
-                               
-                                 @foreach(var c in Model.Number)
-                                 {
-                                    if(Client == c.id)
-                                    {
-                                       Phone = c.Номер_телефону;
-                                    }
-                                 }
-                               <b>@Phone</b>
-                            </td>
-
-                        </tr>
-                    </tfoot>
-
-               </table>
-           
-
-         }
-        <div style="background-color:antiquewhite; width: 250px ">
-            <h2 style="color:brown">Список клієнтів</h2>
-        </div>
-       
-        <table>
-                <tbody>
-                    <tr>
-                        @for (int k = 0; k < client.Length; k++)
-                        {
-                           
-                                @foreach(var l in Model.Number)
-                                {
-                                   if (client[k] == l.id)
-                                   {
-                                       Name = l.Ім_я;
-                                       Village = l.Населений_пункт;
-                                       Phone = l.Номер_телефону;
-                                   }
-                                }
-                            <td>
-                                <b>@Name</b>
-                                <b>@Village</b>
-                                <b>@Phone</b>
-                            </td>
-                        }
-                    </tr>
-                </tbody>
-        </table>
-    }
-    else
-    {
-
-
         <p style="font-size:larger">
             <a asp-page="Create">Додати</a>
         </p>
-        int num = 0;
+      
         <h1>Замовлення </h1>
         
                     <table>
@@ -323,7 +144,11 @@
                                  }
                            </tbody>
                            <tfoot>
+<<<<<<< HEAD
                                             
+=======
+                                           
+>>>>>>> ad2a905c2e376dcf37853891a4996866f8f58b6c
                                          <tr>
                                               <td colspan="6" style="border: 5px solid gray">
                                                   <b style="font-size:larger">Всього : </b>
@@ -355,7 +180,7 @@
                 </form>
                 
            
-    }
+    
     
 
 </body>
