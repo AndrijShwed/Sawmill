@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eQfCYqTb8h1fg8G5iafsN+kp1qBJkiQ9fYhn4ThSHdg=",
+  "Hash": "jOZ4VC7cDcVEClw4OKMTwlxySoNpRsEJeHIDiAf42Og=",
   "Source": "Пилорама",
   "BasePath": "_content/Пилорама",
   "Mode": "Default",
@@ -1171,6 +1171,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Бруски.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Брусок_з_розмірами.png",
+      "SourceId": "Пилорама",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\",
+      "BasePath": "_content/Пилорама",
+      "RelativePath": "images/Брусок_з_розмірами.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Брусок_з_розмірами.png"
+    },
+    {
+      "Identity": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\завантаження.png",
+      "SourceId": "Пилорама",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\",
+      "BasePath": "_content/Пилорама",
+      "RelativePath": "images/завантаження.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\завантаження.png"
     },
     {
       "Identity": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Зруб_1.jpg",
