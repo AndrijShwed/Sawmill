@@ -51,8 +51,8 @@
                 <span asp-validation-for="Order.Кількість" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Order.Ціна" class="control-label"></label><b>(шт)</b>
-                <input asp-for="Order.Ціна" class="form-control" />
+               @*  <label asp-for="Order.Ціна" class="control-label"></label><b>(грн)</b> *@
+                <input type="hidden" asp-for="Order.Ціна" class="form-control" />
                 <span asp-validation-for="Order.Ціна" class="text-danger"></span>
             </div>
             <div class="form-group">
