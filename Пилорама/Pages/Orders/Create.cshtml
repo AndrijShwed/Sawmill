@@ -12,7 +12,27 @@
 
 
 <head>
-    <link rel="stylesheet" href="css/Home.css">
+   <style>
+        .block1 {
+            width: 500px;
+            background: #ccc;
+            padding: 5px;
+            padding-right: 20px;
+            border: solid 1px black;
+            float: left;
+        }
+
+        .block2 {
+            width: 700px;
+            height: 500px;
+            padding: 5px;
+            border: solid 1px black;
+            float: right;
+            position: relative;
+            left: 10px;
+           
+        }
+   </style>
 
 </head>
 
@@ -21,7 +41,8 @@
     <h1>Додавання елемента</h1>
 
     <h4>Замовлення</h4>
-    
+  
+   <div class="block1">
     <div class="row" style="font:bold">
         <div class="col-md-4">
             <form method="post">
@@ -73,10 +94,15 @@
             </form>
         </div>
     </div>
-   
-    <div>
-        <a asp-page="Index">Повернутись до списку</a>
-    </div>
+            <div>
+                <a asp-page="Index">Повернутись до списку</a>
+            </div>
+   </div>
+      <div class="block2">
+          <img src="/images/завантаження.png" width="400" height="400" style="display:block;  margin:0 auto"  />
+          </div>
+  
+    
 </body>
 </html>
 

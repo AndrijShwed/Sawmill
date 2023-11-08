@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\images\\Бруски.jpg"
     },
     {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Брусок_з_розмірами.png",
+      "PackagePath": "staticwebassets\\images\\Брусок_з_розмірами.png"
+    },
+    {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Зруб_1.jpg",
       "PackagePath": "staticwebassets\\images\\Зруб_1.jpg"
     },
@@ -91,6 +95,10 @@
     {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Скелет2.jpg",
       "PackagePath": "staticwebassets\\images\\Скелет2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\завантаження.png",
+      "PackagePath": "staticwebassets\\images\\завантаження.png"
     },
     {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\js\\site.js",

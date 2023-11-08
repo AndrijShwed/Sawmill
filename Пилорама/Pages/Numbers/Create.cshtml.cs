@@ -39,7 +39,7 @@ namespace Пилорама.Pages.Numbers
             _context.Numbers.Add(Number);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Orders/Підтвердити");
         }
     }
 }
