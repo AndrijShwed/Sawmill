@@ -100,7 +100,7 @@
 
                                 @foreach (var item in Model.Order)
                                 {
-                                    if (item.Замовник == Uclient[m] && q.id == item.НомерЗамовлення)
+                                    if (q.id == item.НомерЗамовлення)
                                     {
                                         decimal h = Convert.ToDecimal(item.Висота);
                                         decimal w = Convert.ToDecimal(item.Ширина);

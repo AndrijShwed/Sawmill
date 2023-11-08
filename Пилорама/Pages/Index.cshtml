@@ -6,33 +6,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="css/Home.css">
+  
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+         video {
+             position: fixed;
+             top: 50%;
+             left: 50%;
+             min-width: 100%;
+             min-height: 100%;
+             width: auto;
+             height: auto;
+             z-index: -1;
+             transform: translateX(-50%) translateY(-50%);
+         }
+
+    </style>
+    
 </head>
 <body>
   
+    <video autoplay loop muted>
+        <source src="/images/Порізка.mp4" type="video/mp4" />
+    </video>
     <div class="text-center">
-           <h1 class="display-4" style="font-style:oblique ">Вітаємо на сайті замовлень пиломатеріалів</h1>
-        
+         
         @if (User.Identity.Name != "Admin@ukr.net" && User.Identity.IsAuthenticated)
         {
+            <h1 class="display-4" style="font-style: unset; color:purple "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h1>
             <div class="text-start">
-                <a asp-page="./Orders/Index"><b style="font-size:larger">Створити замовлення</b></a>
+                <a asp-page="./Orders/Index"><b style="font-size:xx-large">Створити замовлення</b></a>
             </div>
             <div class="text-start">
-                <a asp-page="./Numbers/Index"><b style="font-size:larger">Мої замовлення</b></a>
+                <a asp-page="./Numbers/Index"><b style="font-size:xx-large">Мої замовлення</b></a>
             </div>
         }
         else if(User.Identity.IsAuthenticated)
         {
+            <h1 class="display-4" style="font-style: unset; color:purple "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h1>
             <div class="text-start">
-                <a asp-page="./Admin/Index"><b style="font-size:larger">Переглянути замовлення</b></a>
+                <a asp-page="./Admin/Index"><b style="font-size:xx-large">Переглянути замовлення</b></a>
             </div>
             <div class="text-start">
-                <a asp-page="./AdminNumbers/Index"><b style="font-size:larger">Опрацювати замовлення</b></a>
+                <a asp-page="./AdminNumbers/Index"><b style="font-size:xx-large">Опрацювати замовлення</b></a>
             </div>
         }
     </div>
-    <div style="padding:40px">
+   @*  <div style="padding:40px">
         <table>
             <tbody>
                 <tr>
@@ -49,7 +73,7 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+    </div> *@
 
 </body>
 </html>

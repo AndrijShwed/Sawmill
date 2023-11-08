@@ -5,78 +5,112 @@
     ViewData["Title"] = "Заповнити дані";
     int k = 0;
 }
+<!DOCTYPE html>
+<html>
+<head>
 
-<h1>Додайте свої дані</h1>
-<h1>Або підтвердіть, якщо ви вже наш клієнт</h1>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-               @*  <label asp-for="Number.Status" class="control-label"></label> *@
-                <input type="hidden" asp-for="Number.Status" class="form-control" value="На підтвердженні" />
-                <span asp-validation-for="Number.Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <b>Замовник</b>
-                @* <label asp-for="Number.Замовник1" class="control-label"></label> *@
-                <input asp-for="Number.Замовник1" class="form-control" value=@User.Identity.Name />
-                <span asp-validation-for="Number.Замовник1" class="text-danger"></span>
-            </div>
-            @foreach(var item in Model.Numberm)
-            {
-                if (item.Замовник1 == User.Identity.Name && k == 0)
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <video autoplay loop muted>
+        <source src="/images/1072688276-preview.mp4" type="video/mp4" />
+    </video>
+    <h1>Додайте свої дані</h1>
+    <h1>Або підтвердіть, якщо ви вже наш клієнт</h1>
+
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    @*  <label asp-for="Number.Status" class="control-label"></label> *@
+                    <input type="hidden" asp-for="Number.Status" class="form-control" value="На підтвердженні" />
+                    <span asp-validation-for="Number.Status" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <b>Замовник</b>
+                    @* <label asp-for="Number.Замовник1" class="control-label"></label> *@
+                    <input asp-for="Number.Замовник1" class="form-control" value=@User.Identity.Name />
+                    <span asp-validation-for="Number.Замовник1" class="text-danger"></span>
+                </div>
+                @foreach (var item in Model.Numberm)
+                {
+                    if (item.Замовник1 == User.Identity.Name && k == 0)
+                    {
+                        k++;
+                        <div class="form-group">
+                            <b>
+                                <label asp-for="Number.Номер_телефону" class="control-label"></label><b></b>
+                                <input asp-for="Number.Номер_телефону" class="form-control" value="@item.Номер_телефону" />
+                                <span asp-validation-for="Number.Номер_телефону" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Number.Ім_я" class="control-label"></label>
+                            <input asp-for="Number.Ім_я" class="form-control" value="@item.Ім_я" />
+                            <span asp-validation-for="Number.Ім_я" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Number.Населений_пункт" class="control-label"></label>
+                            <input asp-for="Number.Населений_пункт" class="form-control" value="@item.Населений_пункт" />
+                            <span asp-validation-for="Number.Населений_пункт" class="text-danger"></span>
+                        </div>
+                    }
+
+                }
+                @if (k == 0)
                 {
                     k++;
                     <div class="form-group">
-                        <b><label asp-for="Number.Номер_телефону" class="control-label"></label><b></b>
-                        <input asp-for="Number.Номер_телефону" class="form-control" value="@item.Номер_телефону" />
+                        <b><label asp-for="Number.Номер_телефону" class="control-label"></label></b>
+                        <input asp-for="Number.Номер_телефону" class="form-control" />
                         <span asp-validation-for="Number.Номер_телефону" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Number.Ім_я" class="control-label"></label>
-                        <input asp-for="Number.Ім_я" class="form-control" value="@item.Ім_я" />
+                        <input asp-for="Number.Ім_я" class="form-control" />
                         <span asp-validation-for="Number.Ім_я" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Number.Населений_пункт" class="control-label"></label>
-                        <input asp-for="Number.Населений_пункт" class="form-control" value="@item.Населений_пункт"/>
+                        <input asp-for="Number.Населений_пункт" class="form-control" />
                         <span asp-validation-for="Number.Населений_пункт" class="text-danger"></span>
                     </div>
                 }
-               
-            }
-            @if(k == 0)
-            {
-               k++;
-               <div class="form-group">
-                   <b><label asp-for="Number.Номер_телефону" class="control-label"></label></b>
-                   <input asp-for="Number.Номер_телефону" class="form-control" />
-                   <span asp-validation-for="Number.Номер_телефону" class="text-danger"></span>
-               </div>
-               <div class="form-group">
-                   <label asp-for="Number.Ім_я" class="control-label"></label>
-                   <input asp-for="Number.Ім_я" class="form-control" />
-                   <span asp-validation-for="Number.Ім_я" class="text-danger"></span>
-               </div>
-               <div class="form-group">
-                   <label asp-for="Number.Населений_пункт" class="control-label"></label>
-                   <input asp-for="Number.Населений_пункт" class="form-control" />
-                   <span asp-validation-for="Number.Населений_пункт" class="text-danger"></span>
-               </div>
-            }
-            <div class="form-group">
-                <input type="submit" value="Підтвердити" class="btn btn-primary" />
-            </div>
-        </form>
+                <div class="form-group">
+                    <input type="submit" value="Підтвердити" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-page="/Orders/Index">Повернутись на головну</a>
-</div>
-
+    <div>
+        <a asp-page="/Orders/Index">Повернутись на головну</a>
+    </div>
+</body>
+</html>
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
