@@ -11,7 +11,7 @@ body{
     background-image: url(/images/Зруб_2.jpg);
     background-size:cover;
     background-repeat: no-repeat;
-
+    
 }
 th,td {
   padding: 10px;
@@ -33,4 +33,20 @@ h1{
 }
 header, footer {
     background-color: aqua;
+}
+.video {
+    position:relative;
+    padding-bottom: 100%;
+}
+.video_media {
+    width: 200%;
+    height: auto;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.intro {
+    max-height: 200vh;
+    overflow:hidden;
 }

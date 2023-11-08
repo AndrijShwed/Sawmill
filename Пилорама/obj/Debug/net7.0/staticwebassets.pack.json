@@ -25,6 +25,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Video_Forest_1.mp4",
+      "PackagePath": "staticwebassets\\images\\Video_Forest_1.mp4"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Video_Sawmill.mp4",
+      "PackagePath": "staticwebassets\\images\\Video_Sawmill.mp4"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\fiskas.mp4",
+      "PackagePath": "staticwebassets\\images\\fiskas.mp4"
+    },
+    {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Бруски.jpg",
       "PackagePath": "staticwebassets\\images\\Бруски.jpg"
     },

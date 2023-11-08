@@ -6,50 +6,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="css/Home.css">
+   @*  <link rel="stylesheet" href="css/Home.css"> *@
+  <style>
+       body {
+           margin: 0;
+       }
+    .video {
+    position:relative;
+    z-index: 1;
+    padding-bottom: 56.25%;
+    }
+    .video_media {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+ 
+    .intro {
+    max-height: 80vh;
+    overflow:hidden;
+    position:relative;
+    }
+    .intro:after {
+        content:close-quote;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0, 0.4);
+        position:absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+    .intro_content {
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        width: 100%;
+        height:100%;
+
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:3;
+        
+    }
+    .container {
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
-  
-    <div class="text-center">
-           <h1 class="display-4" style="font-style:oblique ">Вітаємо на сайті замовлень пиломатеріалів</h1>
-        
-        @if (User.Identity.Name != "Admin@ukr.net" && User.Identity.IsAuthenticated)
-        {
-            <div class="text-start">
-                <a asp-page="./Orders/Index"><b style="font-size:larger">Створити замовлення</b></a>
+    <div class="intro">
+       <div class="video">
+           <video class="video_media" src="/images/Video_Forest_1.mp4" autoplay muted loop></video>
+       </div>
+       <div class="intro_content">
+          <div class="container">
+            <div class="text-center">
+                <h1 class="display-4" style="font-style:oblique; color:aliceblue">Вітаємо на сайті замовлень пиломатеріалів</h1>
+
+                @if (User.Identity.Name != "Admin@ukr.net" && User.Identity.IsAuthenticated)
+                {
+                    <div class="text-start">
+                        <a asp-page="./Orders/Index"><b style="font-size:larger">Створити замовлення</b></a>
+                    </div>
+                    <div class="text-start">
+                        <a asp-page="./Numbers/Index"><b style="font-size:larger">Мої замовлення</b></a>
+                    </div>
+                }
+                else if (User.Identity.IsAuthenticated)
+                {
+                    <div class="text-start">
+                        <a asp-page="./Admin/Index"><b style="font-size:larger">Переглянути замовлення</b></a>
+                    </div>
+                    <div class="text-start">
+                        <a asp-page="./AdminNumbers/Index"><b style="font-size:larger">Опрацювати замовлення</b></a>
+                    </div>
+                }
             </div>
-            <div class="text-start">
-                <a asp-page="./Numbers/Index"><b style="font-size:larger">Мої замовлення</b></a>
-            </div>
-        }
-        else if(User.Identity.IsAuthenticated)
-        {
-            <div class="text-start">
-                <a asp-page="./Admin/Index"><b style="font-size:larger">Переглянути замовлення</b></a>
-            </div>
-            <div class="text-start">
-                <a asp-page="./AdminNumbers/Index"><b style="font-size:larger">Опрацювати замовлення</b></a>
-            </div>
-        }
+            @* <div style="padding:10px">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="images/Пилорама2.jpg" />
+                            </td>
+                            <td>
+                                <img src="images/Бруски.jpg" />
+                            </td>
+                            <td>
+                                <img src="images/Скелет.png" />
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>  *@
+          </div>
+       </div>
     </div>
-    <div style="padding:40px">
-        <table>
-            <tbody>
-                <tr>
-                    <td>
-                        <img src="images/Пилорама2.jpg"/>
-                    </td>
-                    <td>
-                        <img src="images/Бруски.jpg"/>
-                    </td>
-                    <td>
-                        <img src="images/Скелет.png"/>
-                    </td>
-        
-                </tr>
-            </tbody>
-        </table>
-    </div>
+   
 
 </body>
 </html>
