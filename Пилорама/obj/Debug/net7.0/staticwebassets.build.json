@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "X6OFiecbM6pxWhS8SsEZTlThv8CusoMo9XxJJtXJ0qs=",
+  "Hash": "1UTXoU85jeHb9dCaZ2qvgtgEypJkeIaaZZ4L5giigNM=",
   "Source": "Пилорама",
   "BasePath": "_content/Пилорама",
   "Mode": "Default",
@@ -1275,6 +1275,23 @@
       "OriginalItemSpec": "wwwroot\\images\\Бруски.jpg"
     },
     {
+      "Identity": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Брусок_з_розмірами.jpg",
+      "SourceId": "Пилорама",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\",
+      "BasePath": "_content/Пилорама",
+      "RelativePath": "images/Брусок_з_розмірами.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Брусок_з_розмірами.jpg"
+    },
+    {
       "Identity": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Брусок_з_розмірами.png",
       "SourceId": "Пилорама",
       "SourceType": "Discovered",
@@ -1358,6 +1375,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Зруб_3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Каркас_Даху.jpg",
+      "SourceId": "Пилорама",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\",
+      "BasePath": "_content/Пилорама",
+      "RelativePath": "images/Каркас_Даху.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Каркас_Даху.jpg"
     },
     {
       "Identity": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Ліс_1.jpg",
