@@ -4,12 +4,9 @@
 @{
     ViewData["Title"] = "Мої замовлення";
     int k = 0;
-    decimal nAll = 0;
-    decimal sumAll = 0;
     int Client = 0;
     string status;
 
-    
 }
 
 <!DOCTYPE html>
@@ -31,6 +28,8 @@
             k++;
             int num = 0;
             int zam = cl.id;
+            decimal sumAll = 0;
+            decimal nAll = 0;
             status = cl.Status;
             <div style="background-color:antiquewhite; width: 300px ">
                 <h2 style="color:brown">Замовлення №@zam</h2>

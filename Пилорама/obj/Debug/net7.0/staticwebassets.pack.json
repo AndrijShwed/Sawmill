@@ -17,12 +17,36 @@
       "PackagePath": "staticwebassets\\css\\Index.css"
     },
     {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\css\\Number.css",
+      "PackagePath": "staticwebassets\\css\\Number.css"
+    },
+    {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\1055142740-preview.mp4",
+      "PackagePath": "staticwebassets\\images\\1055142740-preview.mp4"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\1072688276-preview.mp4",
+      "PackagePath": "staticwebassets\\images\\1072688276-preview.mp4"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\1072814543-preview.mp4",
+      "PackagePath": "staticwebassets\\images\\1072814543-preview.mp4"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\1073251766-preview.mp4",
+      "PackagePath": "staticwebassets\\images\\1073251766-preview.mp4"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Fiskas.mp4",
+      "PackagePath": "staticwebassets\\images\\Fiskas.mp4"
     },
     {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Бруски.jpg",
@@ -79,6 +103,10 @@
     {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Пилорама2.jpg",
       "PackagePath": "staticwebassets\\images\\Пилорама2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Порізка.mp4",
+      "PackagePath": "staticwebassets\\images\\Порізка.mp4"
     },
     {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Розпил.jpg",

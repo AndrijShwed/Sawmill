@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using Пилорама.Data;
 using Пилорама.Models;
@@ -64,8 +65,14 @@ namespace Пилорама.Pages.Orders
                     throw;
                 }
             }
-
-            return RedirectToPage("./Index");
+            if(User.Identity.Name=="Admin@ukr.net")
+            {
+                return RedirectToPage("/AdminNumbers/Index");
+            }
+            else{
+                return RedirectToPage("./Index");
+            }
+           
         }
 
         private bool OrderExists(int id)

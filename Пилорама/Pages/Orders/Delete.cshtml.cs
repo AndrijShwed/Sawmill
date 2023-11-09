@@ -56,8 +56,15 @@ namespace Пилорама.Pages.Orders
                 _context.Orders.Remove(Order);
                 await _context.SaveChangesAsync();
             }
-
-            return RedirectToPage("./Index");
+            if (User.Identity.Name == "Admin@ukr.net")
+            {
+                return RedirectToPage("/AdminNumbers/Index");
+            }
+            else
+            {
+                return RedirectToPage("./Index");
+            }
+           
         }
     }
 }
