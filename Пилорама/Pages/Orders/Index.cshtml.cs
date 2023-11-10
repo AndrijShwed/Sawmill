@@ -18,6 +18,7 @@ namespace Пилорама.Pages.Orders
         private readonly Пилорама.Data.ApplicationDbContext _context;
 
         int Номер = 0;
+        int Ціна = 0;
 
         public IndexModel(Пилорама.Data.ApplicationDbContext context)
         {
@@ -26,6 +27,7 @@ namespace Пилорама.Pages.Orders
 
         public IList<Order> Order { get;set; } = default!;
         public IList<Number> Number { get; set; } = default!;
+        public IList<Price> Price { get; set; } = default!;
        
         public async Task OnGetAsync()
         {
@@ -39,8 +41,13 @@ namespace Пилорама.Pages.Orders
                 Number = await _context.Numbers.ToListAsync();
                
             }
-           
-            
+            if (_context.Prices != null)
+            {
+                Price = await _context.Prices.ToListAsync();
+
+            }
+
+
         }
         public async Task<IActionResult> OnPostAsync()
         {
@@ -59,12 +66,16 @@ namespace Пилорама.Pages.Orders
                 Номер = 1;
             }
 
+            Ціна = _context.Prices.ToList().Last().Ціна;
+            ViewData["Ціна"] = Ціна;
+
             foreach (var item in _context.Orders)
             {
                 if (item.Замовник == User.Identity.Name && item.НомерЗамовлення == 0)
                 {
                     
                     item.НомерЗамовлення = Номер;
+                    item.Ціна = Ціна;
 
                 }
             }

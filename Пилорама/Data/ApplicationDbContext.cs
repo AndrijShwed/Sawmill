@@ -13,6 +13,7 @@ namespace Пилорама.Data
 
         public DbSet<Order> Orders { get; set; } = default!;
         public DbSet<Number> Numbers { get; set; } = default!;
+        public DbSet<Price> Prices { get; set; } = default!;
 
        
     }

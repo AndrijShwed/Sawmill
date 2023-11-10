@@ -301,6 +301,25 @@ namespace Пилорама.Migrations
                     b.ToTable("Orders");
                 });
 
+            modelBuilder.Entity("Пилорама.Models.Price", b =>
+                {
+                    b.Property<int>("Priceid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Priceid"));
+
+                    b.Property<DateTime>("Дата")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Ціна")
+                        .HasColumnType("int");
+
+                    b.HasKey("Priceid");
+
+                    b.ToTable("Prices");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
