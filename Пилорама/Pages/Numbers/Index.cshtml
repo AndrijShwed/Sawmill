@@ -6,7 +6,7 @@
     int k = 0;
     int Client = 0;
     string status;
-
+    string color;
 }
 
 <!DOCTYPE html>
@@ -25,6 +25,7 @@
     {
         if (cl.Замовник1 == User.Identity.Name)
         {
+            color = "";
             k++;
             int num = 0;
             int zam = cl.id;
@@ -74,7 +75,7 @@
 
                     @foreach (var item in Model.Order)
                     {
-
+                        
 
                         if (item.НомерЗамовлення == zam)
                         {
@@ -139,7 +140,25 @@
                         <td sstyle="border: 5px solid gray">
                             <b>@sumAll </b>
                         </td>
-                        <td style="border: 5px solid gray">
+                        @{
+                            if(status == "Підтверджено")
+                            {
+                                color = "aqua";
+                            }
+                            if(status == "Виконано")
+                            {
+                                color = "green";
+                            }
+                            if(status == "В роботі")
+                            {
+                                color = "yellow";
+                            }
+                            if(status == "Відхилено")
+                            {
+                                color = "red";
+                            }
+                        }
+                        <td style="border: 5px solid gray; background-color:@color">
                             <b>@status</b>
                         </td>
 
@@ -149,16 +168,19 @@
             </table>
         }
     }
-    <div style="background-color:antiquewhite; width: 500px; text-align:center" >
-    <p style="font-size:larger">
-            <a asp-page="/Orders/Index"><h2 style="font:bolder; color: blue">Створити нове замовлення</h2></a>
-    </p>
-    </div>
     @if(k == 0)
     {
         <h2 style="color:brown; font:bolder">У Вас ще немає замовлень</h2>
         <div style="background-color:antiquewhite; width: 500px; text-align:center">
             <p>
+                <a asp-page="/Orders/Index"><h2 style="font:bolder; color: blue">Створити нове замовлення</h2></a>
+            </p>
+        </div>
+    }
+    else
+    {
+        <div style="background-color:antiquewhite; width: 500px; text-align:center">
+            <p style="font-size:larger">
                 <a asp-page="/Orders/Index"><h2 style="font:bolder; color: blue">Створити нове замовлення</h2></a>
             </p>
         </div>

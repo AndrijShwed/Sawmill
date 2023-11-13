@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Пилорама.Migrations
 {
     /// <inheritdoc />
-    public partial class first : Migration
+    public partial class _1111 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -57,6 +57,7 @@ namespace Пилорама.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Замовник1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Номер_телефону = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Ім_я = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Населений_пункт = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -88,6 +89,19 @@ namespace Пилорама.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Orders", x => x.orderId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Price",
+                columns: table => new
+                {
+                    Priceid = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Ціна = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Price", x => x.Priceid);
                 });
 
             migrationBuilder.CreateTable(
@@ -259,6 +273,9 @@ namespace Пилорама.Migrations
 
             migrationBuilder.DropTable(
                 name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "Price");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

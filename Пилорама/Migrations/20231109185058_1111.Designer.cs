@@ -12,8 +12,8 @@ using Пилорама.Data;
 namespace Пилорама.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231106095816_first")]
-    partial class first
+    [Migration("20231109185058_1111")]
+    partial class _1111
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -241,6 +241,9 @@ namespace Пилорама.Migrations
                     b.Property<string>("Ім_я")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Замовник1")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Населений_пункт")
                         .HasColumnType("nvarchar(max)");
 
@@ -299,6 +302,22 @@ namespace Пилорама.Migrations
                     b.HasKey("orderId");
 
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Пилорама.Models.Price", b =>
+                {
+                    b.Property<int>("Priceid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Priceid"));
+
+                    b.Property<int>("Ціна")
+                        .HasColumnType("int");
+
+                    b.HasKey("Priceid");
+
+                    b.ToTable("Price");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

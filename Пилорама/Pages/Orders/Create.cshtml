@@ -26,6 +26,7 @@
         }
 
         .block2 {
+            background-color:aquamarine;
             width: 600px;
             height: 500px;
             padding: 5px;
@@ -51,12 +52,16 @@
             <form method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="Order.Замовник" class="control-label"></label>
+                        <div style="background-color:antiquewhite; width:150px">
+                            <b><label asp-for="Order.Замовник" class="control-label"></label></b>
+                        </div>
                     <input asp-for="Order.Замовник" class="form-control" value=@User.Identity.Name />
                     <span asp-validation-for="Order.Замовник" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Order.Назва" class="control-label"></label><b>(виберіть)</b>
+                        <div style="background-color:antiquewhite; width:150px">
+                            <b><label asp-for="Order.Назва" class="control-label"></label>(виберіть)</b>
+                        </div>
                     <select asp-for="Order.Назва" class="form-control">
 
                         <option>Балка</option>
@@ -67,28 +72,36 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Order.Висота" class="control-label"></label><b>(мм)</b>
+                        <div style="background-color:antiquewhite; width:150px">
+                           <b><label asp-for="Order.Висота" class="control-label"></label>(мм)</b>
+                        </div>
                     <input asp-for="Order.Висота" class="form-control" />
                     <span asp-validation-for="Order.Висота" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Order.Ширина" class="control-label"></label><b>(мм)</b>
+                        <div style="background-color:antiquewhite; width:150px">
+                            <b><label asp-for="Order.Ширина" class="control-label"></label>(мм)</b>
+                        </div>
                     <input asp-for="Order.Ширина" class="form-control" />
                     <span asp-validation-for="Order.Ширина" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Order.Довжина" class="control-label"></label><b>(м)</b>
+                     <div style ="background-color:antiquewhite; width:150px">
+                        <b><label asp-for="Order.Довжина" class="control-label"></label>(м)</b>
+                     </div>
                     <input asp-for="Order.Довжина" class="form-control" />
                     <span asp-validation-for="Order.Довжина" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Order.Кількість" class="control-label"></label><b>(шт)</b>
+                    <div style="background-color:antiquewhite; width:150px">
+                         <b><label asp-for="Order.Кількість" class="control-label"></label>(шт)</b>
+                    </div>
                     <input asp-for="Order.Кількість" class="form-control" />
                     <span asp-validation-for="Order.Кількість" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    @* <label asp-for="Order.Ціна" class="control-label"></label> *@
-                        <input type="hidden" asp-for="Order.Ціна" class="form-control" value=7400 />
+                    <label asp-for="Order.Ціна" class="control-label"></label>
+                        <input type="hidden" asp-for="Order.Ціна" class="form-control" value=@ViewBag.Ціна />
                     <span asp-validation-for="Order.Ціна" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -98,7 +111,7 @@
         </div>
     </div>
             <div>
-                <a asp-page="Index">Повернутись до списку</a>
+                <a asp-page="Index"><b style="font-size:xx-large">Повернутись до списку</b></a>
             </div>
    </div>
       <div class="block2">

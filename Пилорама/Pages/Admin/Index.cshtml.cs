@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Пилорама.Models;
@@ -18,6 +17,7 @@ namespace Пилорама.Pages.Admin
 
         public IList<Order> Order { get; set; } = default!;
         public IList<Number> Number { get; set; } = default!;
+       
 
         public async Task OnGetAsync()
         {
@@ -31,35 +31,34 @@ namespace Пилорама.Pages.Admin
                 Number = await _context.Numbers.ToListAsync();
 
             }
-
-
+           
         }
-        public async Task<IActionResult> OnPostAsync()
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+        //public async Task<IActionResult> OnPostAsync()
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return Page();
+        //    }
 
 
-            Номер = _context.Numbers.ToList().Last().id + 1;
+        //    Номер = _context.Numbers.ToList().Last().id + 1;
 
-            foreach (var item in _context.Orders)
-            {
-                if (item.Замовник == User.Identity.Name)
-                {
-                    item.Статус = "На підтвердженні";
-                    item.НомерЗамовлення = Номер;
+        //    foreach (var item in _context.Orders)
+        //    {
+        //        if (item.Замовник == User.Identity.Name)
+        //        {
+        //            item.Статус = "На підтвердженні";
+        //            item.НомерЗамовлення = Номер;
 
-                }
-            }
+        //        }
+        //    }
 
 
 
-            await _context.SaveChangesAsync();
+        //    await _context.SaveChangesAsync();
 
-            return RedirectToPage("/Numbers/Create");
-        }
+        //    return RedirectToPage("/Numbers/Create");
+        //}
 
     }
 }

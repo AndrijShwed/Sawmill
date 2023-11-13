@@ -12,8 +12,8 @@ using Пилорама.Data;
 namespace Пилорама.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231106174436_0321")]
-    partial class _0321
+    [Migration("20231110163641_AddDateTimeToPrice")]
+    partial class AddDateTimeToPrice
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -302,6 +302,25 @@ namespace Пилорама.Migrations
                     b.HasKey("orderId");
 
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Пилорама.Models.Price", b =>
+                {
+                    b.Property<int>("Priceid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Priceid"));
+
+                    b.Property<DateTime>("Дата")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Ціна")
+                        .HasColumnType("int");
+
+                    b.HasKey("Priceid");
+
+                    b.ToTable("Prices");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

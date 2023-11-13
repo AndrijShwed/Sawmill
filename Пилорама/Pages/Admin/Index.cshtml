@@ -1,16 +1,16 @@
 ﻿@page
-@model Пилорама.Pages.Orders.IndexModel
+@model Пилорама.Pages.Numbers.IndexModel
 @{
     ViewData["Title"] = "Головна сторінка";
 
     int Client = 0;
     int numbZam = 0;
     string Village = "";
-
+    int P = 0;
     string Phone = "";
     string zam = "";
     int i = 0;
-  
+   
 }
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
 </head>
 
 <body>
-
+   
     @if (User.Identity.Name == "Admin@ukr.net")
     {
         if (Model.Number != null)
