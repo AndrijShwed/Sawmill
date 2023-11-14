@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-Пилорама-4ba28be5-d520-44e0-9356-cba622d5b877")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Пилорама")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
