@@ -32,7 +32,7 @@
             decimal sumAll = 0;
             decimal nAll = 0;
             status = cl.Status;
-            <div style="background-color:antiquewhite; width: 300px ">
+            <div style="background-color:antiquewhite; width: 300px; border-radius: 0.3em; margin-top:20px" >
                 <h2 style="color:brown">Замовлення №@zam</h2>
             </div>
             <table>
@@ -171,7 +171,7 @@
     @if(k == 0)
     {
         <h2 style="color:brown; font:bolder">У Вас ще немає замовлень</h2>
-        <div style="background-color:antiquewhite; width: 500px; text-align:center">
+        <div style="background-color:antiquewhite; width: 500px; text-align:center; border-radius: 0.3em">
             <p>
                 <a asp-page="/Orders/Index"><h2 style="font:bolder; color: blue">Створити нове замовлення</h2></a>
             </p>
@@ -179,7 +179,7 @@
     }
     else
     {
-        <div style="background-color:antiquewhite; width: 500px; text-align:center">
+        <div style="background-color:antiquewhite; width: 500px; text-align:center; border-radius: 0.3em">
             <p style="font-size:larger">
                 <a asp-page="/Orders/Index"><h2 style="font:bolder; color: blue">Створити нове замовлення</h2></a>
             </p>

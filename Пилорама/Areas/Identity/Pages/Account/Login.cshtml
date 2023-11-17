@@ -11,7 +11,7 @@
 <head>
     <style>
         .block {
-            width: 1300px;
+           /*  width: 1300px; */
             height: 600px;
             background-image: url(/images/Зруб_3.jpg);
             background-size: cover;
@@ -26,10 +26,10 @@
 
 </head>
 <body>
-    <div class="block">
+    <div class="block img-fluid" >
 <h1 style="color:white">@ViewData["Title"]</h1>
 <div class="row">
-    <div class="col-md-4">
+    <div @* class="col-md-4" *@>
         <section>
             <form id="account" method="post">
                 <h2 style="color:white">Використовуйте свій акаунт для входу</h2>
