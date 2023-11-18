@@ -5,7 +5,6 @@
     decimal nAll = 0;
     decimal sumAll = 0;
     int num = 0;
-    int i = 0;
    
 }
 
@@ -18,12 +17,14 @@
 </head>
 
 <body>
-
-        <p style="font-size:larger">
-            <a asp-page="Create">Додати</a>
-        </p>
-      
-        <h1>Замовлення </h1>
+    <div style="padding-left: 370px">
+       <div style=" background-color:burlywood; border-radius: 0.3em; width: 240px">
+          <h1>Замовлення </h1>
+       </div>
+    </div>
+     <div style="width:200px; border-radius: 0.3em; background-color: bisque">
+        <a asp-page="Create"><b style="font-size:x-large">Додати елемент</b></a>
+     </div>
         
                     <table>
 
@@ -149,7 +150,7 @@
                 <form method="post">
 
                     <div class="form-group">
-                        <input type="submit" value="Вілправити на підтвердження" class="btn btn-primary" />
+                        <input type="submit" value="Відправити на підтвердження" class="btn btn-primary" />
                     </div>
 
                 </form>
