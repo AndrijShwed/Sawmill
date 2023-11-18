@@ -44,13 +44,14 @@
                 foreach (var q in Model.Number)
                 {
                     int num = 0;
-                    if (q.Замовник1 == Uclient[m] && q.Status == "Підтверджено")
+                    if (q.Замовник1 == Uclient[m] && (q.Status == "Підтверджено" ||
+                    q.Status == "В роботі" || q.Status == "Виконано" || q.Status == "Відхилено"))
                     {
                         zam = q.Ім_я;
                         numbZam = q.id;
                         Phone = q.Номер_телефону;
                         Village = q.Населений_пункт;
-                        <div style="background-color:antiquewhite; width: 600px">
+                        <div style="background-color:antiquewhite; width: 600px; border-radius: 0.4em; margin-top: 20px">
                             <h2 style="color:brown">@zam @Village  тел: @Phone Замовлення№ @numbZam</h2>
                         </div>
 
@@ -174,7 +175,7 @@
                 }
 
             }
-                <div style="background-color:antiquewhite; width: 400px">
+                <div style="background-color:antiquewhite; width: 400px; border-radius: 0.3em; margin-top: 20px">
                     <h2 style="color:brown">Список клієнтів</h2>
                 </div>
             <table>
