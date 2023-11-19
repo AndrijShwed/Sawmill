@@ -5,7 +5,7 @@
     decimal nAll = 0;
     decimal sumAll = 0;
     int num = 0;
-   
+    string color = "blue";
 }
 
 <!DOCTYPE html>
@@ -14,18 +14,48 @@
 
 <head>
     <link rel="stylesheet" href="css/Home.css">
+    <style>
+        #addElementButton {
+            width: 200px;
+            border-radius: 0.3em;
+            color: black;
+            text-align: center;
+            font-size: x-large;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            #addElementButton:hover {
+                background-color: lightgray; /* Change the color on hover if needed */
+            }
+    </style>
 </head>
 
 <body>
-    <div style="padding-left: 370px">
+    <div style="padding-left: 350px">
        <div style=" background-color:burlywood; border-radius: 0.3em; width: 240px">
           <h1>Замовлення </h1>
        </div>
     </div>
-     <div style="width:200px; border-radius: 0.3em; background-color: bisque">
-        <a asp-page="Create"><b style="font-size:x-large">Додати елемент</b></a>
-     </div>
-        
+
+    <div id="addElementButton" onclick="toggleBackgroundColor()">
+        <a asp-page="Create"><b style="font-size: x-large"> Додати елемент </b></a>
+    </div>
+
+    <script>
+        var button = document.getElementById("addElementButton");
+        var colors = ["yellow", "orange", "white"];
+        var currentIndex = 0;
+
+        function toggleBackgroundColor() {
+            button.style.backgroundColor = colors[currentIndex];
+            currentIndex = (currentIndex + 1) % colors.length;
+        }
+
+        // Toggle background color every 2 seconds (adjust the time interval as needed)
+        setInterval(toggleBackgroundColor, 1000); // Change color every 2000 milliseconds (2 seconds)
+    </script>
+
                     <table>
 
                            <thead>
