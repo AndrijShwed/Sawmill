@@ -110,6 +110,7 @@ namespace Пилорама.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+           
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
@@ -158,6 +159,7 @@ namespace Пилорама.Areas.Identity.Pages.Account
 
         private async Task<bool> SendEmailAsync(string email, string subject, string confirmlink)
         {
+            EmailService emailService;
             try
             {
                 MailMessage message = new MailMessage();
@@ -173,7 +175,7 @@ namespace Пилорама.Areas.Identity.Pages.Account
 
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential("sawmill3011@gmail.com", "gbgl srzc xrgz gmqz");
+                smtpClient.Credentials = new NetworkCredential("sawmill3011@gmail.com", "pbdd akvh ehvr ltjk");
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.Send(message);
                 return true;

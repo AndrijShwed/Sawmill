@@ -101,7 +101,7 @@ namespace Пилорама.Areas.Identity.Pages.Account
 
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential("sawmill3011@gmail.com", "gbgl srzc xrgz gmqz");
+                smtpClient.Credentials = new NetworkCredential("sawmill3011@gmail.com", "pbdd akvh ehvr ltjk");
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.Send(message);
                 return true;
