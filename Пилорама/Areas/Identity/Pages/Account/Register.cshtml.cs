@@ -159,7 +159,7 @@ namespace Пилорама.Areas.Identity.Pages.Account
 
         private async Task<bool> SendEmailAsync(string email, string subject, string confirmlink)
         {
-            EmailService emailService;
+           
             try
             {
                 MailMessage message = new MailMessage();
