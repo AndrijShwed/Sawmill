@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using Пилорама.Core;
 
 namespace Пилорама.Areas.Identity.Pages.Account
 {
@@ -71,8 +72,8 @@ namespace Пилорама.Areas.Identity.Pages.Account
                     pageHandler: null,
                     values: new { area = "Identity", code },
                     protocol: Request.Scheme);
-               
-                await SendEmailAsync(
+                EmailService email = new EmailService();
+                await email.SendEmailAsync(
                     Input.Email,
                     "Reset Password",
                     $"Для зміни пароля  <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'> натисніть тут</a>.");

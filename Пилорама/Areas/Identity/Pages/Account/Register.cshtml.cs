@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Пилорама.Core;
 
 namespace Пилорама.Areas.Identity.Pages.Account
 {
@@ -133,8 +134,8 @@ namespace Пилорама.Areas.Identity.Pages.Account
                         pageHandler: null,
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
-
-                    await SendEmailAsync(Input.Email, "Підтвердіть свою ел.пошту",
+                    EmailService email = new EmailService();
+                    await email.SendEmailAsync(Input.Email, "Підтвердіть свою ел.пошту",
                         $"Будь ласка для підтвердження акаунту <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>натисніть тут</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
