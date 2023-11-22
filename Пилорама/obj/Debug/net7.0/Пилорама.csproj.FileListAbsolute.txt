@@ -524,3 +524,4 @@ C:\Users\1\Source\Repos\Sawmill\Пилорама\obj\Debug\net7.0\refint\Пил�
 C:\Users\1\Source\Repos\Sawmill\Пилорама\obj\Debug\net7.0\Пилорама.pdb
 C:\Users\1\Source\Repos\Sawmill\Пилорама\obj\Debug\net7.0\Пилорама.genruntimeconfig.cache
 C:\Users\1\Source\Repos\Sawmill\Пилорама\obj\Debug\net7.0\ref\Пилорама.dll
+C:\Users\1\source\repos\Sawmill\Пилорама\bin\Debug\net7.0\Microsoft.AspNet.Identity.Core.dll

@@ -18,12 +18,13 @@ using Microsoft.AspNetCore.WebUtilities;
 
 namespace Пилорама.Areas.Identity.Pages.Account
 {
-    public class ForgotPasswordModel : PageModel
+    [AllowAnonymous]
+    public class ResendEmailConfirmationModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IEmailSender _emailSender;
 
-        public ForgotPasswordModel(UserManager<IdentityUser> userManager, IEmailSender emailSender)
+        public ResendEmailConfirmationModel(UserManager<IdentityUser> userManager, IEmailSender emailSender)
         {
             _userManager = userManager;
             _emailSender = emailSender;
@@ -51,35 +52,38 @@ namespace Пилорама.Areas.Identity.Pages.Account
             public string Email { get; set; }
         }
 
+        public void OnGet()
+        {
+        }
+
         public async Task<IActionResult> OnPostAsync()
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                var user = await _userManager.FindByEmailAsync(Input.Email);
-                if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
-                {
-                    // Don't reveal that the user does not exist or is not confirmed
-                    return RedirectToPage("./ForgotPasswordConfirmation");
-                }
-
-                // For more information on how to enable account confirmation and password reset please
-                // visit https://go.microsoft.com/fwlink/?LinkID=532713
-                var code = await _userManager.GeneratePasswordResetTokenAsync(user);
-                code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-                var callbackUrl = Url.Page(
-                    "/Account/ResetPassword",
-                    pageHandler: null,
-                    values: new { area = "Identity", code },
-                    protocol: Request.Scheme);
-               
-                await SendEmailAsync(
-                    Input.Email,
-                    "Reset Password",
-                    $"Для зміни пароля  <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'> натисніть тут</a>.");
-
-                return RedirectToPage("./ForgotPasswordConfirmation");
+                return Page();
             }
 
+            var user = await _userManager.FindByEmailAsync(Input.Email);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "Підтвердження електронної пошти. Перевірте свою електронну пошту.");
+                return Page();
+            }
+
+            var userId = await _userManager.GetUserIdAsync(user);
+            var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+            var callbackUrl = Url.Page(
+                "/Account/ConfirmEmail",
+                pageHandler: null,
+                values: new { userId = userId, code = code },
+                protocol: Request.Scheme);
+            await SendEmailAsync(
+                Input.Email,
+                "Confirm your email",
+                $"Для підтвердження Email <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'> натисніть тут</a>.");
+
+            ModelState.AddModelError(string.Empty, "Підтвердження електронної пошти. Перевірте свою електронну пошту.");
             return Page();
         }
 
@@ -94,9 +98,6 @@ namespace Пилорама.Areas.Identity.Pages.Account
                 message.Subject = subject;
                 message.IsBodyHtml = true;
                 message.Body = confirmlink;
-
-                //smtpClient.Port = 587;
-                //smtpClient.Host = "smtp.gmail.com";
 
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = false;
