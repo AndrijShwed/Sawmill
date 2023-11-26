@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using Пилорама.Core;
 
 namespace Пилорама.Areas.Identity.Pages.Account
 {
@@ -78,7 +79,8 @@ namespace Пилорама.Areas.Identity.Pages.Account
                 pageHandler: null,
                 values: new { userId = userId, code = code },
                 protocol: Request.Scheme);
-            await SendEmailAsync(
+            EmailService email = new EmailService();
+            await email.SendEmailAsync(
                 Input.Email,
                 "Confirm your email",
                 $"Для підтвердження Email <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'> натисніть тут</a>.");
@@ -87,30 +89,8 @@ namespace Пилорама.Areas.Identity.Pages.Account
             return Page();
         }
 
-        private async Task<bool> SendEmailAsync(string email, string subject, string confirmlink)
-        {
-            try
-            {
-                MailMessage message = new MailMessage();
-                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-                message.From = new MailAddress("sawmill3011@gmail.com");
-                message.To.Add(email);
-                message.Subject = subject;
-                message.IsBodyHtml = true;
-                message.Body = confirmlink;
-
-                smtpClient.EnableSsl = true;
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential("sawmill3011@gmail.com", "pbdd akvh ehvr ltjk");
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtpClient.Send(message);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
+       
+        
 
     }
 }

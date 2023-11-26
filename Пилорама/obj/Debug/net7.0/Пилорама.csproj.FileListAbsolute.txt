@@ -525,3 +525,8 @@ C:\Users\1\Source\Repos\Sawmill\Пилорама\obj\Debug\net7.0\Пилорам
 C:\Users\1\Source\Repos\Sawmill\Пилорама\obj\Debug\net7.0\Пилорама.genruntimeconfig.cache
 C:\Users\1\Source\Repos\Sawmill\Пилорама\obj\Debug\net7.0\ref\Пилорама.dll
 C:\Users\1\source\repos\Sawmill\Пилорама\bin\Debug\net7.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\1\source\repos\Sawmill\Пилорама\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+C:\Users\1\source\repos\Sawmill\Пилорама\bin\Debug\net7.0\MailKit.dll
+C:\Users\1\source\repos\Sawmill\Пилорама\bin\Debug\net7.0\MimeKit.dll
+C:\Users\1\source\repos\Sawmill\Пилорама\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\1\source\repos\Sawmill\Пилорама\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
