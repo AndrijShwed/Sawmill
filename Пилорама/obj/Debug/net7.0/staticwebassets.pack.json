@@ -25,10 +25,6 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\favicon.ico",
-      "PackagePath": "staticwebassets\\favicon.ico"
-    },
-    {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\1055142740-preview.mp4",
       "PackagePath": "staticwebassets\\images\\1055142740-preview.mp4"
     },
@@ -47,6 +43,50 @@
     {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Fiskas.mp4",
       "PackagePath": "staticwebassets\\images\\Fiskas.mp4"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Life.png",
+      "PackagePath": "staticwebassets\\images\\Life.png"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\email.png",
+      "PackagePath": "staticwebassets\\images\\email.png"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\email_1.jpg",
+      "PackagePath": "staticwebassets\\images\\email_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\email_2.png",
+      "PackagePath": "staticwebassets\\images\\email_2.png"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\home.png",
+      "PackagePath": "staticwebassets\\images\\home.png"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\phone-call.png",
+      "PackagePath": "staticwebassets\\images\\phone-call.png"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\repairing-service.png",
+      "PackagePath": "staticwebassets\\images\\repairing-service.png"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\shopping-cart.png",
+      "PackagePath": "staticwebassets\\images\\shopping-cart.png"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\telegram.png",
+      "PackagePath": "staticwebassets\\images\\telegram.png"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\viber.png",
+      "PackagePath": "staticwebassets\\images\\viber.png"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\whatsapp.png",
+      "PackagePath": "staticwebassets\\images\\whatsapp.png"
     },
     {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Бруски.jpg",
@@ -71,6 +111,10 @@
     {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Каркас_Даху.jpg",
       "PackagePath": "staticwebassets\\images\\Каркас_Даху.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Київстар.png",
+      "PackagePath": "staticwebassets\\images\\Київстар.png"
     },
     {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Ліс_1.jpg",
@@ -127,6 +171,18 @@
     {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Скелет2.jpg",
       "PackagePath": "staticwebassets\\images\\Скелет2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Телефон.png",
+      "PackagePath": "staticwebassets\\images\\Телефон.png"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Фон_1.jpg",
+      "PackagePath": "staticwebassets\\images\\Фон_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\Фон_2.jpg",
+      "PackagePath": "staticwebassets\\images\\Фон_2.jpg"
     },
     {
       "Id": "C:\\Users\\1\\source\\repos\\Sawmill\\Пилорама\\wwwroot\\images\\завантаження.png",
