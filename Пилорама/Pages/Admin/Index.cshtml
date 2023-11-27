@@ -178,24 +178,59 @@
                     <h2 style="color:brown">Список клієнтів</h2>
                 </div>
             <table>
-                <tbody>
+                <thead>
                     <tr>
+                        <th>
+                            <p>Номер п/п</p>
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Number[0].Ім_я)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Number[0].Населений_пункт)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Number[0].Номер_телефону)
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @{
+                        int num_1 = 0;
+                    }
+
                         @for (int k = 0; k < Uclient.Length; k++)
                         {
+                           
                             foreach (var s in Model.Number)
                             {
                                 if (s.Замовник1 == Uclient[k])
                                 {
+                                    
                                     zam = s.Ім_я;
                                     Village = s.Населений_пункт;
                                     Phone = s.Номер_телефону;
+
                                 }
                             }
+                            num_1++;
+                          <tr>
                             <td>
-                                <b>@zam @Village тел: @Phone</b>
+                                <b>@num_1</b>
                             </td>
+                            <td>
+                                <b>@zam</b>
+                            </td>
+                            <td>
+                                <b>@Village</b>
+                            </td>
+                            <td>
+                                <b>@Phone</b>
+                            </td>
+                          </tr>
                         }
-                    </tr>
+                    
                 </tbody>
             </table>
         }
