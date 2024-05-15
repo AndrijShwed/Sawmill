@@ -1,0 +1,113 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a {
+  color: #0077cc;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+  color: aqua;
+}
+.image {
+    width: 18px;
+    padding-bottom: 5px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    flex: 1;
+    min-width: 100%;
+    /* display:contents; */
+}
+
+header {
+    position: fixed;
+    padding: 0;
+    z-index: 50;
+    /* display: contents; */
+    max-width: 100%;
+}
+
+main {
+    padding: 80px 0 0 0;
+}
+
+.header_logo {
+    flex: 0 0 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+    .header_logo img {
+        max-width: 100%;
+        display: block;
+    }
+
+.navbar::before {
+    content: ''; /* Важливо встановити контент для псевдоелементу */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Розміри псевдоелементу збігаються з контейнером */
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1); /* Колір фону для псевдоелементу без прозорості */
+    z-index: -1; /* Помістіть псевдоелемент під контентом */
+    border-radius: 6px;
+}
+
+.navbar {
+    max-width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.cont {
+    justify-content: center;
+    display: flex;
+    min-width: 100%;
+    margin-left: -13px;
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.33808.371
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sawmill", "Sawmill\Sawmill.csproj", "{FF9DC5F8-A56B-48D1-8363-8B9AD16C85A0}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{6CB5DC52-7634-4C80-AE1B-E8CAD3C484DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF9DC5F8-A56B-48D1-8363-8B9AD16C85A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9DC5F8-A56B-48D1-8363-8B9AD16C85A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9DC5F8-A56B-48D1-8363-8B9AD16C85A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9DC5F8-A56B-48D1-8363-8B9AD16C85A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB5DC52-7634-4C80-AE1B-E8CAD3C484DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB5DC52-7634-4C80-AE1B-E8CAD3C484DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB5DC52-7634-4C80-AE1B-E8CAD3C484DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB5DC52-7634-4C80-AE1B-E8CAD3C484DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66DA3552-F105-454C-A83C-0805D4F7AA51}
+	EndGlobalSection
+EndGlobal

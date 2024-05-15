@@ -1,0 +1,210 @@
+﻿@page
+@using Sawmill.Models;
+@model Sawmill.Pages.Orders.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+    <link rel="stylesheet" href="css/Home.css">
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+        .block1 {
+            width: 48%;
+            height: 50%;
+            background-image: url(/images/Каркас_Даху.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 5px;
+            padding-right: 5px;
+            border: solid 5px black;
+            float: left;
+        }
+
+        .block2 {
+            background-color: aquamarine;
+            width: 48%;
+            height: 50%;
+            padding: 5px;
+            border: solid 5px black;
+            float: right;
+            position: relative;
+            left: 5px;
+        }
+
+        .button {
+            font-family: Arial;
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+        }
+
+        .button_text {
+            position: relative;
+            min-height: 20px;
+            display: flex;
+            justify-content: center;
+            padding: 0px 10px;
+            border-radius: 20px;
+            font-size: 90%;
+            text-transform: uppercase;
+            color: black;
+            letter-spacing: 0px;
+            transition: all 1s ease 0s;
+            top: 0px;
+            overflow: hidden;
+        }
+
+            .button_text:before,
+            .button_text:after {
+                content: ' ';
+                position: absolute;
+                width: 50%;
+                height: 100%;
+                background-color: lightgray;
+            }
+
+            .button_text:before {
+                left: 0;
+                z-index: 2;
+            }
+
+            .button_text:after {
+                right: 0;
+            }
+
+            .button_text span {
+                position: relative;
+                z-index: 2;
+            }
+
+        .button:hover .button_text:before,
+        .button:hover .button_text:after {
+            background-color: aqua;
+        }
+
+        .button:hover .button_text {
+            top: -3px;
+            color: firebrick;
+            transition: all 0.5s ease 0.2s;
+            box-shadow: 0 5px 0px 0 #0c5b56;
+        }
+
+        .button:active .button_text {
+            top: 2px;
+            transition: all 0.1s ease 0s;
+            box-shadow: 0 2px 0px 0 #0c5b56;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Додавання елемента</h1>
+
+        <h4>Замовлення</h4>
+
+        <div class="block1">
+            <div class="row" style="font:bold">
+                <div class="col-md-4">
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <div style="background-color:antiquewhite; width:100%; border-radius:0.2em ">
+                                <b><label asp-for="Order.Date" class="control-label"></label>(дд.мм.рррр)</b>
+                            </div>
+                            <input asp-for="Order.Date" class="form-control" value=@DateTime.Now.ToString("dd-MM-yyyy") />
+                            <span asp-validation-for="Order.Date" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" asp-for="Order.Замовник" class="form-control" value=@User.Identity?.Name />
+                            <span asp-validation-for="Order.Замовник" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div style="background-color:antiquewhite; width:100%; border-radius:0.2em ">
+                                <b><label asp-for="Order.Назва" class="control-label"></label> елемента</b>
+                            </div>
+                            <select asp-for="Order.Назва" class="form-control">
+
+                                <option>Балка</option>
+                                <option>Кроква</option>
+                                <option>Лата</option>
+                                <option>Дошка</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div style="background-color:antiquewhite; width:100%; border-radius:0.2em ">
+                                <b><label asp-for="Order.Висота" class="control-label"></label>(мм)</b>
+                            </div>
+                            <input asp-for="Order.Висота" class="form-control" />
+                            <span asp-validation-for="Order.Висота" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div style="background-color:antiquewhite; width:100%; border-radius:0.2em ">
+                                <b><label asp-for="Order.Ширина" class="control-label"></label>(мм)</b>
+                            </div>
+                            <input asp-for="Order.Ширина" class="form-control" />
+                            <span asp-validation-for="Order.Ширина" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div style="background-color:antiquewhite; width:100%; border-radius:0.2em ">
+                                <b><label asp-for="Order.Довжина" class="control-label"></label>(м)</b>
+                            </div>
+                            <select asp-for="Order.Довжина" class="form-control">
+                                <option>6</option>
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div style="background-color:antiquewhite; width:100%; border-radius:0.2em ">
+                                <b><label asp-for="Order.Кількість" class="control-label"></label>(шт)</b>
+                            </div>
+                            <input asp-for="Order.Кількість" class="form-control" />
+                            <span asp-validation-for="Order.Кількість" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" asp-for="Order.Ціна" class="form-control" value=@ViewBag.Ціна />
+                            <span asp-validation-for="Order.Ціна" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Додати" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <a asp-page="Index" class="button">
+                    <span class="button_text">
+                        <span><b>Повернутись до списку</b></span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="block2">
+            <img src="/images/Брусок_з_розмірами.jpg" style="width:100%;  margin:0 auto" />
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

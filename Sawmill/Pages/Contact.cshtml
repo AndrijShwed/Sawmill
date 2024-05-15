@@ -1,0 +1,68 @@
+﻿@page
+@model Sawmill.Pages.ContactModel
+@{
+    ViewData["Title"] = "Контакти";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .image {
+            width: 20px;
+            height: 25px;
+            padding-bottom: 5px;
+        }
+
+        .block{
+            height:100vh;
+            background-image:url(/images/Фон_1.jpg);
+            background-repeat:no-repeat;
+            background-size:cover;
+           
+        }
+        .conty{
+            display: flex;
+            justify-content: center;
+           /*  align-items: center; */
+           /*  height:100vh; */
+        }
+        .row {
+            display:inline-block;
+            border-radius: 5px;
+            border: 1px solid aqua;
+            padding: 10px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+            box-shadow: 10px 10px 30px aqua;
+        }
+    </style>
+    <meta charset="utf-8" />
+   
+</head>
+<body class="block">
+  <div class="conty">
+      <div class="row">
+            <h1 style="color:aqua">Наші контакти</h1>
+         <p style="font-size:x-large; color:aqua">
+                                             <img class="image" src="~/images/Київстар.png" /><pb> </pb>
+              тел: (067)-784-05-02<pb> </pb> <img class="image" src="~/images/viber.png" /><pb> </pb>
+                                             <img class="image" src="~/images/telegram.png" /><pb> </pb>
+                                             <img class="image" src="~/images/whatsapp.png" /><pb> </pb>
+         </p>
+         <p style="font-size:x-large; color:aqua" >
+            
+                                              <img class="image" src="~/images/Life.png" />
+                                              <pb> </pb>
+              тел: (063)-993-04-15<pb> </pb>  <img class="image" src="~/images/viber.png" /><pb> </pb>
+                                              <img class="image" src="~/images/telegram.png" /><pb> </pb>
+                                              <img class="image" src="~/images/whatsapp.png" /><pb> </pb>
+            
+         </p>
+         <p style="font-size:x-large; color:aqua">
+                                           <img class="image" src="~/images/email_1.jpg" /><pb> </pb>
+              sawmill3011@gmail.com
+         </p>
+      </div>
+  </div>
+    
+</body>
+</html>

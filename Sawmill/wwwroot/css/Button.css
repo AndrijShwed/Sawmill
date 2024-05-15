@@ -1,0 +1,95 @@
+﻿
+body {
+    background-color: dimgray;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 0px 15px;
+}
+
+.button {
+    font-family: Arial;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+
+.button_text {
+    position: relative;
+    min-height: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 0px 10px;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 90%;
+    text-transform: lowercase;
+    color: black;
+    letter-spacing: 1px;
+    transition: all 1s ease 0s;
+    top: 0px;
+    overflow: hidden;
+}
+
+    .button_text:before,
+    .button_text:after {
+        content: ' ';
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        background-color: lightgray;
+    }
+
+    .button_text:before {
+        left: 0;
+        z-index: 2;
+    }
+
+    .button_text:after {
+        right: 0;
+    }
+
+    .button_text span {
+        position: relative;
+        z-index: 2;
+    }
+
+.button:hover .button_text:before,
+.button:hover .button_text:after {
+    background-color: aqua;
+}
+
+.button:hover .button_text {
+    top: -3px;
+    color: firebrick;
+    transition: all 0.5s ease 0.2s;
+    box-shadow: 0 5px 0px 0 #0c5b56;
+}
+
+.button:active .button_text {
+    top: 2px;
+    transition: all 0.1s ease 0s;
+    box-shadow: 0 2px 0px 0 #0c5b56;
+}
+
+.outside {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.inside {
+    width: 50%;
+    margin: 8% auto;
+}
+
+.inside_text {
+    color: azure;
+    font-size: 120%;
+}
+
+.image_ins {
+    width: 90%;
+    margin: 0 0 0 10%
+}

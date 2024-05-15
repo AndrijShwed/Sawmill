@@ -1,0 +1,49 @@
+﻿@page
+@model Sawmill.Pages.AdminNumbers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Number</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Number.Status" class="control-label"></label>
+                <input asp-for="Number.Status" class="form-control" />
+                <span asp-validation-for="Number.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Number.Номер_телефону" class="control-label"></label>
+                <input asp-for="Number.Номер_телефону" class="form-control" />
+                <span asp-validation-for="Number.Номер_телефону" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Number.Ім_я" class="control-label"></label>
+                <input asp-for="Number.Ім_я" class="form-control" />
+                <span asp-validation-for="Number.Ім_я" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Number.Населений_пункт" class="control-label"></label>
+                <input asp-for="Number.Населений_пункт" class="form-control" />
+                <span asp-validation-for="Number.Населений_пункт" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

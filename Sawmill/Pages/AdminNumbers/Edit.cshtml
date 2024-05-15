@@ -1,0 +1,75 @@
+﻿@page
+@model Sawmill.Pages.AdminNumbers.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <h1>Опрацювання</h1>
+
+    <h4>Замовлень</h4>
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Number.id" />
+                <div class="form-group">
+                    <label asp-for="Number.Status" class="control-label"></label>
+                    <select asp-for="Number.Status" class="form-control">
+
+                        <option>Підтв.</option>
+                        <option>Відхил.</option>
+                        <option>В роботі</option>
+                        <option>Виконано</option>
+
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Number.date" class="control-label"></label>
+                    <input asp-for="Number.date" class="form-control" />
+                    <span asp-validation-for="Number.date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Number.Номер_телефону" class="control-label"></label>
+                    <input asp-for="Number.Номер_телефону" class="form-control" />
+                    <span asp-validation-for="Number.Номер_телефону" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Number.Ім_я" class="control-label"></label>
+                    <input asp-for="Number.Ім_я" class="form-control" />
+                    <span asp-validation-for="Number.Ім_я" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Number.Населений_пункт" class="control-label"></label>
+                    <input asp-for="Number.Населений_пункт" class="form-control" />
+                    <span asp-validation-for="Number.Населений_пункт" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Number.Замовник" class="control-label"></label>
+                    <input asp-for="Number.Замовник" class="form-control" />
+                    <span asp-validation-for="Number.Замовник" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Зберегти" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="./Index">Повернутись до списку</a>
+    </div>
+</body>
+</html>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

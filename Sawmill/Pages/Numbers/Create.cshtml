@@ -1,0 +1,134 @@
+﻿@page
+@model Sawmill.Pages.Numbers.CreateModel
+
+@{
+    ViewData["Title"] = "Заповнити дані";
+    int k = 0;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .row {
+            margin: auto;
+            width: fit-content;
+            display: inline-block;
+            border-radius: 5px;
+            border: 1px solid aqua;
+            padding: 10px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+            box-shadow: 10px 10px 30px aqua;
+        }
+    </style>
+
+</head>
+<body>
+
+    <video autoplay loop muted>
+        <source src="/images/1072688276-preview.mp4" type="video/mp4" />
+    </video>
+    <div class="row">
+        <h3 style="color:aqua">Додайте свої дані</h3>
+        <h3 style="color:aqua">Або підтвердіть, якщо ви вже наш клієнт</h3>
+        @{
+
+            string date = DateTime.Now.ToString("dd-MM-yyyy");
+
+        }
+
+        <div class="col-md-6">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="Number.Status" class="form-control" value="На підтв." />
+                    <span asp-validation-for="Number.Status" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <b style="color:aqua; font-size:large">Дата</b>
+                    <input asp-for="Number.date" class="form-control" value=@date />
+                    <span asp-validation-for="Number.date" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <b style="color:aqua; font-size:large">Замовник</b>
+                    <input asp-for="Number.Замовник" class="form-control" value=@User.Identity?.Name />
+                    <span asp-validation-for="Number.Замовник" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <b style="color:aqua; font-size:large">Номер телефону</b>
+                    <input asp-for="Number.Номер_телефону" class="form-control" value="@Model.Phone" />
+                    <span asp-validation-for="Number.Номер_телефону" class="text-danger"></span>
+                </div>
+
+                @foreach (var item in Model.Numberm)
+                {
+                    if (item.Замовник == User.Identity?.Name && k == 0)
+                    {
+                        k++;
+
+                        <div class="form-group">
+                            <b style="color:aqua; font-size:large">Ім'я</b>
+                            <input asp-for="Number.Ім_я" class="form-control" value="@item.Ім_я" />
+                            <span asp-validation-for="Number.Ім_я" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <b style="color:aqua; font-size:large">Населений пункт</b>
+                            <input asp-for="Number.Населений_пункт" class="form-control" value="@item.Населений_пункт" />
+                            <span asp-validation-for="Number.Населений_пункт" class="text-danger"></span>
+                        </div>
+                    }
+
+                }
+                @if (k == 0)
+                {
+                    k++;
+                    <div class="form-group">
+                        <b style="color:aqua; font-size:large">Ім'я</b>
+                        <input asp-for="Number.Ім_я" class="form-control" />
+                        <span asp-validation-for="Number.Ім_я" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <b style="color:aqua; font-size:large">Населений пункт</b>
+                        <input asp-for="Number.Населений_пункт" class="form-control" />
+                        <span asp-validation-for="Number.Населений_пункт" class="text-danger"></span>
+                    </div>
+                }
+                <div class="form-group">
+                    <input type="submit" value="Підтвердити" class="btn btn-primary" />
+                </div>
+                <div>
+                    <a asp-page="/Orders/Index">
+                        <p style="color:aqua; font-size:18px">Повернутись назад</p>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

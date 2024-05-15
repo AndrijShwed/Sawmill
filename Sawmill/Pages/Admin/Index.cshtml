@@ -1,0 +1,277 @@
+﻿@page
+@model Sawmill.Pages.Numbers.IndexModel
+@{
+    ViewData["Title"] = "Головна сторінка";
+
+    int Client = 0;
+    int numbZam = 0;
+    string Village = "";
+    string date = "";
+    string Phone = "";
+    string zam = "";
+    string Email = "";
+    int i = 0;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/Home.css">
+</head>
+
+<body>
+    <div class="container">
+        @if (User.Identity?.Name == "Admin@ukr.net")
+        {
+            if (Model.Number != null)
+            {
+                string[] client = new string[Model.Number.Count];
+
+                foreach (var name in Model.Number)
+                {
+
+                    client[i] = name.Замовник;
+                    i++;
+
+                }
+                string[] Uclient = client.Distinct().ToArray();
+                for (int m = 0; m < Uclient.Length; m++)
+                {
+
+
+                    foreach (var q in Model.Number)
+                    {
+                        int num = 0;
+                        if (q.Замовник == Uclient[m] && (q.Status == "Підтв." ||
+                        q.Status == "В роботі" || q.Status == "Виконано" || q.Status == "Відхил."))
+                        {
+                            zam = q.Ім_я;
+                            numbZam = q.id;
+                            date = q.date;
+                            Phone = q.Номер_телефону;
+                            Village = q.Населений_пункт;
+                            
+                            <table>
+
+                                <thead>
+                                    <tr>
+                                        <td colspan="2" style="border: 5px solid gray; background-color:aquamarine">
+                                            <h5 style="color:brown; text-align:center"> @zam</h5>
+                                        </td>
+                                        <td colspan="2" style="border: 5px solid gray; background-color:aquamarine">
+                                            <h5 style="color:brown; text-align:center"> @Village</h5>
+                                        </td>
+                                        <td colspan="2" style="border: 5px solid gray; background-color:aquamarine">
+                                            <h5 style="color:brown; text-align:center">@Phone</h5>
+                                        </td>
+                                        <td colspan="2" style="border: 5px solid gray; background-color:aquamarine">
+                                            <h5 style="color:brown; text-align:center">Зам. № @numbZam</h5>
+                                        </td>
+                                        <td colspan="2" style="border: 5px solid gray; background-color:aquamarine">
+                                            <h5 style="color:brown; text-align:center">@date</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <p>№ п/п</p>
+                                        </th>
+                                        <th>
+                                            Назва
+                                        </th>
+                                        <th>
+                                            Вис.<p>(мм.)</p>
+                                        </th>
+                                        <th>
+                                            Шир.<p>(мм.)</p>
+                                        </th>
+                                        <th>
+                                            Довж.<p>(м.)</p>
+                                        </th>
+                                        <th>
+                                            <div>К-сть</div>
+                                            <div>(шт.)</div>
+                                            <div>(м/п)</div>
+                                        </th>
+                                        <th>
+                                            Об'єм<p>(м.куб)</p>
+                                        </th>
+                                        <th>
+                                            Ціна<p>(грн.)</p>
+                                        </th>
+                                        <th>
+                                            Сума<p>(грн.)</p>
+                                        </th>
+                                        <th>
+                                            <p>Стан зам.</p>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @{
+                                        decimal nAll = 0;
+                                        decimal sumAll = 0;
+                                    }
+
+                                    @foreach (var item in Model.Order)
+                                    {
+                                        if (q.id == item.NumberId)
+                                        {
+                                            decimal h = Convert.ToDecimal(item.Висота);
+                                            decimal w = Convert.ToDecimal(item.Ширина);
+                                            decimal l = Convert.ToDecimal(item.Довжина);
+                                            decimal n = Convert.ToDecimal(item.Кількість);
+                                            decimal volume = h * w * l * n / 1000000;
+                                            decimal sum = volume * item.Ціна;
+                                            nAll += volume;
+                                            Client = item.NumberId;
+                                            sumAll += sum;
+                                            num++;
+                                            sumAll = Convert.ToInt32(sumAll);
+
+                                            <tr>
+                                                <td>
+                                                    @num
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Назва)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Висота)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Ширина)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Довжина)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Кількість)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => volume)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Ціна)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => sum)
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="6" style="border: 5px solid gray">
+                                            <b style="font-size:larger">Всього : </b>
+                                        </td>
+                                        <td style="border: 5px solid gray">
+                                            <b>@nAll </b>
+                                        </td>
+                                        <td style="border: 5px solid gray">
+                                            <b></b>
+                                        </td>
+                                        <td sstyle="border: 5px solid gray">
+                                            <b>@sumAll </b>
+                                        </td>
+                                        <td style="border: 5px solid gray">
+                                            <b>@q.Status</b>
+                                        </td>
+
+                                    </tr>
+                                </tfoot>
+
+                            </table>
+                        }
+                    }
+
+                }
+
+                <table>
+                    <thead>
+                        <tr>
+                            <td colspan="5" style="border: 5px solid gray; background-color:aquamarine">
+                                <h3 style="color:brown; text-align:center">Список клієнтів</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div>Номер</div>
+                                <div>п/п</div>
+                            </th>
+                            <th>
+                                Ім_я
+                            </th>
+                            <th>
+                                <div>Населений</div>
+                                <div>пункт</div>
+                            </th>
+                            <th>
+                                <div>Номер</div>
+                                <div>телефону</div>
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @{
+                            int num_1 = 0;
+                        }
+
+                        @for (int k = 0; k < Uclient.Length; k++)
+                        {
+
+                            foreach (var s in Model.Number)
+                            {
+                                if (s.Замовник == Uclient[k])
+                                {
+                                    if (s.Ім_я != null && s.Населений_пункт != null && s.Номер_телефону != null && s.Замовник != null)
+                                    {
+                                        zam = s.Ім_я;
+                                        Village = s.Населений_пункт;
+                                        Phone = s.Номер_телефону;
+                                        Email = s.Замовник;
+                                    }
+                                }
+
+                            }
+                            num_1++;
+                            <tr>
+                                <td>
+                                    <b>@num_1</b>
+                                </td>
+                                <td>
+                                    <b>@zam</b>
+                                </td>
+                                <td>
+                                    <b>@Village</b>
+                                </td>
+                                <td>
+                                    <b>@Phone</b>
+                                </td>
+                                <td>
+                                    <b>@Email</b>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <h2>Список замовників пустий</h2>
+            }
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+td {
+    border: 5px solid gray;
+    background-color: blanchedalmond;
+}
+
+img {
+    width: 400px;
+    height: 341px;
+}
+
+body {
+    background-image: url(/images/«руб_2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+th, td {
+    padding: 10px;
+}
+
+th {
+    background-color: Moccasin;
+    border: 5px solid gray;
+}
+
+.table {
+    border: 5px solid gray;
+    text-align: center;
+}
+
+h1, h2 {
+    color: brown;
+    font: bolder;
+}
+
+
+header, footer {
+    background-color: aqua;
+}

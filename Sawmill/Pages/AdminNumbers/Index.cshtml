@@ -1,0 +1,98 @@
+﻿@page
+@model Sawmill.Pages.AdminNumbers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            .container{
+                max-width:1200px;
+                margin: 0px auto;
+                padding: 0px 15px;
+            }
+            .table{
+                max-width: 100%;
+                /* border-block-end:dashed; */
+               
+            }
+            th{
+                color:aqua;
+                border-right: 1px solid lightskyblue;
+                padding: 5px;
+            }
+            b{
+                color:deepskyblue;
+            }
+            td{
+                color:lightskyblue;
+            border-right: 1px solid lightskyblue;
+                padding: 5px;
+            }
+        </style>
+
+    </head>
+
+    <body style="background-color:dimgray">
+        <h1>Опрацювання замовлень</h1>
+
+    <div class="container">
+       <table class="table">
+            <thead>
+                 <tr>
+                        <th>
+                          @Html.DisplayNameFor(model => model.Number[0].Status)
+                        </th>
+                        <th>
+                          @Html.DisplayNameFor(model => model.Number[0].Номер_телефону)
+                        </th>
+                        <th>
+                          @Html.DisplayNameFor(model => model.Number[0].Ім_я)
+                        </th>
+                        <th>
+                          @Html.DisplayNameFor(model => model.Number[0].Населений_пункт)
+                        </th>
+                        <th>
+                          @Html.DisplayNameFor(model => model.Number[0].id)
+                        </th>
+                        <th>
+                          @Html.DisplayNameFor(model => model.Number[0].Замовник)
+                        </th>
+                        <th></th>
+                 </tr>
+            </thead>
+            <tbody>
+               @foreach (var item in Model.Number) {
+                  <tr>
+                      <td>
+                          @Html.DisplayFor(modelItem => item.Status)
+                      </td>
+                      <td>
+                          @Html.DisplayFor(modelItem => item.Номер_телефону)
+                      </td>
+                       <td>
+                          @Html.DisplayFor(modelItem => item.Ім_я)
+                       </td>
+                       <td>
+                          @Html.DisplayFor(modelItem => item.Населений_пункт)
+                       </td>
+                       <td>
+                          @Html.DisplayFor(modelItem => item.id)
+                       </td>
+                       <td>
+                          @Html.DisplayFor(modelItem => item.Замовник)
+                       </td>  
+                       <td style="color:aquamarine">
+                          <a asp-page="./Edit" asp-route-id="@item.id"><b>Опрацювати</b></a> *
+                          <a asp-page="./Details" asp-route-id="@item.id"><b style="color:aquamarine">Переглянути</b></a> *
+                          <a asp-page="./Delete" asp-route-id="@item.id"><b style="color:red">Видалити</b></a>
+                       </td>
+                  </tr>
+               }
+            </tbody>
+       </table>
+    </div>
+</body>
+</html>

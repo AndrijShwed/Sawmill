@@ -1,0 +1,68 @@
+﻿@page
+@model Sawmill.Pages.Services.IndexModel
+@{
+    ViewData["Title"] = "Додаткові послуги";
+    int n;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        .block {
+            height: 100%;
+            background-image: url(/images/Фон_1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .list {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .row {
+            margin: auto;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid aqua;
+            padding: 20px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+            box-shadow: 10px 10px 30px aqua;
+        }
+    </style>
+
+</head>
+<body class="block">
+
+    <div class="row">
+
+        <h1 style="text-align:center; color:aqua"><b>У нас можна замовити наступні послуги : </b></h1>
+
+        @foreach (var item in Model.Service)
+        {
+            n = item.Id;
+
+            <div style="color:azure; margin-top:20px; font-style:italic">
+               
+                <h4><b>     @item.Name : </b></h4>
+
+                <ul class="list">
+
+                    @foreach (var item_1 in Model.ServicePPs)
+                    {
+                        if (item_1.ServiceId == n)
+                        {
+                            <li> @item_1.Name.</li>
+                        }
+                    }
+
+                </ul>
+            </div>
+        }
+
+    </div>
+
+</body>
+
+</html>

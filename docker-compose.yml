@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  sawmill:
+    image: ${DOCKER_REGISTRY-}sawmill
+    build:
+      context: .
+      dockerfile: Sawmill/Dockerfile

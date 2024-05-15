@@ -1,0 +1,38 @@
+﻿@page
+@model Sawmill.Pages.Services.IndexModel
+                    
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Service[0].Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Service) {
+            
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Змінити</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Деталі</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Видалити</a>|
+                <a asp-page="/ServicePPs/Index" asp-route-id="@item.Id">Заповнити</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
