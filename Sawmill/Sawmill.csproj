@@ -105,4 +105,11 @@
     <EditorConfigFiles Remove="C:\Users\1\source\repos\Sawmill\Sawmill\Areas\Identity\Pages\Account\Manage\.editorconfig" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Pages\ServicePPs\IndexPP.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

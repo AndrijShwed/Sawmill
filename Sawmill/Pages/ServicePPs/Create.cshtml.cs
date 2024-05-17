@@ -26,11 +26,11 @@ namespace Sawmill.Pages.ServicePPs
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.ServicePPs == null || ServicePP == null)
+            if (!ModelState.IsValid || _context.ServicePPs == null || ServicePP == null)
             {
                 return Page();
             }
-
+            
             _context.ServicePPs.Add(ServicePP);
             await _context.SaveChangesAsync();
 

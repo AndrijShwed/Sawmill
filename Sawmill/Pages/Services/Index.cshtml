@@ -21,9 +21,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Service) {
-            
-        int n = item.Id; 
-
+           
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -32,7 +30,7 @@
                 <a asp-page="./Edit" asp-route-id="@item.Id">Змінити</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Деталі</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Id">Видалити</a>|
-                <a asp-page="/ServicePPs/Index" asp-route-id="@item.Id">Послуги</a>
+                <a asp-page="/ServicePPs/IndexPP" asp-route-id="@item.Id">Послуги</a>
             </td>
         </tr>
 }
