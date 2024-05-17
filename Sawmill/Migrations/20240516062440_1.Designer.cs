@@ -11,7 +11,7 @@ using Sawmill.Data;
 namespace Sawmill.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240409174454_1")]
+    [Migration("20240516062440_1")]
     partial class _1
     {
         /// <inheritdoc />
@@ -19,7 +19,7 @@ namespace Sawmill.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.14")
+                .HasAnnotation("ProductVersion", "7.0.18")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -307,6 +307,39 @@ namespace Sawmill.Migrations
                     b.HasKey("Priceid");
 
                     b.ToTable("Prices");
+                });
+
+            modelBuilder.Entity("Sawmill.Models.Service", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Services");
+                });
+
+            modelBuilder.Entity("Sawmill.Models.ServicePP", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ServicePPs");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
