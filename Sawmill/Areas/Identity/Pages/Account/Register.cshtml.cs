@@ -74,7 +74,6 @@ namespace Sawmill.Areas.Identity.Pages.Account
             public string Email { get; set; }
 
             [Required]
-            [StringLength(17, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 10)]
             [Display(Name = "PhoneNumber")]
             public string PhoneNumber { get; set; }
 
