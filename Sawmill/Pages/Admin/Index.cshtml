@@ -20,6 +20,23 @@
 <head>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/Home.css">
+    <style>
+
+        table {
+            max-width: 90%;
+            margin: 2px 5px 20px 5px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+            box-shadow: 10px 10px 30px aqua;
+            border: 3px solid aqua;
+        }
+
+        th, td {
+            background-color: rgba(0, 0, 0, 0);
+            border: 1px solid aqua;
+            color: aqua;
+            font-weight:normal;
+        }
+    </style>
 </head>
 
 <body>
@@ -53,58 +70,58 @@
                             date = q.date;
                             Phone = q.Номер_телефону;
                             Village = q.Населений_пункт;
-                            
+
                             <table>
 
                                 <thead>
                                     <tr>
-                                        <td colspan="2" style="border: 5px solid gray; background-color:aquamarine">
-                                            <h5 style="color:brown; text-align:center"> @zam</h5>
+                                        <td colspan="2" style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0)">
+                                            <h5 style="color:aqua; text-align:center"> @zam</h5>
                                         </td>
-                                        <td colspan="2" style="border: 5px solid gray; background-color:aquamarine">
-                                            <h5 style="color:brown; text-align:center"> @Village</h5>
+                                        <td colspan="2" style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0)">
+                                            <h5 style="color:aqua; text-align:center"> @Village</h5>
                                         </td>
-                                        <td colspan="2" style="border: 5px solid gray; background-color:aquamarine">
-                                            <h5 style="color:brown; text-align:center">@Phone</h5>
+                                        <td colspan="2" style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0)">
+                                            <h5 style="color:aqua; text-align:center">@Phone</h5>
                                         </td>
-                                        <td colspan="2" style="border: 5px solid gray; background-color:aquamarine">
-                                            <h5 style="color:brown; text-align:center">Зам. № @numbZam</h5>
+                                        <td colspan="2" style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0)">
+                                            <h5 style="color:aqua; text-align:center">Зам. № @numbZam</h5>
                                         </td>
-                                        <td colspan="2" style="border: 5px solid gray; background-color:aquamarine">
-                                            <h5 style="color:brown; text-align:center">@date</h5>
+                                        <td colspan="2" style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0)">
+                                            <h5 style="color:aqua; text-align:center">@date</h5>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>
+                                        <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                             <p>№ п/п</p>
                                         </th>
-                                        <th>
+                                        <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                             Назва
                                         </th>
-                                        <th>
+                                        <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                             Вис.<p>(мм.)</p>
                                         </th>
-                                        <th>
+                                        <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                             Шир.<p>(мм.)</p>
                                         </th>
-                                        <th>
+                                        <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                             Довж.<p>(м.)</p>
                                         </th>
-                                        <th>
+                                        <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                             <div>К-сть</div>
                                             <div>(шт.)</div>
                                             <div>(м/п)</div>
                                         </th>
-                                        <th>
+                                        <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                             Об'єм<p>(м.куб)</p>
                                         </th>
-                                        <th>
+                                        <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                             Ціна<p>(грн.)</p>
                                         </th>
-                                        <th>
+                                        <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                             Сума<p>(грн.)</p>
                                         </th>
-                                        <th>
+                                        <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                             <p>Стан зам.</p>
                                         </th>
                                     </tr>
@@ -133,34 +150,34 @@
                                             sumAll = Convert.ToInt32(sumAll);
 
                                             <tr>
-                                                <td>
+                                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                                     @num
                                                 </td>
-                                                <td>
+                                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                                     @Html.DisplayFor(modelItem => item.Назва)
                                                 </td>
-                                                <td>
+                                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                                     @Html.DisplayFor(modelItem => item.Висота)
                                                 </td>
-                                                <td>
+                                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                                     @Html.DisplayFor(modelItem => item.Ширина)
                                                 </td>
-                                                <td>
+                                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                                     @Html.DisplayFor(modelItem => item.Довжина)
                                                 </td>
-                                                <td>
+                                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                                     @Html.DisplayFor(modelItem => item.Кількість)
                                                 </td>
-                                                <td>
+                                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                                     @Html.DisplayFor(modelItem => volume)
                                                 </td>
-                                                <td>
+                                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                                     @Html.DisplayFor(modelItem => item.Ціна)
                                                 </td>
-                                                <td>
+                                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                                     @Html.DisplayFor(modelItem => sum)
                                                 </td>
-                                                <td>
+                                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                                 </td>
                                             </tr>
                                         }
@@ -168,19 +185,19 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td colspan="6" style="border: 5px solid gray">
-                                            <b style="font-size:larger">Всього : </b>
+                                        <td colspan="6" style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
+                                            <b>Всього : </b>
                                         </td>
-                                        <td style="border: 5px solid gray">
+                                        <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                             <b>@nAll </b>
                                         </td>
-                                        <td style="border: 5px solid gray">
+                                        <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                             <b></b>
                                         </td>
-                                        <td sstyle="border: 5px solid gray">
+                                        <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                             <b>@sumAll </b>
                                         </td>
-                                        <td style="border: 5px solid gray">
+                                        <td style ="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
                                             <b>@q.Status</b>
                                         </td>
 
@@ -188,6 +205,7 @@
                                 </tfoot>
 
                             </table>
+
                         }
                     }
 
@@ -196,27 +214,27 @@
                 <table>
                     <thead>
                         <tr>
-                            <td colspan="5" style="border: 5px solid gray; background-color:aquamarine">
-                                <h3 style="color:brown; text-align:center">Список клієнтів</h3>
+                            <td colspan="5" style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
+                                <h3 style="text-align:center">Список клієнтів</h3>
                             </td>
                         </tr>
                         <tr>
-                            <th>
+                            <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                 <div>Номер</div>
                                 <div>п/п</div>
                             </th>
-                            <th>
+                            <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                 Ім_я
                             </th>
-                            <th>
+                            <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                 <div>Населений</div>
                                 <div>пункт</div>
                             </th>
-                            <th>
+                            <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                 <div>Номер</div>
                                 <div>телефону</div>
                             </th>
-                            <th>
+                            <th style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua; font-weight:normal">
                                 Email
                             </th>
                         </tr>
@@ -246,20 +264,20 @@
                             }
                             num_1++;
                             <tr>
-                                <td>
-                                    <b>@num_1</b>
+                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
+                                    @num_1
                                 </td>
-                                <td>
-                                    <b>@zam</b>
+                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
+                                    @zam
                                 </td>
-                                <td>
-                                    <b>@Village</b>
+                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
+                                    @Village
                                 </td>
-                                <td>
-                                    <b>@Phone</b>
+                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
+                                    @Phone
                                 </td>
-                                <td>
-                                    <b>@Email</b>
+                                <td style="border: 1px solid aqua; background-color:rgba(0, 0, 0, 0); color:aqua">
+                                    @Email
                                 </td>
                             </tr>
                         }

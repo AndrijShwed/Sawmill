@@ -102,6 +102,16 @@
             transition: all 0.1s ease 0s;
             box-shadow: 0 2px 0px 0 #0c5b56;
         }
+
+        .btn-custom {
+            color: aqua;
+            background-color: darkred;
+            border-color: aqua;
+        }
+
+            .btn-custom:hover {
+                background-color: red;
+            }
     </style>
 
 </head>
@@ -180,7 +190,7 @@
                             <span asp-validation-for="Order.Ціна" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Додати" class="btn btn-primary" />
+                            <input type="submit" value="Додати" class="btn btn-custom" />
                         </div>
                     </form>
                 </div>

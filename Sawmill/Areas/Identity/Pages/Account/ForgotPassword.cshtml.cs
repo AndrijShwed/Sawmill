@@ -49,13 +49,16 @@ namespace Sawmill.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync()
         {
+            
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByEmailAsync(Input.Email);
                 if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
-                    return RedirectToPage("./ForgotPasswordConfirmation");
+                    //return RedirectToPage("./ForgotPasswordConfirmation");
+                    ViewData["Fail"] = "Not found";
+                    return Page();
                 }
 
                 // For more information on how to enable account confirmation and password reset please

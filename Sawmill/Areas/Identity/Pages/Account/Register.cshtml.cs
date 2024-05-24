@@ -74,6 +74,7 @@ namespace Sawmill.Areas.Identity.Pages.Account
             public string Email { get; set; }
 
             [Required]
+            [StringLength(17, MinimumLength = 17, ErrorMessage = "Номер телефону має містити 12 цифр")]
             [Display(Name = "PhoneNumber")]
             public string PhoneNumber { get; set; }
 
@@ -82,7 +83,7 @@ namespace Sawmill.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "Пароль має містити від {2} до {2} символів.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }

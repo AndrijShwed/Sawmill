@@ -5,19 +5,18 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Sawmill/Sawmill.csproj", "Sawmill/"]
-RUN dotnet restore "Sawmill/Sawmill.csproj"
+RUN dotnet restore "./Sawmill/Sawmill.csproj"
 COPY . .
 WORKDIR "/src/Sawmill"
-ARG Configuration=Release
-RUN dotnet build "Sawmill.csproj" -c Release -o /app/build
+RUN dotnet build "./Sawmill.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
-#RUN dotnet publish "Sawmill.csproj" -c Release -o /app/publish /p:UseAppHost=false
-RUN dotnet publish "Sawmill.csproj" -c ${Configuration} -o /app/publish /p:UseAppHost=false
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./Sawmill.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

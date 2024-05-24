@@ -11,7 +11,7 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow: auto;
         }
 
         video {
@@ -114,9 +114,9 @@
             if (User.Identity.IsAuthenticated && User.Identity.Name != "Admin@ukr.net")
             {
                 <div class="row">
-                    <h1 class="display-4" style="font-style: unset; color:aqua "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h1>
+                    <h2 class="display-4" style="font-style: unset; color:aqua "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h2>
                 </div>
-                <div class="text-start" style="display:flex; justify-content:center; margin-top:10%">
+                <div style="display:flex; justify-content:center; margin-top:10%">
                     <a asp-page="./Orders/IndexFirst" class="button">
                         <span class="button_text">
                             <span><b>Створити замовлення</b></span>
@@ -126,20 +126,13 @@
             }
             else if (User.Identity.IsAuthenticated)
             {
-                <h1 class="display-4" style="font-style: unset; color:aqua "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h1>
-                <div class="text-start">
-                    <a asp-page="./Admin/Index"><b style="font-size:xx-large; color:aqua">Переглянути замовлення</b></a>
-                </div>
-                <div class="text-start">
-                    <a asp-page="./AdminNumbers/Index"><b style="font-size:xx-large; color:aqua">Опрацювати замовлення</b></a>
-                </div>
-                <div class="text-start">
-                    <a asp-page="./Prices/Index"><b style="font-size:xx-large; color:aqua">Встановити або змінити ціну</b></a>
-                </div>
-                <div class="text-start">
-                    <a asp-page="./Services/Index"><b style="font-size:xx-large; color:aqua">Додати вид послуг</b></a>
-                </div>
-
+                <h2 class="display-4" style="font-style: unset; color:aqua "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h2>
+                <ul class="text-sm-start" style="margin-top: 20px">
+                    <li><a asp-page="./Admin/Index"><h4 style="font-style: unset; text-decoration: none; color:aqua">Переглянути замовлення</h4></a></li>
+                    <li><a asp-page="./AdminNumbers/Index"><h4 style="font-style: unset; color:aqua">Опрацювати замовлення</h4></a></li>
+                    <li><a asp-page="./Prices/Index"><h4 style="font-style: unset; color:aqua">Встановити або змінити ціну</h4></a></li>
+                    <li><a asp-page="./Services/Index"><h4 style="font-style: unset; color:aqua">Додати вид послуг</h4></a></li>
+                </ul>
             }
             else
             {
@@ -149,7 +142,7 @@
                 </div>
             }
         }
-        
+
     </div>
 
 </body>

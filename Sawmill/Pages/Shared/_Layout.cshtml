@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <style>
-         .image {
+        .image {
             width: 18px;
             padding-bottom: 5px;
         }
@@ -70,6 +70,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Пилорама</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+   
 
 </head>
 <body>
@@ -142,10 +143,18 @@
 
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
+     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function () {
+            // Ваш код для використання плагіна
+            $('.phone').mask("+38(099)999-99-99");
 
+            
+        });
+        
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>

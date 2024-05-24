@@ -15,14 +15,51 @@
 <head>
     <link rel="stylesheet" href="css/Home.css">
     <meta name="viewport" content="width=device-width" />
+    <style>
+
+        table {
+            max-width: 90%;
+            margin: 10px 5px 20px 5px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+            box-shadow: 10px 10px 30px aqua;
+            border: 3px solid aqua;
+        }
+
+        th, td {
+            background-color: rgba(0, 0, 0, 0);
+            border: 1px solid aqua;
+            color: aqua;
+            font-weight: normal;
+        }
+
+        .row {
+            margin: 20px auto;
+            width: fit-content;
+            display: inline-block;
+            border-radius: 5px;
+            border: 1px solid aqua;
+            padding: 10px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+            box-shadow: 10px 10px 30px aqua;
+            color:aqua;
+        }
+        .btn-custom{
+            color:aqua;
+            background-color: darkred;
+            border-color:aqua;
+        }
+        .btn-custom:hover{
+            background-color:red;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <div style="margin: 0px auto">
-            <div style=" background-color:burlywood; border-radius: 0.3em; width:fit-content">
-                <h1>Замовлення </h1>
-            </div>
+        <div class="row">
+            
+                <h2> Формування замовлення </h2>
+            
         </div>
 
         <div>
@@ -139,19 +176,19 @@
             <tfoot>
 
                 <tr>
-                    <td colspan="6" style="border: 5px solid gray">
-                        <b style="font-size:larger">Всього : </b>
+                    <td colspan="6">
+                        <b>Всього : </b>
                     </td>
-                    <td style="border: 5px solid gray">
+                    <td>
                         <b>@nAll </b>
                     </td>
-                    <td style="border: 5px solid gray">
+                    <td>
                         <b></b>
                     </td>
-                    <td style="border: 5px solid gray">
+                    <td>
                         <b>@sumAll </b>
                     </td>
-                    <td style="border: 5px solid gray; background-color:aqua">
+                    <td>
                         <b></b>
                     </td>
                 </tr>
@@ -162,8 +199,8 @@
 
         <form method="post">
 
-            <div class="form-group">
-                <input type="submit" value="Відправити на підтвердження" class="btn btn-primary" />
+            <div class="form-group" style="color:red">
+                <input type="submit" value="Відправити на підтвердження" class="btn btn-custom" />
             </div>
 
         </form>
