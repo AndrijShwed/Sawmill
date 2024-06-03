@@ -4,47 +4,50 @@
 @{
     ViewData["Title"] = "Delete";
 }
-<!DOCTYPE html>
-<html>
+<!DOCTYPE>
+<html lang="uk">
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
 <body>
-    <h1>Видалити</h1>
+<h1>Видалити</h1>
 
-    <h3>Ви впевнені що хочете видалити це?</h3>
-    <div>
+<h3>Ви впевнені що хочете видалити це?</h3>
+<div>
 
 
-        <dl class="row">
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Number.Status)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Number.Status)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Number.Номер_телефону)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Number.Номер_телефону)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Number.Ім_я)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Number.Ім_я)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Number.Населений_пункт)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Number.Населений_пункт)
-            </dd>
-        </dl>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Number.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Number.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Number.Номер_телефону)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Number.Номер_телефону)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Number.Ім_я)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Number.Ім_я)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Number.Населений_пункт)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Number.Населений_пункт)
+        </dd>
+    </dl>
 
-        <form method="post">
-            <input type="hidden" asp-for="Number.id" />
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            <a asp-page="./Index">Повернутись до списку</a>
-        </form>
-    </div>
+    <form method="post">
+        <input type="hidden" asp-for="Number.id"/>
+        <input type="submit" value="Delete" class="btn btn-danger"/> |
+        <a asp-page="./Index">Повернутись до списку</a>
+    </form>
+</div>
 </body>
 </html>
