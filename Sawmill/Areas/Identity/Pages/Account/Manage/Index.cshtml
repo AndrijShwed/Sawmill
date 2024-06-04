@@ -16,7 +16,7 @@
                 <label asp-for="Username" class="form-label">Користувач(Email)</label>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.PhoneNumber" class="form-control phone" placeholder="Введіть номер телефону."/>
+                <input asp-for="Input.PhoneNumber" type="tel" class="form-control phone" placeholder="Введіть номер телефону."/>
                 <label asp-for="Input.PhoneNumber" class="form-label">Номер телефону</label>
                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
             </div>

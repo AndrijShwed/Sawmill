@@ -31,9 +31,9 @@ namespace Sawmill.Pages.Numbers
 
         public IList<Number> Numberm { get; set; } = default!;
 
-        [Required]
-        [StringLength(17, MinimumLength = 17, ErrorMessage = "Номер телефону має містити 12 цифр")]
-        [Display(Name = "Номер_телефону")]
+        //[Required]
+        //[StringLength(17, MinimumLength = 17, ErrorMessage = "Номер телефону має містити 12 цифр")]
+        //[Display(Name = "Номер_телефону")]
         public string Phone { get; set; } = default!;
         public int Номер { get; set; } = default!;
        
