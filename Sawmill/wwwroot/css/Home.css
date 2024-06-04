@@ -13,7 +13,6 @@ th, td {
     padding: 3px;
     border: 1px solid aqua;
     background-color: rgba(0, 0, 0, 0);
-    border: 1px solid aqua;
     color: aqua;
     font-weight: normal;
 }
@@ -29,16 +28,16 @@ table {
 
 h1 {
     color: brown;
-    font: bolder;
+    font-weight: bolder;
 }
 
 .container {
     max-width: 100%;
-    margin: 0px auto;
-    padding: 0px 5px;
+    margin: 0 auto;
+    padding: 0 5px;
 }
 .button {
-    font-family: Arial;
+    font-family: Arial, serif;
     text-decoration: none;
     position: relative;
     display: inline-block;
@@ -50,14 +49,14 @@ h1 {
     min-height: 30px;
     display: flex;
     justify-content: center;
-    padding: 0px 10px;
+    padding: 0 10px;
     border-radius: 30px;
     font-size: 20px;
     text-transform: uppercase;
     color: black;
     letter-spacing: 3px;
     transition: all 1s ease 0s;
-    top: 0px;
+    top: 0;
     overflow: hidden;
 }
 
@@ -93,12 +92,12 @@ h1 {
     top: -3px;
     color:firebrick;
     transition: all 0.5s ease 0.2s;
-    box-shadow: 0 5px 0px 0 #0c5b56;
+    box-shadow: 0 5px 0 0 #0c5b56;
 }
 
 .button:active .button_text {
     top: 2px;
     transition: all 0.1s ease 0s;
-    box-shadow: 0 2px 0px 0 #0c5b56;
+    box-shadow: 0 2px 0 0 #0c5b56;
 }
 
