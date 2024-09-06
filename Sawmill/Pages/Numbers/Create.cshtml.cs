@@ -5,7 +5,6 @@ using Sawmill.Data;
 using Sawmill.Models;
 using Sawmill.Core;
 using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations;
 
 namespace Sawmill.Pages.Numbers
 {
