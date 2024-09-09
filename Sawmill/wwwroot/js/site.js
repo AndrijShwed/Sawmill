@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-
 !function (a) {
     "function" == typeof define && define.amd ?
     define(["jquery"], a) : a("object" == typeof exports ? require("jquery") : jQuery)
@@ -115,9 +110,6 @@
         })
 });
 
-
-
-=======
 ﻿$(document).ready(function () {
     $('.phone').mask("+38(099)999-99-99");
 });

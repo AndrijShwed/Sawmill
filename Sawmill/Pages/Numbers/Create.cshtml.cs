@@ -20,23 +20,11 @@ namespace Sawmill.Pages.Numbers
             _userManager = userManager;
         }
 
-        //public class InpuModel
-        //{
-        //    [Required]
-        //    [StringLength(17, MinimumLength = 17, ErrorMessage = "Номер телефону має містити 12 цифр")]
-        //    [Display(Name = "Номер_телефону")]
-        //    public string Phone { get; set; }
-        //}
-
         public IList<Number> Numberm { get; set; } = default!;
 
-        //[Required]
-        //[StringLength(17, MinimumLength = 17, ErrorMessage = "Номер телефону має містити 12 цифр")]
-        //[Display(Name = "Номер_телефону")]
         public string Phone { get; set; } = default!;
         public int Номер { get; set; } = default!;
        
-
         public async Task OnGetAsync()
         {
             if (_context.Numbers != null)
