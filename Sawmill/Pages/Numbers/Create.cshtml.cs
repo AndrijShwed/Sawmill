@@ -40,7 +40,7 @@ namespace Sawmill.Pages.Numbers
 
         [BindProperty]
         public Number Number { get; set; } = default!;
-        EmailService email = new EmailService();
+        EmailService email = new();
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
