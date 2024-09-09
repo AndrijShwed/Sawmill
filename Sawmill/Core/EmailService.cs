@@ -1,17 +1,21 @@
 ﻿using System.Net;
 using System.Net.Mail;
+using System.Text.Json;
 
 namespace Sawmill.Core
 {
 
     public class EmailService
     {
-        string from = "sawmill3011@gmail.com";
-        string to = "a_shwed@ukr.net";
-        string password = "pbdd akvh ehvr ltjk";
+        static EmailStrings e = new EmailStrings();
+        string from = e.From;
+        string to = e.To;
+        string password = e.Password;
+        string cl = e.Client;
 
         public async Task<bool> SendEmailAsync(string email, string subject, string confirmlink)
         {
+           
             try
             {
                 MailMessage message = new MailMessage();
@@ -22,7 +26,7 @@ namespace Sawmill.Core
                 message.IsBodyHtml = true;
                 message.Body = confirmlink;
 
-                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                SmtpClient smtpClient = new SmtpClient(cl, 587);
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.Credentials = new NetworkCredential(from, password);
@@ -47,7 +51,7 @@ namespace Sawmill.Core
                 message.IsBodyHtml = true;
                 message.Body = client;
 
-                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                SmtpClient smtpClient = new SmtpClient(cl, 587);
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.Credentials = new NetworkCredential(from, password);
@@ -73,7 +77,7 @@ namespace Sawmill.Core
                 message.IsBodyHtml = true;
                 message.Body = answer;
 
-                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                SmtpClient smtpClient = new SmtpClient(cl, 587);
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.Credentials = new NetworkCredential(from, password);
