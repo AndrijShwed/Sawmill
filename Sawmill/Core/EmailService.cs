@@ -25,11 +25,13 @@ namespace Sawmill.Core
                 message.IsBodyHtml = true;
                 message.Body = confirmlink;
 
-                SmtpClient smtpClient = new (emailServ, port);
-                smtpClient.EnableSsl = true;
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential(from, password);
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                SmtpClient smtpClient = new(emailServ, port)
+                {
+                    EnableSsl = true,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(from, password),
+                    DeliveryMethod = SmtpDeliveryMethod.Network
+                };
                 await smtpClient.SendMailAsync(message);
                 return true;
             }
@@ -78,11 +80,13 @@ namespace Sawmill.Core
                 message.IsBodyHtml = true;
                 message.Body = answer;
 
-                SmtpClient smtpClient = new(emailServ, port);
-                smtpClient.EnableSsl = true;
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential(from, password);
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                SmtpClient smtpClient = new(emailServ, port)
+                {
+                    EnableSsl = true,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(from, password),
+                    DeliveryMethod = SmtpDeliveryMethod.Network
+                };
                 await smtpClient.SendMailAsync(message);
                 return true;
             }
