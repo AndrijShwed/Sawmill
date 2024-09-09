@@ -8,6 +8,7 @@ namespace Sawmill.Core
         public string To;
         public string Password;
         public string Client;
+        public string Port;
         
 
         public  EmailStrings() {
@@ -23,6 +24,8 @@ namespace Sawmill.Core
              Password = settings.GetProperty("password").GetString();
 
              Client = settings.GetProperty("client").GetString();
+
+             Port = settings.GetProperty("port").GetString();
         }
     }
 }

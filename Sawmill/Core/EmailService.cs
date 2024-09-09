@@ -1,6 +1,5 @@
 ﻿using System.Net;
 using System.Net.Mail;
-using System.Text.Json;
 
 namespace Sawmill.Core
 {
@@ -11,7 +10,10 @@ namespace Sawmill.Core
         string from = e.From;
         string to = e.To;
         string password = e.Password;
-        string cl = e.Client;
+        string emailServ = e.Client;
+        int port = int.Parse(e.Port);
+
+
 
         public async Task<bool> SendEmailAsync(string email, string subject, string confirmlink)
         {
@@ -26,7 +28,7 @@ namespace Sawmill.Core
                 message.IsBodyHtml = true;
                 message.Body = confirmlink;
 
-                SmtpClient smtpClient = new SmtpClient(cl, 587);
+                SmtpClient smtpClient = new SmtpClient(emailServ, port);
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.Credentials = new NetworkCredential(from, password);
@@ -51,7 +53,7 @@ namespace Sawmill.Core
                 message.IsBodyHtml = true;
                 message.Body = client;
 
-                SmtpClient smtpClient = new SmtpClient(cl, 587);
+                SmtpClient smtpClient = new SmtpClient(emailServ, port);
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.Credentials = new NetworkCredential(from, password);
@@ -77,7 +79,7 @@ namespace Sawmill.Core
                 message.IsBodyHtml = true;
                 message.Body = answer;
 
-                SmtpClient smtpClient = new SmtpClient(cl, 587);
+                SmtpClient smtpClient = new SmtpClient(emailServ, port);
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.Credentials = new NetworkCredential(from, password);
