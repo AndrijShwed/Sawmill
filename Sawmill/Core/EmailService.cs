@@ -13,11 +13,8 @@ namespace Sawmill.Core
         string emailServ = e.Client;
         int port = int.Parse(e.Port);
 
-
-
         public async Task<bool> SendEmailAsync(string email, string subject, string confirmlink)
         {
-           
             try
             {
                 MailMessage message = new();
