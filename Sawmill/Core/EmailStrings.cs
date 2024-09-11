@@ -16,16 +16,16 @@ namespace Sawmill.Core
 
              JsonDocument doc = JsonDocument.Parse(jsonString);
              JsonElement settings = doc.RootElement.GetProperty("EmailSettings");
-
-                From = settings.GetProperty("from").GetString();
            
-                To = settings.GetProperty("to").GetString();
-           
-                Password = settings.GetProperty("password").GetString();
-            
-                Client = settings.GetProperty("client").GetString();
+            From = settings.GetProperty("from").GetString() ?? "Помилка відправки листа";
 
-                Port = settings.GetProperty("port").GetString();
+            To = settings.GetProperty("to").GetString() ?? "Помилка відправки листа";
+
+            Password = settings.GetProperty("password").GetString() ?? "Помилка відправки листа";
+
+            Client = settings.GetProperty("client").GetString() ?? "Помилка відправки листа";
+
+            Port = settings.GetProperty("port").GetString() ?? "Помилка відправки листа";
            
         }
     }

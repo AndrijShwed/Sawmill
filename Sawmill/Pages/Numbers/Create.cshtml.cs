@@ -22,7 +22,7 @@ namespace Sawmill.Pages.Numbers
 
         public IList<Number> Numberm { get; set; } = default!;
 
-        public string Phone { get; set; } = default!;
+        public string? Phone { get; set; } = default!;
         public int Номер { get; set; } = default!;
        
         public async Task OnGetAsync()
@@ -31,16 +31,22 @@ namespace Sawmill.Pages.Numbers
             {
                 Numberm = await _context.Numbers.ToListAsync();
             }
-           
+
             var user = await _userManager.GetUserAsync(User);
-            
-            Phone = await _userManager.GetPhoneNumberAsync(user);
-           
+            if (user != null)
+            {
+                Phone = await _userManager.GetPhoneNumberAsync(user);
+            }
+            else
+            {
+                Phone = "Не вдалося отримати номер телефону користувача";
+            }
+
         }
 
         [BindProperty]
         public Number Number { get; set; } = default!;
-        EmailService email = new();
+        readonly EmailService email = new();
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
@@ -61,7 +67,7 @@ namespace Sawmill.Pages.Numbers
             string client = Number.Ім_я +", "+ Number.Населений_пункт +", тел: "+ Number.Номер_телефону;
             _context.Numbers.Add(Number);
 
-            if (_context.Numbers.Count() != 0)
+            if (_context.Numbers.Any())
             {
                 Номер = _context.Numbers.ToList().Last().id + 1;
             }
