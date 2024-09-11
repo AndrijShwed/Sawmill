@@ -8,7 +8,7 @@ namespace Sawmill.Core
     {
         string from = "sawmill3011@gmail.com";
         string to = "a_shwed@ukr.net";
-        string password = "pbdd akvh ehvr ltjk";
+        string password = "rrdr fjsh eofp raic";
 
         public async Task<bool> SendEmailAsync(string email, string subject, string confirmlink)
         {

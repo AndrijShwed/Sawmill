@@ -51,9 +51,9 @@
                         <span asp-validation-for="Input.Email" class="text-danger"></span>
                     </div>
                     <div class="form-floating mb-3" style="opacity:0.8">
-                        <input asp-for="Input.PhoneNumber" type="tel" class=" form-control phone" aria-required="true" placeholder="phone" />
-                        <label asp-for="Input.PhoneNumber">Номер телефону</label>
-                        <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                        <input asp-for="Input.PhoneNumber" type="tel" class="phone form-control" aria-required="true" placeholder="phone" />
+                        <label asp-for="Input.PhoneNumber" class="phone">Номер телефону</label>
+                        <span asp-validation-for="Input.PhoneNumber" class="text-light"></span>
                     </div>
                     <div class="form-floating mb-3" style="opacity:0.8">
                         <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
@@ -65,6 +65,7 @@
                         <label asp-for="Input.ConfirmPassword">Підтвердити пароль</label>
                         <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                     </div>
+        
                     <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary"
                     style="background-color:aqua; color: black">Зареєструватись</button>
                 </form>
@@ -73,6 +74,7 @@
    
 </body>
 </html>
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }

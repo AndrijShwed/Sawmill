@@ -20,10 +20,8 @@ namespace Sawmill.Pages.Orders
             return Page();
         }
 
-
         [BindProperty]
         public Order Order { get; set; } = default!;
-
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -34,7 +32,6 @@ namespace Sawmill.Pages.Orders
                 return Page();
             }
             
-
             _context.Orders.Add(Order);
             await _context.SaveChangesAsync();
 
