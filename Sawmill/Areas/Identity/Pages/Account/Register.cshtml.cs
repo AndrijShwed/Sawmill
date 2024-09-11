@@ -74,7 +74,7 @@ namespace Sawmill.Areas.Identity.Pages.Account
             public string Email { get; set; }
 
             [Required]
-            [StringLength(17, MinimumLength = 17, ErrorMessage = "Номер телефону має містити 12 цифр")]
+            [StringLength(18, MinimumLength = 18, ErrorMessage = "Номер телефону має містити 12 цифр")]
             [Display(Name = "PhoneNumber")]
             public string PhoneNumber { get; set; }
 
@@ -129,15 +129,15 @@ namespace Sawmill.Areas.Identity.Pages.Account
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
-                        values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                        values: new { area = "Identity", userId, code, returnUrl },
                         protocol: Request.Scheme);
-                    EmailService email = new EmailService();
+                    EmailService email = new();
                     await email.SendEmailAsync(Input.Email, "Підтвердіть свою ел.пошту",
                         $"Будь ласка для підтвердження акаунту <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>натисніть тут</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl });
                     }
                     else
                     {

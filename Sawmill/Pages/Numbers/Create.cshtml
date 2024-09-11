@@ -74,13 +74,13 @@
                 </div>
                 <div class="form-group">
                     <b style="color:aqua; font-size:large">Дата</b>
-                    <input asp-for="Number.date" class="form-control" value=@date />
+                    <input asp-for="Number.date" class="form-control" readonly value=@date />
                     <span asp-validation-for="Number.date" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <b style="color:aqua; font-size:large">Замовник</b>
-                    <input asp-for="Number.Замовник" class="form-control" value=@User.Identity?.Name />
+                    <input asp-for="Number.Замовник" class="form-control" readonly value=@User.Identity?.Name />
                     <span asp-validation-for="Number.Замовник" class="text-danger"></span>
                 </div>
                 <div class="form-group">

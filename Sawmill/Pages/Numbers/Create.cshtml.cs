@@ -5,7 +5,6 @@ using Sawmill.Data;
 using Sawmill.Models;
 using Sawmill.Core;
 using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations;
 
 namespace Sawmill.Pages.Numbers
 {
@@ -21,6 +20,7 @@ namespace Sawmill.Pages.Numbers
             _userManager = userManager;
         }
 
+<<<<<<< HEAD
         //public class InpuModel
         //{
         //    [Required]
@@ -37,21 +37,42 @@ namespace Sawmill.Pages.Numbers
         public string Phone { get; set; } = default!;
         public int Номер { get; set; } = default!;
 
+=======
+        public IList<Number> Numberm { get; set; } = default!;
+
+        public string? Phone { get; set; } = default!;
+        public int Номер { get; set; } = default!;
+       
+>>>>>>> 4a59711edbb42ff35c7e16b4839b4777e84797c9
         public async Task OnGetAsync()
         {
             if (_context.Numbers.Count() != 0)
             {
                 Numberm = await _context.Numbers.ToListAsync();
             }
+<<<<<<< HEAD
             
             var user = await _userManager.GetUserAsync(User);
 
             Phone = await _userManager.GetPhoneNumberAsync(user);
+=======
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user != null)
+            {
+                Phone = await _userManager.GetPhoneNumberAsync(user);
+            }
+            else
+            {
+                Phone = "Не вдалося отримати номер телефону користувача";
+            }
+
+>>>>>>> 4a59711edbb42ff35c7e16b4839b4777e84797c9
         }
 
         [BindProperty]
         public Number Number { get; set; } = default!;
-        EmailService email = new EmailService();
+        readonly EmailService email = new();
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
@@ -72,7 +93,7 @@ namespace Sawmill.Pages.Numbers
             string client = Number.Ім_я +", "+ Number.Населений_пункт +", тел: "+ Number.Номер_телефону;
             _context.Numbers.Add(Number);
 
-            if (_context.Numbers.Count() != 0)
+            if (_context.Numbers.Any())
             {
                 Номер = _context.Numbers.ToList().Last().id + 1;
             }

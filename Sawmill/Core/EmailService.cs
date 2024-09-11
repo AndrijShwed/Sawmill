@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using Humanizer;
+using System.Net;
 using System.Net.Mail;
 
 namespace Sawmill.Core
@@ -6,27 +7,39 @@ namespace Sawmill.Core
 
     public class EmailService
     {
+<<<<<<< HEAD
         string from = "sawmill3011@gmail.com";
         string to = "a_shwed@ukr.net";
         string password = "rrdr fjsh eofp raic";
+=======
+        static readonly EmailStrings e = new();
+        static readonly string from = e.From;
+        static readonly string to = e.To;
+        static readonly string password = e.Password;
+        static readonly string emailServ = e.Client;
+        static readonly int port = int.Parse(e.Port);
+
+        readonly SmtpClient smtpClient = new(emailServ, port)
+        {
+            EnableSsl = true,
+            UseDefaultCredentials = false,
+            Credentials = new NetworkCredential(from, password),
+            DeliveryMethod = SmtpDeliveryMethod.Network
+        };
+>>>>>>> 4a59711edbb42ff35c7e16b4839b4777e84797c9
 
         public async Task<bool> SendEmailAsync(string email, string subject, string confirmlink)
         {
             try
             {
-                MailMessage message = new MailMessage();
-
-                message.From = new MailAddress(from);
+                MailMessage message = new()
+                {
+                    From = new MailAddress(from),
+                    Subject = subject,
+                    IsBodyHtml = true,
+                    Body = confirmlink
+                };
                 message.To.Add(email);
-                message.Subject = subject;
-                message.IsBodyHtml = true;
-                message.Body = confirmlink;
-
-                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-                smtpClient.EnableSsl = true;
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential(from, password);
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 await smtpClient.SendMailAsync(message);
                 return true;
             }
@@ -39,19 +52,15 @@ namespace Sawmill.Core
         {
             try
             {
-                MailMessage message = new MailMessage();
-
-                message.From = new MailAddress(from);
+                MailMessage message = new()
+                {
+                    From = new MailAddress(from),
+                    Subject = "Поступило нове замовлення від: ",
+                    IsBodyHtml = true,
+                    Body = client
+                };
                 message.To.Add(to);
-                message.Subject = "Поступило нове замовлення від: ";
-                message.IsBodyHtml = true;
-                message.Body = client;
 
-                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-                smtpClient.EnableSsl = true;
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential(from, password);
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 await smtpClient.SendMailAsync(message);
                 return true;
             }
@@ -65,19 +74,15 @@ namespace Sawmill.Core
         {
             try
             {
-                MailMessage message = new MailMessage();
-
-                message.From = new MailAddress(from);
+                MailMessage message = new()
+                {
+                    From = new MailAddress(from),
+                    Subject = "Ваше замовлення пиломатеріалів №  " + order,
+                    IsBodyHtml = true,
+                    Body = answer
+                };
                 message.To.Add(email);
-                message.Subject = "Ваше замовлення пиломатеріалів №  " + order;
-                message.IsBodyHtml = true;
-                message.Body = answer;
 
-                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-                smtpClient.EnableSsl = true;
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential(from, password);
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 await smtpClient.SendMailAsync(message);
                 return true;
             }
