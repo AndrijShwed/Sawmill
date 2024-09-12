@@ -53,7 +53,7 @@
 
     @foreach (var cl in Model.Number)
     {
-        if (cl.Замовник == User.Identity?.Name)
+        if (cl.Замовник == User.Identity?.Name && cl.Status != "Виконано")
         {
             color = "";
             k++;
