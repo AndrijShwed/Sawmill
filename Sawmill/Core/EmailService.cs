@@ -7,11 +7,7 @@ namespace Sawmill.Core
 
     public class EmailService
     {
-<<<<<<< HEAD
-        string from = "sawmill3011@gmail.com";
-        string to = "a_shwed@ukr.net";
-        string password = "rrdr fjsh eofp raic";
-=======
+       
         static readonly EmailStrings e = new();
         static readonly string from = e.From;
         static readonly string to = e.To;
@@ -26,7 +22,6 @@ namespace Sawmill.Core
             Credentials = new NetworkCredential(from, password),
             DeliveryMethod = SmtpDeliveryMethod.Network
         };
->>>>>>> 4a59711edbb42ff35c7e16b4839b4777e84797c9
 
         public async Task<bool> SendEmailAsync(string email, string subject, string confirmlink)
         {

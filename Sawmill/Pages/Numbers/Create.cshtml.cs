@@ -31,7 +31,7 @@ namespace Sawmill.Pages.Numbers
             {
                 Numberm = await _context.Numbers.ToListAsync();
             }
-            
+
             var user = await _userManager.GetUserAsync(User);
             if (user != null)
             {
