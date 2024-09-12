@@ -20,43 +20,18 @@ namespace Sawmill.Pages.Numbers
             _userManager = userManager;
         }
 
-<<<<<<< HEAD
-        //public class InpuModel
-        //{
-        //    [Required]
-        //    [StringLength(17, MinimumLength = 17, ErrorMessage = "Номер телефону має містити 12 цифр")]
-        //    [Display(Name = "Номер_телефону")]
-        //    public string Phone { get; set; }
-        //}
-
-        public List<Number> Numberm { get; set; } = default!;
-
-        //[Required]
-        //[StringLength(17, MinimumLength = 17, ErrorMessage = "Номер телефону має містити 12 цифр")]
-        //[Display(Name = "Номер_телефону")]
-        public string Phone { get; set; } = default!;
-        public int Номер { get; set; } = default!;
-
-=======
         public IList<Number> Numberm { get; set; } = default!;
 
         public string? Phone { get; set; } = default!;
         public int Номер { get; set; } = default!;
        
->>>>>>> 4a59711edbb42ff35c7e16b4839b4777e84797c9
         public async Task OnGetAsync()
         {
             if (_context.Numbers.Count() != 0)
             {
                 Numberm = await _context.Numbers.ToListAsync();
             }
-<<<<<<< HEAD
             
-            var user = await _userManager.GetUserAsync(User);
-
-            Phone = await _userManager.GetPhoneNumberAsync(user);
-=======
-
             var user = await _userManager.GetUserAsync(User);
             if (user != null)
             {
@@ -67,7 +42,6 @@ namespace Sawmill.Pages.Numbers
                 Phone = "Не вдалося отримати номер телефону користувача";
             }
 
->>>>>>> 4a59711edbb42ff35c7e16b4839b4777e84797c9
         }
 
         [BindProperty]
