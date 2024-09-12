@@ -11,7 +11,6 @@
 <!DOCTYPE html>
 
 <html>
-
 <head>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/Home.css">
@@ -28,8 +27,24 @@
         th, td {
             background-color: rgba(0, 0, 0, 0);
             border: 1px solid aqua;
-            color: aqua;
+            color: black;
             font-weight: normal;
+        }
+
+        .aqua {
+            background-color: antiquewhite;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .red {
+            background-color: red;
         }
     </style>
 </head>
@@ -168,24 +183,26 @@
                                 <b>@sumAll </b>
                             </td>
                             @{
-                                if (status == "Підтв.")
+                                string cssClass = "";
+
+                                if (status == "Очікує")
                                 {
-                                    color = "aqua";
+                                    cssClass = "aqua";
                                 }
                                 if (status == "Виконано")
                                 {
-                                    color = "green";
+                                    cssClass = "green";
                                 }
                                 if (status == "В роботі")
                                 {
-                                    color = "yellow";
+                                    cssClass = "yellow";
                                 }
                                 if (status == "Відхилено")
                                 {
-                                    color = "red";
+                                    cssClass = "red";
                                 }
                             }
-                            <td @* style="background-color:@color" *@>
+                            <td class="@cssClass" >
                                 <b>@status</b>
                             </td>
 
