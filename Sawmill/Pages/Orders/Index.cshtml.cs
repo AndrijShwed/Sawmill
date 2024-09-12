@@ -10,7 +10,7 @@ namespace Sawmill.Pages.Orders
     {
         private readonly ApplicationDbContext _context;
 
-        int Ціна = 0;
+        int Ціна;
 
         public IndexModel(ApplicationDbContext context)
         {
