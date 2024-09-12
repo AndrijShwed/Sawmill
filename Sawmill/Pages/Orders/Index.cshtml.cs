@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Sawmill.Models;
 using Sawmill.Data;
+using NuGet.Protocol.Plugins;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Sawmill.Pages.Orders
 {
@@ -11,6 +13,7 @@ namespace Sawmill.Pages.Orders
         private readonly ApplicationDbContext _context;
 
         int Ціна;
+        int k = 0;
 
         public IndexModel(ApplicationDbContext context)
         {
@@ -57,13 +60,21 @@ namespace Sawmill.Pages.Orders
                 {
                     
                     item.Ціна = Ціна;
+                    k++;
 
                 }
             }
 
-            await _context.SaveChangesAsync();
+            if (k == 0)
+            {
+                return RedirectToPage("/Orders/Помилка_підтвердження");
+            }
+            else
+            {
+                await _context.SaveChangesAsync();
 
-            return RedirectToPage("/Numbers/Create");
+                return RedirectToPage("/Numbers/Create");
+            }
         }
 
     }

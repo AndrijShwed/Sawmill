@@ -20,8 +20,8 @@ namespace Sawmill.Pages.Numbers
             _userManager = userManager;
         }
 
-        public IList<Number> Numberm { get; set; } = default!;
-
+        public IList<Number> Numberm { get; set; } = new List<Number>();
+        
         public string? Phone { get; set; } = default!;
         public int Номер { get; set; } = default!;
        
