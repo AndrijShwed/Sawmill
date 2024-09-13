@@ -170,6 +170,7 @@
                                 <b><label asp-for="Order.Довжина" class="control-label"></label>(м)</b>
                             </div>
                             <select asp-for="Order.Довжина" class="form-control">
+                                <option>Виберіть</option>
                                 <option>6</option>
                                 <option>5</option>
                                 <option>4</option>
@@ -177,6 +178,7 @@
                                 <option>2</option>
                                 <option>1</option>
                             </select>
+                            <span asp-validation-for="Order.Довжина" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <div style="background-color:antiquewhite; width:100%; border-radius:0.2em ">

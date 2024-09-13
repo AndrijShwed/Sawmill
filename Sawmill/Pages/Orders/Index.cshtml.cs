@@ -39,8 +39,6 @@ namespace Sawmill.Pages.Orders
                 Price = await _context.Prices.ToListAsync();
 
             }
-
-
         }
         public async Task<IActionResult> OnPostAsync()
         {
