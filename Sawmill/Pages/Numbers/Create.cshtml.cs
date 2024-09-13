@@ -21,7 +21,11 @@ namespace Sawmill.Pages.Numbers
         }
 
         public IList<Number> Numberm { get; set; } = new List<Number>();
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> dd1391ea364513f4874df63ce4ffe9d75c55559c
         public string? Phone { get; set; } = default!;
         public int Номер { get; set; }
 

@@ -108,6 +108,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Pages\Orders\Помилка_підтвердження.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="Pages\ServicePPs\IndexPP.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

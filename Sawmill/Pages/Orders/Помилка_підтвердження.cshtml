@@ -1,0 +1,55 @@
+﻿@page
+@model Sawmill.Pages.Orders.IndexModel
+@{
+    ViewData["Title"] = "Підтведження замовлення";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .row {
+            margin:auto;
+            width:fit-content;
+            display: inline-block;
+            border-radius: 5px;
+            border: 1px solid aqua;
+            padding: 10px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+            box-shadow: 10px 10px 30px aqua;
+        }
+    </style>
+
+</head>
+<body>
+    <video autoplay loop muted>
+        <source src="/images/1055142740-preview.mp4" type="video/mp4" />
+    </video>
+    <div class="row">
+
+        <h3 style="color:aqua">Шановний <b>@User.Identity?.Name</b> , у Вашому замовленні відсутні елементи для підтвердження. Спочатку додайте елемент </h3>
+
+        <p style="font-size:larger">
+            <a asp-page="/Orders/Create"><h3 style="color:aqua">OK</h3></a>
+        </p>
+    </div>
+</body>
+</html>
