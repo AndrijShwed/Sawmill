@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Sawmill.Models;
 using Sawmill.Data;
-using NuGet.Protocol.Plugins;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Sawmill.Pages.Orders
 {
