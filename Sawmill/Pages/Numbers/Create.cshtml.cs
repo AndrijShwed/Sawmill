@@ -23,7 +23,7 @@ namespace Sawmill.Pages.Numbers
         public IList<Number> Numberm { get; set; } = default!;
 
         public string? Phone { get; set; } = default!;
-        public int Номер { get; set; } = default!;
+        public int Номер { get; set; }
        
         public async Task OnGetAsync()
         {
