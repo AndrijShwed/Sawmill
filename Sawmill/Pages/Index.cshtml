@@ -31,22 +31,24 @@
             text-decoration: none;
             position: relative;
             display: inline-block;
+            top: 15px;
         }
 
         .button_text {
             position: relative;
-            height: 30px;
+            height: 18px;
             display: flex;
             justify-content: center;
             padding: 0px 10px;
             border-radius: 30px;
-            font-size: 20px;
-            text-transform: uppercase;
+            font-size: 10px;
             color: black;
+            text-transform: uppercase;
             letter-spacing: 3px;
             transition: all 1s ease 0s;
             top: 0px;
             overflow: hidden;
+            align-items: center;
         }
 
             .button_text:before,
@@ -99,6 +101,44 @@
             background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2));
             box-shadow: 10px 10px 30px aqua;
         }
+
+        .outside {
+            display: flex;
+            margin-bottom: 15px;
+            border: 2px solid black; /* Ширина, тип і колір рамки */
+            padding: 5px; /* Внутрішні відступи */
+            margin: 10px; /* Зовнішні відступи */
+        }
+
+            .outside:hover {
+                background-color: burlywood;
+            }
+
+        .inside {
+            width: 50%;
+            margin: 8% auto;
+            border: 2px solid black; /* Ширина, тип і колір рамки */
+            padding: 5px; /* Внутрішні відступи */
+            margin: 0px; /* Зовнішні відступи */
+        }
+
+        .inside_text {
+            position: relative;
+            color: black;
+            font-size: 120%;
+        }
+
+        .image_ins {
+            width: 90%;
+            margin: 0 0 0 0%
+        }
+
+        .prod {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Два стовпці рівної ширини */
+            gap: 10px; /* Відстань між стовпцями */
+        }
+
     </style>
 
 </head>
@@ -116,12 +156,93 @@
                 <div class="row">
                     <h2 class="display-4" style="font-style: unset; color:aqua "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h2>
                 </div>
-                <div style="display:flex; justify-content:center; margin-top:10%">
-                    <a asp-page="./Orders/IndexFirst" class="button">
-                        <span class="button_text">
-                            <span><b>Створити замовлення</b></span>
-                        </span>
-                    </a>
+                
+                <div class="row prod">
+                    <div class="outside">
+                        <div style="width:50%">
+                            <img src="/images/Бруски.jpg" class="image_ins" />
+                        </div>
+                        <div class="inside">
+                            <div>
+                               <span class="inside_text"> Щоб замовити брус та обрати розміри і кількість натисніть кнопку замовити.</span>
+                            </div>
+                            <div >
+                                <a href="Orders/Create" class="button">
+                                    <span class="button_text">
+                                        <span><b>Замовити</b></span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="outside">
+                        <div style="width:50%">
+                            <img src="/images/Крокви.jpg" class="image_ins" />
+                        </div>
+                        <div class="inside">
+                            <div>
+                                <span class="inside_text"> Щоб замовити крокви та обрати розміри і кількість натисніть кнопку замовити.</span>
+                            </div>
+                            <div>
+                                <a href="Orders/Create" class="button">
+                                    <span class="button_text">
+                                        <span><b>Замовити</b></span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="outside">
+                        <div style="width:50%">
+                            <img src="/images/Лати.jpg" class="image_ins" />
+                        </div>
+                        <div class="inside">
+                            <div>
+                               <span class="inside_text"> Щоб замовити лати та обрати розміри і кількість натисніть кнопку замовити.</span>
+                            </div>
+                            <div>
+                                <a href="Orders/Create" class="button">
+                                    <span class="button_text">
+                                        <span><b>Замовити</b></span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="outside">
+                        <div style="width:50%">
+                            <img src="/images/Дошки.jpg" class="image_ins" />
+                        </div>
+                        <div class="inside">
+                            <div>
+                               <span class="inside_text"> Щоб замовити дошки та обрати розміри і кількість натисніть кнопку замовити.</span>
+                            </div>
+                            <div>
+                                <a href="Orders/Create" class="button">
+                                    <span class="button_text">
+                                        <span><b>Замовити</b></span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="outside">
+                        <div style="width:50%">
+                            <img src="/images/Циліндр.jpg" class="image_ins" />
+                        </div>
+                        <div class="inside">
+                            <div>
+                               <span class="inside_text"> Щоб замовити брус оциліндрований та обрати розміри і кількість натисніть кнопку замовити.</span>
+                            </div>
+                            <div>
+                                <a href="Orders/Create" class="button">
+                                    <span class="button_text">
+                                        <span><b>Замовити</b></span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             }
             else if (User.Identity.IsAuthenticated)

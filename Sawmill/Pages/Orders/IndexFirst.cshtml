@@ -22,8 +22,13 @@
         }
 
         .button {
+            position:relative;
             font-family: Arial;
             text-decoration: none;
+            display: inline-block;
+            bottom: 0; /* Розміщує елемент у нижньому краї контейнера */
+            right: 0; /* Розміщує елемент у правому краї контейнера */
+            padding: 10px;
         }
 
         .button_text {
@@ -87,15 +92,27 @@
         .outside {
             display: flex;
             margin-bottom: 15px;
+            border: 2px solid black; /* Ширина, тип і колір рамки */
+            padding: 5px; /* Внутрішні відступи */
+            margin: 10px; /* Зовнішні відступи */
+        }
+
+        .outside:hover {
+            background-color:burlywood;
         }
 
         .inside {
             width: 50%;
             margin: 8% auto;
+            border: 2px solid black; /* Ширина, тип і колір рамки */
+            padding: 5px; /* Внутрішні відступи */
+            margin: 0px; /* Зовнішні відступи */
+            
         }
 
         .inside_text {
-            color: azure;
+            position: relative;
+            color: black;
             font-size: 120%;
         }
 
@@ -112,69 +129,74 @@
     <div class="container">
 
         <div style="max-width:600px" class="product list-group-item">
-            <h2 class="display-6" style="color:azure"><b>У нас ви можете замовити такі матеріали:</b></h2>
+            <h2 class="display-6" style="color: black"><b>У нас ви можете замовити такі матеріали:</b></h2>
             
-                <div class="outside">
-                    <div style="width:50%">
-                        <img src="/images/Бруски.jpg" class="image_ins" />
-                    </div>
-                    <div class="inside">
-                        <span class="inside_text"> Бруси</span>
+            <div class="outside">
+                <div style="width:50%">
+                    <img src="/images/Бруски.jpg" class="image_ins" />
+                </div>
+                <div class="inside">
+                    <span class="inside_text"> Щоб замовити брус та обрати розміри і кількість натисніть кнопку замовити.</span>
                     <a href="Create" class="button">
                         <span class="button_text">
                             <span><b>Замовити</b></span>
                         </span>
                     </a>
-
                 </div>
-                <div class="outside">
-                    <div style="width:50%">
-                        <img src="/images/Крокви.jpg" class="image_ins" />
-                    </div>
-                    <div class="inside">
-                        <span class="inside_text"> Крокви</span>
-                    </div>
-
+            </div>
+            <div class="outside">
+                <div style="width:50%">
+                    <img src="/images/Крокви.jpg" class="image_ins" />
                 </div>
-                <div class="outside">
-                    <div style="width:50%">
-                        <img src="/images/Лати.jpg" class="image_ins" />
-                    </div>
-                    <div class="inside">
-                        <span class="inside_text"> Лати</span>
-                    </div>
-
+                <div class="inside">
+                    <span class="inside_text"> Щоб замовити крокви та обрати розміри і кількість натисніть кнопку замовити.</span>
+                    <a href="Create" class="button">
+                        <span class="button_text">
+                            <span><b>Замовити</b></span>
+                        </span>
+                    </a>
                 </div>
-                <div class="outside">
-                    <div style="width:50%">
-                        <img src="/images/Дошки.jpg" class="image_ins" />
-                    </div>
-                    <div class="inside">
-                        <span class="inside_text"> Дошки</span>
-                    </div>
-
+            </div>
+            <div class="outside">
+                <div style="width:50%">
+                    <img src="/images/Лати.jpg" class="image_ins" />
                 </div>
-
-                <div class="outside">
-                    <div style="width:50%">
-                        <img src="/images/Циліндр.jpg" class="image_ins" />
-                    </div>
-                    <div class="inside">
-                        <span class="inside_text">Брус<br> оциліндрований</span>
-                    </div>
-
+                <div class="inside">
+                    <span class="inside_text"> Щоб замовити лати та обрати розміри і кількість натисніть кнопку замовити.</span>
+                    <a href="Create" class="button">
+                        <span class="button_text">
+                            <span><b>Замовити</b></span>
+                        </span>
+                    </a>
                 </div>
-            
+            </div>
+            <div class="outside">
+                <div style="width:50%">
+                    <img src="/images/Дошки.jpg" class="image_ins" />
+                </div>
+                <div class="inside">
+                    <span class="inside_text"> Щоб замовити дошки та обрати розміри і кількість натисніть кнопку замовити.</span>
+                    <a href="Create" class="button">
+                        <span class="button_text">
+                            <span><b>Замовити</b></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="outside">
+                <div style="width:50%">
+                    <img src="/images/Циліндр.jpg" class="image_ins" />
+                </div>
+                <div class="inside">
+                    <span class="inside_text"> Щоб замовити брус оциліндрований та обрати розміри і кількість натисніть кнопку замовити.</span>
+                    <a href="Create" class="button">
+                        <span class="button_text">
+                            <span><b>Замовити</b></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
         </div>
-
-        <div class="display-6">
-            <a href="Create" class="button">
-                <span class="button_text">
-                    <span><b>Перейти до замовлення</b></span>
-                </span>
-            </a>
-        </div>
-
     </div>
 </body>
 </html>
