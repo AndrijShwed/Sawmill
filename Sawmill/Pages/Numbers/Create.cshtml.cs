@@ -20,14 +20,14 @@ namespace Sawmill.Pages.Numbers
             _userManager = userManager;
         }
 
-        public IList<Number> Numberm { get; set; } = default!;
+        public IList<Number> Numberm { get; set; } = new List<Number>();
 
         public string? Phone { get; set; } = default!;
         public int Номер { get; set; }
-       
+
         public async Task OnGetAsync()
         {
-            if (_context.Numbers.Count() != 0)
+            if (_context.Numbers.Any())
             {
                 Numberm = await _context.Numbers.ToListAsync();
             }
@@ -41,7 +41,6 @@ namespace Sawmill.Pages.Numbers
             {
                 Phone = "Не вдалося отримати номер телефону користувача";
             }
-
         }
 
         [BindProperty]

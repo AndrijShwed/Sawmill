@@ -11,8 +11,8 @@ using Sawmill.Data;
 namespace Sawmill.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240516062440_1")]
-    partial class _1
+    [Migration("20240912120449_Services")]
+    partial class Services
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
