@@ -116,6 +116,11 @@ video {
     margin: 0px; /* Зовнішні відступи */
 }
 
+.inside a {
+    font-size: 50px;
+    color: antiquewhite;
+}
+
 .inside_text {
     position: relative;
     color: antiquewhite;

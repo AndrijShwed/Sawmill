@@ -130,7 +130,7 @@
                             <div style="background-color:antiquewhite; width:100%; border-radius:0.2em ">
                                 <b><label asp-for="Order.Дата" class="control-label"></label></b>
                             </div>
-                            <input asp-for="Order.Дата" class="form-control" value=@DateTime.Now.ToString("dd-MM-yyyy") />
+                            <input asp-for="Order.Дата" class="form-control" value=@DateTime.Now.ToString("dd-MM-yyyy") disabled/>
                             <span asp-validation-for="Order.Дата" class="text-danger"></span>
                         </div>
                         <div class="form-group">
@@ -143,6 +143,7 @@
                             </div>
                             <select asp-for="Order.Назва" class="form-control">
 
+                                <option disabled selected>Виберіть назву</option>
                                 <option>Балка</option>
                                 <option>Кроква</option>
                                 <option>Лата</option>
@@ -169,7 +170,7 @@
                                 <b><label asp-for="Order.Довжина" class="control-label"></label>(м)</b>
                             </div>
                             <select asp-for="Order.Довжина" class="form-control">
-                                <option>Виберіть</option>
+                                <option selected disabled>Виберіть довжину</option>
                                 <option>6</option>
                                 <option>5</option>
                                 <option>4</option>
