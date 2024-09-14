@@ -22,6 +22,7 @@ video {
     position: relative;
     display: inline-block;
     top: 20%;
+    cursor: pointer;
 }
 
 .button_text {
