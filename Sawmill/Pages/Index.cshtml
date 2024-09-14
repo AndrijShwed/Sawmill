@@ -7,140 +7,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="css/Media.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: auto;
-        }
-
-        video {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            transform: translateX(-50%) translateY(-50%);
-        }
-
-        .button {
-            font-family: Arial;
-            text-decoration: none;
-            position: relative;
-            display: inline-block;
-            top: 15px;
-        }
-
-        .button_text {
-            position: relative;
-            height: 18px;
-            display: flex;
-            justify-content: center;
-            padding: 0px 10px;
-            border-radius: 30px;
-            font-size: 10px;
-            color: black;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            transition: all 1s ease 0s;
-            top: 0px;
-            overflow: hidden;
-            align-items: center;
-        }
-
-            .button_text:before,
-            .button_text:after {
-                content: ' ';
-                position: absolute;
-                width: 50%;
-                height: 100%;
-                background-color: lightgray;
-            }
-
-            .button_text:before {
-                left: 0;
-                z-index: 2;
-            }
-
-            .button_text:after {
-                right: 0;
-            }
-
-            .button_text span {
-                position: relative;
-                z-index: 2;
-            }
-
-        .button:hover .button_text:before,
-        .button:hover .button_text:after {
-            background-color: aqua;
-        }
-
-        .button:hover .button_text {
-            top: -3px;
-            color: firebrick;
-            transition: all 0.5s ease 0.2s;
-            box-shadow: 0 5px 0px 0 #0c5b56;
-        }
-
-        .button:active .button_text {
-            top: 2px;
-            transition: all 0.1s ease 0s;
-            box-shadow: 0 2px 0px 0 #0c5b56;
-        }
-
-        .row {
-            margin: auto;
-            width: 80%;
-            border-radius: 5px;
-            border: 1px solid aqua;
-            padding: 20px;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2));
-            box-shadow: 10px 10px 30px aqua;
-        }
-
-        .outside {
-            display: flex;
-            margin-bottom: 15px;
-            border: 2px solid black; /* Ширина, тип і колір рамки */
-            padding: 5px; /* Внутрішні відступи */
-            margin: 10px; /* Зовнішні відступи */
-        }
-
-            .outside:hover {
-                background-color: burlywood;
-            }
-
-        .inside {
-            width: 50%;
-            margin: 8% auto;
-            border: 2px solid black; /* Ширина, тип і колір рамки */
-            padding: 5px; /* Внутрішні відступи */
-            margin: 0px; /* Зовнішні відступи */
-        }
-
-        .inside_text {
-            position: relative;
-            color: black;
-            font-size: 120%;
-        }
-
-        .image_ins {
-            width: 90%;
-            margin: 0 0 0 0%
-        }
-
-        .prod {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Два стовпці рівної ширини */
-            gap: 10px; /* Відстань між стовпцями */
-        }
+       
 
     </style>
-
+    
 </head>
 <body>
     <video autoplay loop muted>
@@ -159,14 +31,14 @@
                 
                 <div class="row prod">
                     <div class="outside">
-                        <div style="width:50%">
-                            <img src="/images/Бруски.jpg" class="image_ins" />
+                        <div style="width:100%">
+                            <img src="/images/Балки.jpg" class="image_ins" />
                         </div>
                         <div class="inside">
                             <div>
                                <span class="inside_text"> Щоб замовити брус та обрати розміри і кількість натисніть кнопку замовити.</span>
                             </div>
-                            <div >
+                            <div>
                                 <a href="Orders/Create" class="button">
                                     <span class="button_text">
                                         <span><b>Замовити</b></span>
@@ -176,7 +48,7 @@
                         </div>
                     </div>
                     <div class="outside">
-                        <div style="width:50%">
+                        <div style="width:100%">
                             <img src="/images/Крокви.jpg" class="image_ins" />
                         </div>
                         <div class="inside">
@@ -193,7 +65,7 @@
                         </div>
                     </div>
                     <div class="outside">
-                        <div style="width:50%">
+                        <div style="width:100%">
                             <img src="/images/Лати.jpg" class="image_ins" />
                         </div>
                         <div class="inside">
@@ -210,7 +82,7 @@
                         </div>
                     </div>
                     <div class="outside">
-                        <div style="width:50%">
+                        <div style="width:100%">
                             <img src="/images/Дошки.jpg" class="image_ins" />
                         </div>
                         <div class="inside">
@@ -227,7 +99,7 @@
                         </div>
                     </div>
                     <div class="outside">
-                        <div style="width:50%">
+                        <div style="width:100%">
                             <img src="/images/Циліндр.jpg" class="image_ins" />
                         </div>
                         <div class="inside">

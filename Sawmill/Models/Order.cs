@@ -2,8 +2,8 @@
 {
     public class Order
     {
-        public int orderId { get; set; }
-        public string? Date { get; set; }
+        public int OrderId { get; set; }
+        public string? Дата { get; set; }
         public string? Замовник { get; set; }
         public int NumberId { get; set; }
         public string? Назва { get; set; }

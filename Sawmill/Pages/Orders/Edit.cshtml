@@ -12,12 +12,11 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Order.orderId" />
-            <div class="form-group">
+            <input type="hidden" asp-for="Order.OrderId" class="form-group">
                 <label asp-for="Order.Замовник" class="control-label"></label>
-                <input asp-for="Order.Замовник" class="form-control" value=@User.Identity.Name />
+                <input asp-for="Order.Замовник" class="form-control" value=@User.Identity?.Name />
                 <span asp-validation-for="Order.Замовник" class="text-danger"></span>
-            </div>
+            </>
             <div class="form-group">
                 <label asp-for="Order.Назва" class="control-label"></label><b>(виберіть)</b>
                 <select asp-for="Order.Назва" class="form-control">

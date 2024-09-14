@@ -28,8 +28,7 @@
             float: left;
         }
 
-       /*  .block2 {
-            background-color: aquamarine;
+        .block2 {
             width: 48%;
             height: 50%;
             padding: 5px;
@@ -37,7 +36,7 @@
             float: right;
             position: relative;
             left: 5px;
-        } */
+        }
 
         .button {
             font-family: Arial;
@@ -129,10 +128,10 @@
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="form-group">
                             <div style="background-color:antiquewhite; width:100%; border-radius:0.2em ">
-                                <b><label asp-for="Order.Date" class="control-label"></label>(дд.мм.рррр)</b>
+                                <b><label asp-for="Order.Дата" class="control-label"></label></b>
                             </div>
-                            <input asp-for="Order.Date" class="form-control" value=@DateTime.Now.ToString("dd-MM-yyyy") />
-                            <span asp-validation-for="Order.Date" class="text-danger"></span>
+                            <input asp-for="Order.Дата" class="form-control" value=@DateTime.Now.ToString("dd-MM-yyyy") />
+                            <span asp-validation-for="Order.Дата" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <input type="hidden" asp-for="Order.Замовник" class="form-control" value=@User.Identity?.Name />

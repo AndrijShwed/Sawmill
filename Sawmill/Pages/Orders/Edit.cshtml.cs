@@ -25,7 +25,7 @@ namespace Sawmill.Pages.Orders
                 return NotFound();
             }
 
-            var order =  await _context.Orders.FirstOrDefaultAsync(m => m.orderId == id);
+            var order =  await _context.Orders.FirstOrDefaultAsync(m => m.OrderId == id);
             if (order == null)
             {
                 return NotFound();
@@ -50,7 +50,7 @@ namespace Sawmill.Pages.Orders
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!OrderExists(Order.orderId))
+                if (!OrderExists(Order.OrderId))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace Sawmill.Pages.Orders
 
         private bool OrderExists(int id)
         {
-          return (_context.Orders?.Any(e => e.orderId == id)).GetValueOrDefault();
+          return (_context.Orders?.Any(e => e.OrderId == id)).GetValueOrDefault();
         }
     }
 }
