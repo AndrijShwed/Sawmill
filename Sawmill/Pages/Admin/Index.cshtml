@@ -62,8 +62,8 @@
                     foreach (var q in Model.Number)
                     {
                         int num = 0;
-                        if (q.Замовник == Uclient[m] && (q.Status == "Підтв." ||
-                        q.Status == "В роботі" || q.Status == "Виконано" || q.Status == "Відхил."))
+                        if (q.Замовник == Uclient[m] && (q.Status == "Очікує" ||
+                        q.Status == "В роботі" || q.Status == "Виконано" || q.Status == "Відхилено"))
                         {
                             zam = q.Ім_я;
                             numbZam = q.id;
