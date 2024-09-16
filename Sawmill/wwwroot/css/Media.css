@@ -1,4 +1,8 @@
 ﻿body {
+    background-image: url(/images/Фон_2.jpg);
+    background-size: cover; /* Зображення розтягується, щоб покрити весь екран */
+    background-position: center; /* Центрує зображення по горизонталі та вертикалі */
+    background-repeat: no-repeat; /* Запобігає повторенню зображення */
     margin: 0;
     padding: 0;
     overflow: auto;
@@ -97,22 +101,27 @@ video {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border: 2px solid black; /* Ширина, тип і колір рамки */
+    border: 2px solid white; /* Ширина, тип і колір рамки */
     padding: 5px; /* Внутрішні відступи */
 }
 
     .outside:hover {
         background-color: burlywood;
+        border: 2px solid black;
     }
 
         .outside:hover .inside_text {
             color: black;
         }
 
+        .outside:hover .inside {
+            border: 2px solid black;
+        }
+
 .inside {
     width: 100%;
     margin: 8% auto;
-    border: 2px solid black; /* Ширина, тип і колір рамки */
+    border: 2px solid white; /* Ширина, тип і колір рамки */
     padding: 5px; /* Внутрішні відступи */
     margin: 0px; /* Зовнішні відступи */
 }
