@@ -52,19 +52,12 @@
 
 </head>
 <body>
-
-    <video autoplay loop muted>
-        <source src="/images/1072688276-preview.mp4" type="video/mp4" />
-    </video>
     <div class="row">
         <h3 style="color:aqua">Додайте свої дані</h3>
         <h3 style="color:aqua">Або підтвердіть, якщо ви вже наш клієнт</h3>
         @{
-
             string date = DateTime.Now.ToString("dd-MM-yyyy");
-
         }
-
         <div class="col-md-6">
             <form method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -84,11 +77,9 @@
                     <span asp-validation-for="Number.Замовник" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    @* <b style="color:aqua; font-size:large">Номер телефону</b> *@
                     <input type="hidden" asp-for="Number.Номер_телефону" class="form-control phone" value="@Model.Phone" />
                     <span asp-validation-for="Number.Номер_телефону" class="text-danger"></span>
                 </div>
-
                 @foreach (var item in Model.Numberm)
                 {
                     if (item.Замовник == User.Identity?.Name && k == 0)
@@ -132,8 +123,6 @@
             </form>
         </div>
     </div>
-
-
 </body>
 </html>
 @section Scripts {
