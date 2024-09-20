@@ -55,11 +55,17 @@
                                 <span class="inside_text">Якщо у Вас є запитання чи пропозиції, можете написати нам на нашу електронну адресу.</span>
                             </div>
                             <div>
-                                 <a href="mailto: a_shwed@ukr.net" class="button">
-                                     <span class="button_text">
-                                         <span><b>Написати</b></span>
-                                     </span>
-                                 </a>
+                                @foreach(var item in Model.Contacts)
+                                {
+                                    if (item.Name == "Email")
+                                    {
+                                         <a href="mailto: @item.Value" class="button">
+                                             <span class="button_text">
+                                                 <span><b>Написати</b></span>
+                                             </span>
+                                         </a>
+                                    }
+                                }
                              </div>
                         </div>
                     </div>
@@ -69,11 +75,37 @@
             {
                 <h2 class="display-4" style="font-style: unset; color:aqua "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h2>
                 <ul class="text-sm-start" style="margin-top: 20px">
-                    <li><a asp-page="./Admin/Index"><h4 style="font-style: unset; text-decoration: none; color:aqua">Переглянути замовлення</h4></a></li>
-                    <li><a asp-page="./AdminNumbers/Index"><h4 style="font-style: unset; color:aqua">Опрацювати замовлення</h4></a></li>
-                    <li><a asp-page="./Prices/Index"><h4 style="font-style: unset; color:aqua">Встановити або змінити ціну</h4></a></li>
-                    <li><a asp-page="./Services/Index"><h4 style="font-style: unset; color:aqua">Додати вид послуг</h4></a></li>
-                    <li><a asp-page="./AdminProducts/Create"><h4 style="font-style: unset; color:aqua">Додати продукт</h4></a></li>
+                    <li>
+                        <div class="adminlist">
+                            <a asp-page="./Admin/Index"><h4 style="font-style: unset; text-decoration: none; color:aqua">Переглянути замовлення</h4></a>
+                        </div>
+                    </li>
+               
+                    <li>
+                        <div class="adminlist">
+                            <a asp-page="./AdminNumbers/Index"><h4 style="font-style: unset; color:aqua">Опрацювати замовлення</h4></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="adminlist">
+                            <a asp-page="./Prices/Index"><h4 style="font-style: unset; color:aqua">Встановити або змінити ціну</h4></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="adminlist">
+                            <a asp-page="./Services/Index"><h4 style="font-style: unset; color:aqua">Додати вид послуг</h4></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="adminlist">
+                            <a asp-page="./AdminProducts/Create"><h4 style="font-style: unset; color:aqua">Додати продукт</h4></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="adminlist">
+                            <a asp-page="./Contacts/Create"><h4 style="font-style: unset; color:aqua">Додати контакт</h4></a>
+                        </div>
+                    </li>
                 </ul>
             }
             else

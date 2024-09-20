@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using Sawmill.Data;
 using Sawmill.Models;
 namespace Sawmill.Pages
@@ -16,6 +17,7 @@ namespace Sawmill.Pages
         }
 
         public IList<Product>Products { get; set; } = new List<Product>();
+        public IList<Contact>Contacts { get; set; } = new List<Contact>();
 
         public void OnGet()
         {
@@ -23,6 +25,12 @@ namespace Sawmill.Pages
             {
                 Products = _context.Products.ToList();
             }
+
+            if (_context.Contacts.Any())
+            {
+                Contacts = _context.Contacts.ToList();
+            }
         }
+       
     }
 }

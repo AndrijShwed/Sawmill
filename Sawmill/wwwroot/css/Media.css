@@ -158,3 +158,8 @@ video {
     display: flex;
     justify-content: space-between; /* Розміщує блоки 1 і 2 в ряд */
 }
+
+.adminlist:hover {
+    background-color:cadetblue;
+    width:fit-content;
+}

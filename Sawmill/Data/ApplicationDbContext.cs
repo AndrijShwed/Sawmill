@@ -17,5 +17,6 @@ namespace Sawmill.Data
         public DbSet<Service> Services { get; set; } = default!;
         public DbSet<ServicePP> ServicePPs { get; set; } = default!;
         public DbSet<Product> Products { get; set; } = default!;
+        public DbSet<Contact> Contacts { get; set; } = default!;
     }
 }
