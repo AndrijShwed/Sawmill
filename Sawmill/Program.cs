@@ -32,11 +32,15 @@ internal class Program
         });
         builder.Services.AddRazorPages();
 
-        //builder.Services.AddHttpsRedirection(options =>
-        //{
-        //    options.HttpsPort = 443;
-        //});
+        builder.Services.AddDistributedMemoryCache();
+        builder.Services.AddSession(options =>
+        {
+            options.IdleTimeout = TimeSpan.FromMinutes(30); // Час життя сесії
+            options.Cookie.HttpOnly = true; // Зробити cookie недоступним для JavaScript
+            options.Cookie.IsEssential = true; // Обов'язкове для GDPR
+        });
 
+       
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -51,6 +55,7 @@ internal class Program
             app.UseHsts();
         }
 
+        app.UseSession();
         app.UseHttpsRedirection();
         app.UseStaticFiles();
 

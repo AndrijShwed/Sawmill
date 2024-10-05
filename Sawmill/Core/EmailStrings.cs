@@ -15,6 +15,7 @@ namespace Sawmill.Core
              string jsonString = File.ReadAllText("appsettings.json");
 
              JsonDocument doc = JsonDocument.Parse(jsonString);
+
              JsonElement settings = doc.RootElement.GetProperty("EmailSettings");
            
             From = settings.GetProperty("from").GetString() ?? "Помилка відправки листа";

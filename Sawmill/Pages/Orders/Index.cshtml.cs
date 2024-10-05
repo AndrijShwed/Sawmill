@@ -52,9 +52,10 @@ namespace Sawmill.Pages.Orders
 
             foreach (var item in _context.Orders)
             {
-                if (item.Замовник == User.Identity?.Name && item.NumberId == 0)
+                if (item.Замовник == User.Identity?.Name && item.NumberId == 0 ||
+                    item.SessionId == GlobalVariables.SessionId && item.NumberId == 0)
                 {
-                    
+                    item.Замовник = User.Identity?.Name;
                     item.Ціна = Ціна;
                     k++;
 
@@ -65,11 +66,17 @@ namespace Sawmill.Pages.Orders
             {
                 return RedirectToPage("/Orders/Помилка_підтвердження");
             }
-            else
+            else if (User.Identity.IsAuthenticated)
             {
                 await _context.SaveChangesAsync();
 
                 return RedirectToPage("/Numbers/Create");
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Будь ласка, зареєструйтесь, щоб продовжити замовлення.";
+
+                return RedirectToAction("Register", "Account");
             }
         }
 

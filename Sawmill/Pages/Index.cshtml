@@ -10,108 +10,106 @@
     <link rel="stylesheet" href="css/Media.css">
 </head>
 <body>
+
     <div class="text-center">
 
-        @if (User.Identity != null)
+        @if (User.Identity.IsAuthenticated && User.Identity.Name == "Admin@ukr.net")
         {
-            if (User.Identity.IsAuthenticated && User.Identity.Name != "Admin@ukr.net")
-            {
-                <div class="row">
-                    <h2 class="display-4" style="font-style: unset; color:aqua "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h2>
-                </div>
+            <h2 class="display-4" style="font-style: unset; color:aqua "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h2>
+            <ul class="text-sm-start" style="margin-top: 20px">
+                <li>
+                    <div class="adminlist">
+                        <a asp-page="./Admin/Index"><h4 style="font-style: unset; text-decoration: none; color:aqua">Переглянути замовлення</h4></a>
+                    </div>
+                </li>
 
-                <div class="row prod">
-                    @foreach (var item in Model.Products)
-                    {
-                        <div class="outside">
-                            <div style="width:100%">
-                                <img src="/images/@item.Image" class="image_ins" />
-                            </div>
-                            <div class="inside">
-                                <div>
-                                   <span class="inside_text"> @item.Description</span>
-                                </div>
-                                <div>
-                                    <a href="Orders/Create" class="button">
-                                        <span class="button_text">
-                                            <span><b>Замовити</b></span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    }
+                <li>
+                    <div class="adminlist">
+                        <a asp-page="./AdminNumbers/Index"><h4 style="font-style: unset; color:aqua">Опрацювати замовлення</h4></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="adminlist">
+                        <a asp-page="./Prices/Index"><h4 style="font-style: unset; color:aqua">Встановити або змінити ціну</h4></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="adminlist">
+                        <a asp-page="./Services/Index"><h4 style="font-style: unset; color:aqua">Додати вид послуг</h4></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="adminlist">
+                        <a asp-page="./AdminProducts/Create"><h4 style="font-style: unset; color:aqua">Додати продукт</h4></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="adminlist">
+                        <a asp-page="./Contacts/Create"><h4 style="font-style: unset; color:aqua">Додати контакт</h4></a>
+                    </div>
+                </li>
+            </ul>
+        }
+        else
+        {
+            <div class="row">
+                <h2 class="display-4" style="font-style: unset; color:aqua "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h2>
+            </div>
+
+            <div class="row prod">
+                @foreach (var item in Model.Products)
+                {
                     <div class="outside">
                         <div style="width:100%">
-                            <img src="/images/Розпил.jpg" class="image_ins" />
+                            <img src="/images/@item.Image" class="image_ins" />
                         </div>
                         <div class="inside">
                             <div>
-                                <span class="inside_text">Якщо у Вас є запитання чи пропозиції, можете написати нам на нашу електронну адресу.</span>
+                                <span class="inside_text"> @item.Description</span>
                             </div>
                             <div>
-                                @foreach(var item in Model.Contacts)
+                                <a href="Orders/Create" class="button">
+                                    <span class="button_text">
+                                        <span><b>Замовити</b></span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="outside">
+                    <div style="width:100%">
+                        <img src="/images/Розпил.jpg" class="image_ins" />
+                    </div>
+                    <div class="inside">
+                        <div>
+                            <span class="inside_text">Якщо у Вас є запитання чи пропозиції, можете написати нам на нашу електронну адресу.</span>
+                        </div>
+                        <div>
+                            @foreach (var item in Model.Contacts)
+                            {
+                                if (item.Name == "Email")
                                 {
-                                    if (item.Name == "Email")
-                                    {
-                                         <a href="mailto: @item.Value" class="button">
-                                             <span class="button_text">
-                                                 <span><b>Написати</b></span>
-                                             </span>
-                                         </a>
-                                    }
+                                    <a href="mailto: @item.Value" class="button">
+                                        <span class="button_text">
+                                            <span><b>Написати</b></span>
+                                        </span>
+                                    </a>
                                 }
-                             </div>
+                            }
                         </div>
                     </div>
                 </div>
-            }
-            else if (User.Identity.IsAuthenticated)
-            {
-                <h2 class="display-4" style="font-style: unset; color:aqua "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h2>
-                <ul class="text-sm-start" style="margin-top: 20px">
-                    <li>
-                        <div class="adminlist">
-                            <a asp-page="./Admin/Index"><h4 style="font-style: unset; text-decoration: none; color:aqua">Переглянути замовлення</h4></a>
-                        </div>
-                    </li>
-               
-                    <li>
-                        <div class="adminlist">
-                            <a asp-page="./AdminNumbers/Index"><h4 style="font-style: unset; color:aqua">Опрацювати замовлення</h4></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="adminlist">
-                            <a asp-page="./Prices/Index"><h4 style="font-style: unset; color:aqua">Встановити або змінити ціну</h4></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="adminlist">
-                            <a asp-page="./Services/Index"><h4 style="font-style: unset; color:aqua">Додати вид послуг</h4></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="adminlist">
-                            <a asp-page="./AdminProducts/Create"><h4 style="font-style: unset; color:aqua">Додати продукт</h4></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="adminlist">
-                            <a asp-page="./Contacts/Create"><h4 style="font-style: unset; color:aqua">Додати контакт</h4></a>
-                        </div>
-                    </li>
-                </ul>
-            }
-            else
-            {
-                <div class="row">
-                    <h4 class="display-6" style="font-style: unset; color:aqua "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h4>
-                    <h6 class="display-6" style="font-style: unset; color:aqua "><b>Увійдіть або зареєструйтесь</b></h6>
-                </div>
-            }
+            </div>
         }
-
+       @*  else
+        {
+            <div class="row">
+                <h4 class="display-6" style="font-style: unset; color:aqua "><b>Вітаємо на сайті замовлень пиломатеріалів</b></h4>
+                <h6 class="display-6" style="font-style: unset; color:aqua "><b>Увійдіть або зареєструйтесь</b></h6>
+            </div>
+        } *@
+        
     </div>
 
 </body>

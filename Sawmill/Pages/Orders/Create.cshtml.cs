@@ -16,6 +16,12 @@ namespace Sawmill.Pages.Orders
 
         public IActionResult OnGet()
         {
+            // Створюємо нову сесію
+            HttpContext.Session.SetString("SessionId", HttpContext.Session.Id);
+
+            // Можна зберегти ID сесії в глобальній змінній
+            // Для цього вам потрібно визначити глобальну змінну
+            GlobalVariables.SessionId = HttpContext.Session.Id;
             ViewData["Ціна"] = _context.Prices.ToList().Last().Ціна;
             return Page();
         }

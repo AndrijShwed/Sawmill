@@ -12,6 +12,7 @@
         public int Довжина { get; set; }
         public int Кількість { get; set; }
         public int Ціна { get; set; }
+        public string SessionId { get; set; }
       
     }
 }

@@ -130,11 +130,15 @@
                             <div style="background-color:antiquewhite; width:100%; border-radius:0.2em ">
                                 <b><label asp-for="Order.Дата" class="control-label"></label></b>
                             </div>
-                            <input asp-for="Order.Дата" class="form-control" value=@DateTime.Now.ToString("dd-MM-yyyy") disabled/>
+                            <input asp-for="Order.Дата" class="form-control" value=@DateTime.Now.ToString("dd-MM-yyyy")/>
                             <span asp-validation-for="Order.Дата" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <input type="hidden" asp-for="Order.Замовник" class="form-control" value=@User.Identity?.Name />
+                            <span asp-validation-for="Order.Замовник" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" asp-for="Order.SessionId" class="form-control" value=@GlobalVariables.SessionId />
                             <span asp-validation-for="Order.Замовник" class="text-danger"></span>
                         </div>
                         <div class="form-group">

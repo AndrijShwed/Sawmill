@@ -119,8 +119,6 @@
 
                         @foreach (var item in Model.Order)
                         {
-
-
                             if (item.NumberId == zam)
                             {
                                 decimal h = Convert.ToDecimal(item.Висота);
@@ -166,7 +164,6 @@
                                     <td>
                                     </td>
                                 </tr>
-
                             }
                         }
                     </tbody>
@@ -217,11 +214,12 @@
     }
     @if (k == 0)
     {
-        <h2 style="color:brown; font:bolder">У Вас ще немає замовлень</h2>
+        <h2 style="color:brown; font:bolder">У Вас ще немає оформлених замовлень</h2>
+
         <div class="display-5">
             <a href="/Orders" class="button">
                 <span class="button_text">
-                    <span><b>Створити нове замовлення</b></span>
+                    <span><b>Замовлення</b></span>
                 </span>
             </a>
         </div>
@@ -231,7 +229,7 @@
         <div class="display-5">
             <a href="/Orders" class="button">
                 <span class="button_text">
-                    <span><b>Створити нове замовлення</b></span>
+                    <span><b>Замовлення</b></span>
                 </span>
             </a>
         </div>

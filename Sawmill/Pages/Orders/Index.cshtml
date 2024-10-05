@@ -55,11 +55,24 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            
+           
+        @{
+            var errorMessage = TempData["ErrorMessage"] as string;
+        }
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div class="row">
+                <h2> @errorMessage </h2>
+            </div>
+
+        }
+        else
+        {
+            <div class="row">
                 <h2> Формування замовлення </h2>
-            
-        </div>
+            </div>
+        }
 
         <div>
             <a asp-page="Create" class="button">
@@ -111,64 +124,61 @@
 
                 @foreach (var item in Model.Order)
                 {
-                    if (User.Identity != null)
+                    @if (item.SessionId == GlobalVariables.SessionId && item.NumberId == 0)
                     {
-                        @if (item.Замовник == User.Identity.Name && item.NumberId == 0)
-                        {
-                            decimal h = Convert.ToDecimal(item.Висота);
-                            decimal w = Convert.ToDecimal(item.Ширина);
-                            decimal l = Convert.ToDecimal(item.Довжина);
-                            decimal n = Convert.ToDecimal(item.Кількість);
-                            decimal volume = h * w * l * n / 1000000;
-                            decimal sum = volume * item.Ціна;
-                            nAll += volume;
+                        decimal h = Convert.ToDecimal(item.Висота);
+                        decimal w = Convert.ToDecimal(item.Ширина);
+                        decimal l = Convert.ToDecimal(item.Довжина);
+                        decimal n = Convert.ToDecimal(item.Кількість);
+                        decimal volume = h * w * l * n / 1000000;
+                        decimal sum = volume * item.Ціна;
+                        nAll += volume;
 
-                            sumAll += sum;
-                            num++;
-                            sumAll = Convert.ToInt32(sumAll);
+                        sumAll += sum;
+                        num++;
+                        sumAll = Convert.ToInt32(sumAll);
 
-                            <tr>
-                                <td>
-                                    @num
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Назва)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Висота)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Ширина)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Довжина)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Кількість)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => volume)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Ціна)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => sum)
-                                </td>
-                                <td style="line-height:2">
-                                    <div>
-                                        <a asp-page="./Edit" asp-route-id="@item.OrderId">
-                                            <b>Змінити</b>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a asp-page="./Delete" asp-route-id="@item.OrderId">
-                                            <b style="color:red">Видалити</b>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                        }
+                        <tr>
+                            <td>
+                                @num
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Назва)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Висота)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ширина)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Довжина)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Кількість)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => volume)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ціна)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => sum)
+                            </td>
+                            <td style="line-height:2">
+                                <div>
+                                    <a asp-page="./Edit" asp-route-id="@item.OrderId">
+                                        <b>Змінити</b>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a asp-page="./Delete" asp-route-id="@item.OrderId">
+                                        <b style="color:red">Видалити</b>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
                     }
                 }
             </tbody>
