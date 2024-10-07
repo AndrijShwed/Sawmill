@@ -70,12 +70,22 @@
                     <input asp-for="Number.date" class="form-control" readonly value=@date />
                     <span asp-validation-for="Number.date" class="text-danger"></span>
                 </div>
-
-                <div class="form-group">
-                    <b style="color:aqua; font-size:large">Замовник</b>
-                    <input asp-for="Number.Замовник" class="form-control" readonly value=@User.Identity?.Name />
-                    <span asp-validation-for="Number.Замовник" class="text-danger"></span>
-                </div>
+                @if (User.Identity.Name != "")
+                {
+                    <div class="form-group">
+                        <b style="color:aqua; font-size:large">Замовник</b>
+                        <input asp-for="Number.Замовник" class="form-control" readonly value=@User.Identity?.Name />
+                        <span asp-validation-for="Number.Замовник" class="text-danger"></span>
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group">
+                        <b style="color:aqua; font-size:large">Замовник</b>
+                        <input asp-for="Number.Замовник" class="form-control" />
+                        <span asp-validation-for="Number.Замовник" class="text-danger"></span>
+                    </div>
+                }
                 <div class="form-group">
                     <input type="hidden" asp-for="Number.Номер_телефону" class="form-control phone" value="@Model.Phone" />
                     <span asp-validation-for="Number.Номер_телефону" class="text-danger"></span>
