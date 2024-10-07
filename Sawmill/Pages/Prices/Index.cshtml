@@ -14,7 +14,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Price[0].Ціна)
+                @Html.DisplayNameFor(model => model.Price[0].ЦінаПиломатеріал)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price[0].ЦінаЦиліндр)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price[0].Дата)
@@ -26,7 +29,10 @@
         @foreach (var item in Model.Price) {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Ціна)
+                    @Html.DisplayFor(modelItem => item.ЦінаПиломатеріал)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ЦінаЦиліндр)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Дата)

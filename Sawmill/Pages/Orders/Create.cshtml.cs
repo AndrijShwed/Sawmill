@@ -14,7 +14,7 @@ namespace Sawmill.Pages.Orders
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(string Назва)
         {
             // Створюємо нову сесію
             HttpContext.Session.SetString("SessionId", HttpContext.Session.Id);
@@ -22,7 +22,9 @@ namespace Sawmill.Pages.Orders
             // Можна зберегти ID сесії в глобальній змінній
             // Для цього вам потрібно визначити глобальну змінну
             GlobalVariables.SessionId = HttpContext.Session.Id;
-            ViewData["Ціна"] = _context.Prices.ToList().Last().Ціна;
+            ViewData["ЦінаПиломатеріал"] = _context.Prices.ToList().Last().ЦінаПиломатеріал;
+            ViewData["ЦінаЦиліндр"] = _context.Prices.ToList().Last().ЦінаЦиліндр;
+            ViewData["Назва"] = Назва;
             return Page();
         }
 
@@ -36,7 +38,7 @@ namespace Sawmill.Pages.Orders
             {
                 return Page();
             }
-            
+
             _context.Orders.Add(Order);
             await _context.SaveChangesAsync();
 

@@ -74,7 +74,7 @@
         }
 
         <div>
-            <a asp-page="Create" class="button">
+            <a asp-page="/Index" class="button">
                 <span class="button_text">
                     <span> <b>Додати елемент</b></span>
                 </span>
@@ -91,7 +91,7 @@
                         Назва
                     </th>
                     <th>
-                        Вис.<p>(мм.)</p>
+                        Вис.<p>(мм.)</p>Діам.
                     </th>
                     <th>
                         Шир.<p>(мм.)</p>
@@ -127,7 +127,18 @@
                         decimal w = Convert.ToDecimal(item.Ширина);
                         decimal l = Convert.ToDecimal(item.Довжина);
                         decimal n = Convert.ToDecimal(item.Кількість);
-                        decimal volume = h * w * l * n / 1000000;
+                        decimal volume = 0;
+                        decimal p = Convert.ToDecimal(3.14);
+                        if (item.Назва == "Брус оциліндрований")
+                        {
+                                volume = p * h / 2 * h / 2 * l * n /1000000 ;
+                        }
+                        else
+                        {
+                                volume = h * w * l * n / 1000000;
+                           
+                        }
+                        
                         decimal sum = volume * item.Ціна;
                         nAll += volume;
 

@@ -14,9 +14,14 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Price.Ціна" class="control-label"></label>
-                <input asp-for="Price.Ціна" class="form-control" />
-                <span asp-validation-for="Price.Ціна" class="text-danger"></span>
+                <label asp-for="Price.ЦінаПиломатеріал" class="control-label"></label>
+                <input asp-for="Price.ЦінаПиломатеріал" class="form-control" />
+                <span asp-validation-for="Price.ЦінаПиломатеріал" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price.ЦінаЦиліндр" class="control-label"></label>
+                <input asp-for="Price.ЦінаЦиліндр" class="form-control" />
+                <span asp-validation-for="Price.ЦінаЦиліндр" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Price.Дата" class="control-label"></label>
