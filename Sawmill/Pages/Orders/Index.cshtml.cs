@@ -10,7 +10,8 @@ namespace Sawmill.Pages.Orders
     {
         private readonly ApplicationDbContext _context;
 
-        int Ціна;
+        int ЦінаПиломатеріал;
+        int ЦінаЦиліндр;
         int k = 0;
 
         public IndexModel(ApplicationDbContext context)
@@ -47,18 +48,28 @@ namespace Sawmill.Pages.Orders
                 return Page();
             }
 
-            Ціна = _context.Prices.ToList().Last().Ціна;
-            ViewData["Ціна"] = Ціна;
+            ЦінаПиломатеріал = _context.Prices.ToList().Last().ЦінаПиломатеріал;
+            ЦінаЦиліндр = _context.Prices.ToList().Last().ЦінаЦиліндр;
+            ViewData["ЦінаПиломатеріал"] = ЦінаПиломатеріал;
+            ViewData["ЦінаЦиліндр"] = ЦінаЦиліндр;
 
             foreach (var item in _context.Orders)
             {
                 if (item.Замовник == User.Identity?.Name && item.NumberId == 0 ||
                     item.SessionId == GlobalVariables.SessionId && item.NumberId == 0)
                 {
-                    item.Замовник = User.Identity?.Name;
-                    item.Ціна = Ціна;
-                    k++;
-
+                    if (item.Назва == "Брус оциліндрований")
+                    {
+                        item.Замовник = User.Identity?.Name;
+                        item.Ціна = ЦінаЦиліндр;
+                        k++;
+                    }
+                    else
+                    {
+                        item.Замовник = User.Identity?.Name;
+                        item.Ціна = ЦінаПиломатеріал;
+                        k++;
+                    }
                 }
             }
 
