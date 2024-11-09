@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Content Remove="Pages\Shared\_Layout1.cshtml" />
+    <Content Remove="wwwroot\js\newFile.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +29,7 @@
     <None Include="Pages\Shared\_ValidationScriptsPartial.cshtml" />
     <None Include="Pages\_ViewImports.cshtml" />
     <None Include="Pages\_ViewStart.cshtml" />
+    <None Include="wwwroot\js\newFile.js" />
     <None Include="wwwroot\js\site.js" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
@@ -97,6 +99,7 @@
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\StatusMessage.cshtml" />
     <_ContentIncludedByDefault Remove="Areas\Identity\Pages\Account\_StatusMessage.cshtml" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\newFile.js" />
   </ItemGroup>
 
   <ItemGroup>
