@@ -128,4 +128,3 @@ $.fn.setCursorPosition = function (pos) {
 $('input[type="tel"]').click(function () {
     $(this).setCursorPosition(5);  // set position number
 });
-
